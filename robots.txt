@@ -1,1 +1,1 @@
-Sitemap: https://migration.ivansiu.com/sitemap.xml
+Sitemap: https://ivansiu.com/sitemap.xml
