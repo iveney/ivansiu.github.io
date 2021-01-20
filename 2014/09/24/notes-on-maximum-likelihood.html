@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.2.0
+    Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Notes on Maximum Likelihood, Maximum A Posteriori and Naive Bayes | Ivan Xiao</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Notes on Maximum Likelihood, Maximum A Posteriori and Naive Bayes" />
+<meta name="author" content="Ivan Xiao" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Let \(\data\) be a set of data generated from some distribution parameterized by \(\theta\). We want to estimate the unknown parameter \(\theta\). What we can do?" />
+<meta property="og:description" content="Let \(\data\) be a set of data generated from some distribution parameterized by \(\theta\). We want to estimate the unknown parameter \(\theta\). What we can do?" />
+<link rel="canonical" href="https://migration.ivansiu.com/2014/09/24/notes-on-maximum-likelihood" />
+<meta property="og:url" content="https://migration.ivansiu.com/2014/09/24/notes-on-maximum-likelihood" />
+<meta property="og:site_name" content="Ivan Xiao" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2014-09-24T20:41:44+00:00" />
+<script type="application/ld+json">
+{"url":"https://migration.ivansiu.com/2014/09/24/notes-on-maximum-likelihood","@type":"BlogPosting","headline":"Notes on Maximum Likelihood, Maximum A Posteriori and Naive Bayes","dateModified":"2014-09-24T20:41:44+00:00","datePublished":"2014-09-24T20:41:44+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://migration.ivansiu.com/2014/09/24/notes-on-maximum-likelihood"},"author":{"@type":"Person","name":"Ivan Xiao"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://migration.ivansiu.com/images/xiao.png"},"name":"Ivan Xiao"},"description":"Let \\(\\data\\) be a set of data generated from some distribution parameterized by \\(\\theta\\). We want to estimate the unknown parameter \\(\\theta\\). What we can do?","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/skins/dark.css">
+  <link rel="alternate" type="application/atom+xml" title="Ivan Xiao" href="/feed.xml">
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  notes-on-maximum-likelihood-maximum-a-posteriori-and-naive-bayes">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+  <div class="navigation-wrapper">
+    <a href="#menu-toggle" id="menu-toggle">Menu</a>
+    <nav id="primary-nav" class="site-nav animated drop">
+      <ul><li><a href="/">Home</a></li><li><a href="/categories/">Categories</a></li><li><a href="/tags/">Tags</a></li><li><a href="/search/">Search</a></li></ul>
+    </nav>
+  </div><!-- /.navigation-wrapper -->
+
+
+    <header class="masthead">
+  <div class="wrap">
+    
+      <a href="/" class="site-logo" rel="home" title="Ivan Xiao">
+        <img src="/images/xiao.png" class="site-logo-img animated fadeInDown" alt="Ivan Xiao">
+      </a>
+    
+    
+    
+      
+        <div class="site-title animated fadeIn"><a href="/">Ivan Xiao</a></div>
+      
+      <p class="site-description animated fadeIn" itemprop="description">Engineer. Father. Cat Lover. Guitarist. Ballroom Dancer. Woodworker.</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <header class="page-header">
+        
+        
+          <h1 id="page-title" class="page-title p-name">Notes on Maximum Likelihood, Maximum A Posteriori and Naive Bayes
+</h1>
+        
+      </header>
+
+      <div class="page-sidebar">
+        <div class="page-author h-card p-author"><img src="/images/ivan-memoji.jpg" class="author-avatar u-photo" alt="Ivan Xiao"><div class="author-info"><div class="author-name">
+        <span class="p-name">Ivan Xiao</span>
+      </div><ul class="author-links"><li class="author-link">
+            <a class="u-url" rel="me" href="https://about.me/iveney"><i class="fas fa-external-link-square-alt fa-lg" title="About"></i></a>
+          </li><li class="author-link">
+            <a class="u-url" rel="me" href="https://twitter.com/ivanzxiao"><i class="fab fa-twitter-square fa-lg" title="Twitter"></i></a>
+          </li><li class="author-link">
+            <a class="u-url" rel="me" href="https://github.com/iveney"><i class="fab fa-github-square fa-lg" title="GitHub"></i></a>
+          </li></ul>
+
+<span class="read-time">4 min read</span>
+
+    <time class="page-date dt-published" datetime="2014-09-24T20:41:44+00:00"><a class="u-url" href="">September 24, 2014</a>
+</time>
+
+  </div>
+</div>
+
+        
+  <h3 class="page-taxonomies-title">Categories</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy"><a class="p-category" href="/categories/#machine-learning" title="Pages filed under machine learning">machine learning</a></li><li class="page-taxonomy"><a class="p-category" href="/categories/#probability" title="Pages filed under probability">probability</a></li>
+  </ul>
+
+
+        
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p>Let \(\data\) be a set of data generated from some distribution parameterized by
+\(\theta\). We want to <em>estimate</em> the unknown parameter \(\theta\). What we can do?</p>
+
+<!-- more -->
+
+<p>Essentially, we want to find a most likely value of \(\theta\) given \(\data\),
+that is $\arg \max P(\theta | \data)$. According to Bayes Rule, we have</p>
+
+\[P(\theta \given \data) = \frac{P(\data \given \theta)P(\theta)}{P(\data)}\]
+
+<p>and the terms have the following meanings:</p>
+
+<ul>
+  <li>\(P(\theta \given \data)\): Posterior</li>
+  <li>\(P(\data \given \theta)\): Likelihood</li>
+  <li>\(P(\theta)\): Prior</li>
+  <li>\(P(\data)\): Evidence</li>
+</ul>
+
+<h2 id="maximum-likelihood-estimation-mle">Maximum Likelihood Estimation (MLE)</h2>
+
+<p>An easy way out is to use the MLE method.
+We want to find a \(\theta\) the <em>best explains</em> the data.
+That is, we maximize \(P(\data \given \theta)\).
+Denote such a value as \(\hat{\theta}_{ML}\). We have</p>
+
+\[\hat{\theta}_{ML} = \argmax_\theta P(\data \given \theta) =
+\argmax_\theta P(\mathbf{x}_1, \ldots, \mathbf{x}_N \given \theta )\]
+
+<p>Note that the above \(P\) is a joint distribution over the data.
+We usually assume the observations are <em>independent</em>. Thus, we have</p>
+
+\[P(\mathbf{x}_1, \ldots, \mathbf{x}_N \given \theta ) =
+\prod_{i=1}^{N} P(\mathbf{x}_i \given \theta )\]
+
+<p>We usually use logarithm to simplify the computation, as
+logarithm is monotonically increasing. Thus, we write:</p>
+
+\[\mathcal{L}(\data \given \theta) = \sum_{i=1}^N \log P(\mathbf{x}_i \given \theta )\]
+
+<p>Finally, we seek for the ML solution:</p>
+
+\[\hat{\theta}_{ML} = \argmax_\theta \mathcal{L}(\data \given \theta)\]
+
+<p>If we know the distribution \(P\), we can usually solve the above by
+setting derivative of \(\theta\) to 0 and solve for \(\theta\), that is,</p>
+
+\[\frac{\partial L}{\partial \theta} = 0\]
+
+<h2 id="maximum-a-posteriori-map">Maximum A Posteriori (MAP)</h2>
+
+<p>In MAP, we maximize \(P(\theta \given \data)\) directly. Denote the MAP hypothesis
+as \(\hat{\theta}_{MAP}\), we have:</p>
+
+\[\begin{array}{rl}
+\hat{\theta}_{MAP} = &amp; \argmax_\theta P(\theta \given \data) \\\\
+ = &amp; \argmax_\theta \frac{P(\data \given \theta)P(\theta)}{P(\data)} \\\\
+ = &amp; \argmax_\theta P(\data \given \theta)P(\theta)
+\end{array}\]
+
+<p>Note that the last step is due to the evidence (data) \(\data\) is constant, and
+thus can be omitted in \(\argmax\).</p>
+
+<p>At this step, we notice that the only difference between \(\hat{\theta}_{ML}\) and
+\(\hat{\theta}_{MAP}\) is the prior term \(P(\theta)\). Another way to interpret
+is that we consider \(MAP\) is more general than \(MLE\), as if we assume all
+the possible \(\theta\) are equally probable a priori, e.g., they have the same
+prior probability, or <em>uniform prior</em>, we can effectively remove \(P(\theta)\)
+from the MAP formula, and it looks like exactly the same as MLE.</p>
+
+<p>Finally, if the independent observation holds, again we can use logarithm and
+expand \(\hat{\theta}_{MAP}\) as:</p>
+
+\[\begin{array}{rl}
+\hat{\theta}_{MAP} = &amp; \argmax_\theta L(\data \given \theta) \\\\
+ = &amp; \argmax_\theta \sum_{i=1}^{N} \log P(\mathbf{x}_i \given \theta ) + \log P(\theta)
+\end{array}\]
+
+<p>The extra prior term has the effect that we are essentially ‘pulling’ the
+\(\theta\) distribution towards prior value. This makes sense as we are
+putting our domain knowledge as <em>prior</em> and intuitively the estimation is
+biased towards the <em>prior</em> value.</p>
+
+<h2 id="naive-bayes-classifier">Naive Bayes Classifier</h2>
+
+<p>Assume that we are given a set of data \(\data\), where each example
+\(\mathbf{x_j}=(a_1, a_2, \ldots, a_n)\),  which can be viewed as <em>conjunctions of
+attributes values</em>. \(v_j \in V\) is the corresponding class value. Using MAP, we
+can classify an example \(\mathbf{x}\) as:</p>
+
+\[v_{MAP}=\argmax_{v_j\in V} P(v_j \given a_1, \ldots, a_n)\]
+
+<p>The problem is that it is hard to find a joint distribution for  $P(\mathbf{x}
+\given \theta)$. If we use the data to estimate the distribution, we typically
+don’t have enough data for each attribute. In other words, the  data we have is
+very sparse compared to the whole distribution space.</p>
+
+<p>Naive bayes makes the assumption that each
+attribute is <em>conditionally independent</em> given the target class \(v_j\), that is,</p>
+
+\[P(a_1, \ldots, a_n \given v_j) = \prod_{i=1}^n P(a_i \given v_j)\]
+
+<p>which can be easily estimated from the data.
+Thus, we have the following naive bayes classifier:</p>
+
+\[v_{NB} = \argmax_{v_j \in V} P(v_j) \prod_{i=1}^n P(a_i \given v_j)\]
+
+<p>Note that the learning of naive bayes simply involves in estimating
+\(P(a_i \given v_j)\) and \(P(v_j)\) based on the frequencies in the training data.</p>
+
+<p>Normally the conditional independence assumption does not hold, but naive bayes
+performs well even if so.
+More importantly, <strong>when conditional independence is satisfied, Naive Bayes corresponds to MAP classification.</strong></p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>MLE, MAP and Naive Bayes are all connected. While MLE and MAP are parameter
+estimation methods that returns a single value of the paramter being estimated,
+NB is a classifier that predicts the probability of the class that an example
+belongs to. We also have the following insightes:</p>
+
+<ul>
+  <li>Given the data, MLE considers the paramter to be a constant and estimates
+a value that provide maximum support for the data.</li>
+  <li>MLE does not allow us to ‘inject’ our beliefs about the likely values for the parameter (prior) in the estimation process.</li>
+  <li>MAP allows the fact that the paramter can take values from a prior
+(non-uniform) distribution that express our prior beliefs regarding the paramters.</li>
+  <li>MAP returns paramter value where the probability is highest given data.</li>
+  <li>Again, both MLE and MAP returns a single and specific value for the paramter.
+By contrast, <em>bayesian estimation</em> computes the full posterior distribution
+\(P(\theta \given \data)\).</li>
+</ul>
+
+<h2 id="thoughts">Thoughts</h2>
+
+<p>After reading this <a href="http://www.behind-the-enemy-lines.com/2008/01/are-you-bayesian-or-frequentist-or.html">article</a>, I have the following interpretation:</p>
+
+<ul>
+  <li>The Maximum Likelihood approach can be roughly regarded as traditional “frequentist” thinking.</li>
+  <li>The MAP approach is a direct applicatin of Bayes Theorem. Thus, it can be regarded as a “bayesian” way of thinking.</li>
+</ul>
+
+
+        </div>
+
+        
+
+        
+          
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/2014/05/29/fix-mid-2009-mbp-ram-not-recognized-issue">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> Fix Mid 2009 MBP RAM not recognized issue
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/2014/10/02/jing-ying-zhu-yi-yu-tou-piao-kao-shi">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        精英主义与投票考试
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  TeX: {
+    extensions: ["mediawiki-texvc.js"],
+    Macros: {
+      complex: ['\\mathbb{C}'],
+      norm: ['\\left\\lVert#1\\right\\rVert', 1],
+      given: ['\\mathbin{\\vert}'],
+      data: ['\\mathcal{D}'],
+      argmax: ['\\mathop{\\arg\\,\\max}\\limits'],
+    }
+  }
+  });
+</script>
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="https://about.me/iveney"><i class="fas fa-external-link-square-alt fa-2x" title="About"></i></a><a class="social-icon" href="https://twitter.com/ivanzxiao"><i class="fab fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://github.com/iveney"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a><a class="social-icon" href="https://www.linkedin.com/in/zgxiao/"><i class="fab fa-linkedin fa-2x" title="LinkedIn"></i></a><a class="social-icon" href="/atom.xml"><i class="fas fa-rss-square fa-2x" title="Feed"></i></a></div><div class="copyright">
+    
+      <p>&copy; 2021 Ivan Xiao. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p>
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>

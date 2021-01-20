@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.2.0
+    Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Migrating from dropbox public folder | Ivan Xiao</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Migrating from dropbox public folder" />
+<meta name="author" content="Ivan Xiao" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Dropbox recently removed its public folder feature, which was used to host my blog’s images. I have to figure out a solution to host and fix the paths to these images…" />
+<meta property="og:description" content="Dropbox recently removed its public folder feature, which was used to host my blog’s images. I have to figure out a solution to host and fix the paths to these images…" />
+<link rel="canonical" href="https://migration.ivansiu.com/2017/04/03/migrating-from-dropbox-public-folder" />
+<meta property="og:url" content="https://migration.ivansiu.com/2017/04/03/migrating-from-dropbox-public-folder" />
+<meta property="og:site_name" content="Ivan Xiao" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-04-03T09:22:32+00:00" />
+<script type="application/ld+json">
+{"url":"https://migration.ivansiu.com/2017/04/03/migrating-from-dropbox-public-folder","@type":"BlogPosting","headline":"Migrating from dropbox public folder","dateModified":"2017-04-03T09:22:32+00:00","datePublished":"2017-04-03T09:22:32+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://migration.ivansiu.com/2017/04/03/migrating-from-dropbox-public-folder"},"author":{"@type":"Person","name":"Ivan Xiao"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://migration.ivansiu.com/images/xiao.png"},"name":"Ivan Xiao"},"description":"Dropbox recently removed its public folder feature, which was used to host my blog’s images. I have to figure out a solution to host and fix the paths to these images…","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/skins/dark.css">
+  <link rel="alternate" type="application/atom+xml" title="Ivan Xiao" href="/feed.xml">
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  migrating-from-dropbox-public-folder">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+  <div class="navigation-wrapper">
+    <a href="#menu-toggle" id="menu-toggle">Menu</a>
+    <nav id="primary-nav" class="site-nav animated drop">
+      <ul><li><a href="/">Home</a></li><li><a href="/categories/">Categories</a></li><li><a href="/tags/">Tags</a></li><li><a href="/search/">Search</a></li></ul>
+    </nav>
+  </div><!-- /.navigation-wrapper -->
+
+
+    <header class="masthead">
+  <div class="wrap">
+    
+      <a href="/" class="site-logo" rel="home" title="Ivan Xiao">
+        <img src="/images/xiao.png" class="site-logo-img animated fadeInDown" alt="Ivan Xiao">
+      </a>
+    
+    
+    
+      
+        <div class="site-title animated fadeIn"><a href="/">Ivan Xiao</a></div>
+      
+      <p class="site-description animated fadeIn" itemprop="description">Engineer. Father. Cat Lover. Guitarist. Ballroom Dancer. Woodworker.</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <header class="page-header">
+        
+        
+          <h1 id="page-title" class="page-title p-name">Migrating from dropbox public folder
+</h1>
+        
+      </header>
+
+      <div class="page-sidebar">
+        <div class="page-author h-card p-author"><img src="/images/ivan-memoji.jpg" class="author-avatar u-photo" alt="Ivan Xiao"><div class="author-info"><div class="author-name">
+        <span class="p-name">Ivan Xiao</span>
+      </div><ul class="author-links"><li class="author-link">
+            <a class="u-url" rel="me" href="https://about.me/iveney"><i class="fas fa-external-link-square-alt fa-lg" title="About"></i></a>
+          </li><li class="author-link">
+            <a class="u-url" rel="me" href="https://twitter.com/ivanzxiao"><i class="fab fa-twitter-square fa-lg" title="Twitter"></i></a>
+          </li><li class="author-link">
+            <a class="u-url" rel="me" href="https://github.com/iveney"><i class="fab fa-github-square fa-lg" title="GitHub"></i></a>
+          </li></ul>
+
+<span class="read-time">1 min read</span>
+
+    <time class="page-date dt-published" datetime="2017-04-03T09:22:32+00:00"><a class="u-url" href="">April 3, 2017</a>
+</time>
+
+  </div>
+</div>
+
+        
+  <h3 class="page-taxonomies-title">Categories</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy"><a class="p-category" href="/categories/#octopress" title="Pages filed under octopress">octopress</a></li>
+  </ul>
+
+
+        
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p>Dropbox recently removed its public folder feature, which was used to host my blog’s images. I have to figure out a solution to host and fix the paths to these images…</p>
+
+<!-- more -->
+
+<p>Dropbox <a href="https://www.dropbox.com/help/16">announced</a> that <em>As of March 15, 2017 the Public folder in your Dropbox account has been converted into a standard folder.</em> Sad, all my previous links are hosted on Dropbox, and they all become invalid URLs.</p>
+
+<p>I figured that I have to use another image hosting service. After some searching online, <a href="http://cloudinary.com/invites/lpov9zyyucivvxsnalc5/qebjx4vsaxc746ormmqa">Cloundinary</a> seems to be a good option. One design of my hosted images are that they are organized in sub-folders under a ‘blog’ folder. This means that if I want to seamlessly convert the links, I need to preserve the folder structure too.</p>
+
+<p>Cloudinary seems to suggest they support auto-creating folders. Unfortunately that does not quite work for me.</p>
+
+<p><img src="http://res.cloudinary.com/maomao/image/upload/v1491293789/blog/Cloudinary_Management_Console_-_Settings.png" alt="settings" /></p>
+
+<p>In fact, I wrote a small script to do this.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># Upload a folder to cloudinary
+</span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">cloudinary</span>
+<span class="kn">import</span> <span class="nn">cloudinary.uploader</span>
+<span class="kn">import</span> <span class="nn">cloudinary.api</span>
+
+<span class="c1"># Upload the folder in rootdir to cloudinary, preserving the file structure
+</span>
+<span class="n">cloudinary</span><span class="p">.</span><span class="n">config</span><span class="p">(</span>
+  <span class="n">cloud_name</span> <span class="o">=</span> <span class="s">"&lt;name&gt;"</span><span class="p">,</span>
+  <span class="n">api_key</span> <span class="o">=</span> <span class="s">"&lt;your key&gt;"</span><span class="p">,</span>
+  <span class="n">api_secret</span> <span class="o">=</span> <span class="s">"&lt;your secret&gt;"</span>
+<span class="p">)</span>
+
+<span class="n">rootdir</span> <span class="o">=</span> <span class="s">'blog'</span>
+<span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">subs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="p">.</span><span class="n">walk</span><span class="p">(</span><span class="n">rootdir</span><span class="p">):</span>
+    <span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+        <span class="n">cloudinary</span><span class="p">.</span><span class="n">uploader</span><span class="p">.</span><span class="n">upload</span><span class="p">(</span>
+            <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="nb">file</span><span class="p">),</span>
+            <span class="n">folder</span><span class="o">=</span><span class="n">root</span><span class="p">,</span> <span class="n">use_filename</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+            <span class="n">unique_filename</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">resource_type</span><span class="o">=</span><span class="s">'auto'</span><span class="p">)</span></code></pre></figure>
+
+<p>With that, I did a simple sed run on all my post sources:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sed</span> <span class="nt">-i</span> <span class="s1">''</span> <span class="s1">'s/&lt;dropbox base url&gt;/&lt;cloundinary base url&gt;/'</span> <span class="k">*</span>.markdown</code></pre></figure>
+
+<p>then rake preview. Boom! All the images are shown again!</p>
+
+
+        </div>
+
+        
+
+        
+          
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/2017/04/02/zai-mei-guo-huan-lun-tai-de-jing-li">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> 在美國換輪胎的經歷
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/2017/04/30/making-an-comprehensive-insurance-claim-after-got-hit-by-road-debris-flying-object">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        Making an comprehensive insurance claim after got hit by road debris (flying object)
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  TeX: {
+    extensions: ["mediawiki-texvc.js"],
+    Macros: {
+      complex: ['\\mathbb{C}'],
+      norm: ['\\left\\lVert#1\\right\\rVert', 1],
+      given: ['\\mathbin{\\vert}'],
+      data: ['\\mathcal{D}'],
+      argmax: ['\\mathop{\\arg\\,\\max}\\limits'],
+    }
+  }
+  });
+</script>
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="https://about.me/iveney"><i class="fas fa-external-link-square-alt fa-2x" title="About"></i></a><a class="social-icon" href="https://twitter.com/ivanzxiao"><i class="fab fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://github.com/iveney"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a><a class="social-icon" href="https://www.linkedin.com/in/zgxiao/"><i class="fab fa-linkedin fa-2x" title="LinkedIn"></i></a><a class="social-icon" href="/atom.xml"><i class="fas fa-rss-square fa-2x" title="Feed"></i></a></div><div class="copyright">
+    
+      <p>&copy; 2021 Ivan Xiao. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p>
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+</html>
