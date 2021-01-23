@@ -30,7 +30,7 @@
 
 
 
-  <meta property="og:image" content="https://www.ivansiu.com/images/logo.png">
+  <meta property="og:image" content="https://www.ivansiu.com/images/post_fremont_house_buying.jpg">
 
 
 
@@ -40,10 +40,8 @@
   <meta name="twitter:url" content="https://www.ivansiu.com/2018/05/02/2018nian-zai-fremontmai-fang-shi-fou-shi-ji-he-gua-zhi-wo-jian">
 
   
-    <meta name="twitter:card" content="summary">
-    
-      <meta name="twitter:image" content="https://www.ivansiu.com/images/logo.png">
-    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://www.ivansiu.com/images/post_fremont_house_buying.jpg">
   
 
   
@@ -164,9 +162,14 @@
               <a href="/categories/">Categories</a>
             </li><li class="masthead__menu-item">
               <a href="/tags/">Tags</a>
-            </li><li class="masthead__menu-item">
-              <a href="/search/">Search</a>
             </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
         
         <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">Toggle menu</span>
@@ -181,6 +184,68 @@
 
     <div class="initial-content">
       
+  
+
+
+
+
+
+
+
+<div class="page__hero--overlay"
+  style=" background-image: url('/images/post_fremont_house_buying.jpg');"
+>
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          2018年在Fremont买房是否时机合适之我见
+
+        
+      </h1>
+      
+        <p class="page__lead">本文<a href="https://www.zhihu.com/question/265838953/answer/301250174">首发于知乎</a>，作为《2018年在Fremont买房是否时机合适，与在湾区桥对面买房有何优劣？》的回答。手动搬运回博客。仅代表本人拙见，仅供参考。
+
+</p>
+      
+      
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2018-05-02T06:25:08+00:00">May 2, 2018</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+      
+      
+    </div>
+  
+  
+    <span class="page__hero-caption"><a href="https://unsplash.com/photos/rgJ1J8SDEAY">via</a>
+</span>
+  
+</div>
+
+
 
 
 
@@ -306,38 +371,6 @@
     
 
     <div class="page__inner-wrap">
-      
-        <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">2018年在Fremont买房是否时机合适之我见
-</h1>
-          
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2018-05-02T06:25:08+00:00">May 2, 2018</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          1 minute read
-        
-      </span>
-    
-  </p>
-
-
-        </header>
       
 
       <section class="page__content" itemprop="text">
@@ -774,6 +807,17 @@ My old memories came back: almost...</p>
     </div>
 
     
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
 
     <div id="footer" class="page__footer">
       <footer>
@@ -836,6 +880,10 @@ My old memories came back: almost...</p>
 
 
 
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 
