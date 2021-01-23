@@ -1,51 +1,120 @@
-<!DOCTYPE html>
+<!doctype html>
 <!--
-    So Simple Jekyll Theme 3.2.0
-    Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
-    Free for personal and commercial use under the MIT license
-    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
 -->
-<html lang="en-US" class="no-js">
+<html lang="en" class="no-js">
   <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Notes on Maximum Likelihood, Maximum A Posteriori and Naive Bayes - Ivan Xiao</title>
+<meta name="description" content="Let \(\data\) be a set of data generated from some distribution parameterized by \(\theta\). We want to estimate the unknown parameter \(\theta\). What we can do?">
+
+
+  <meta name="author" content="Ivan Xiao">
   
+  <meta property="article:author" content="Ivan Xiao">
   
 
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Ivan Xiao">
+<meta property="og:title" content="Notes on Maximum Likelihood, Maximum A Posteriori and Naive Bayes">
+<meta property="og:url" content="https://www.ivansiu.com/2014/09/24/notes-on-maximum-likelihood">
+
+
+  <meta property="og:description" content="Let \(\data\) be a set of data generated from some distribution parameterized by \(\theta\). We want to estimate the unknown parameter \(\theta\). What we can do?">
+
+
+
+  <meta property="og:image" content="https://www.ivansiu.com/images/logo.png">
+
+
+
+  <meta name="twitter:site" content="@ivanzxiao">
+  <meta name="twitter:title" content="Notes on Maximum Likelihood, Maximum A Posteriori and Naive Bayes">
+  <meta name="twitter:description" content="Let \(\data\) be a set of data generated from some distribution parameterized by \(\theta\). We want to estimate the unknown parameter \(\theta\). What we can do?">
+  <meta name="twitter:url" content="https://www.ivansiu.com/2014/09/24/notes-on-maximum-likelihood">
+
   
+    <meta name="twitter:card" content="summary">
     
-    <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Notes on Maximum Likelihood, Maximum A Posteriori and Naive Bayes | Ivan Xiao</title>
-<meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="Notes on Maximum Likelihood, Maximum A Posteriori and Naive Bayes" />
-<meta name="author" content="Ivan Xiao" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="Let \(\data\) be a set of data generated from some distribution parameterized by \(\theta\). We want to estimate the unknown parameter \(\theta\). What we can do?" />
-<meta property="og:description" content="Let \(\data\) be a set of data generated from some distribution parameterized by \(\theta\). We want to estimate the unknown parameter \(\theta\). What we can do?" />
-<link rel="canonical" href="https://www.ivansiu.com/2014/09/24/notes-on-maximum-likelihood" />
-<meta property="og:url" content="https://www.ivansiu.com/2014/09/24/notes-on-maximum-likelihood" />
-<meta property="og:site_name" content="Ivan Xiao" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2014-09-24T20:41:44+00:00" />
-<script type="application/ld+json">
-{"url":"https://www.ivansiu.com/2014/09/24/notes-on-maximum-likelihood","@type":"BlogPosting","headline":"Notes on Maximum Likelihood, Maximum A Posteriori and Naive Bayes","dateModified":"2014-09-24T20:41:44+00:00","datePublished":"2014-09-24T20:41:44+00:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.ivansiu.com/images/xiao.png"},"name":"Ivan Xiao"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.ivansiu.com/2014/09/24/notes-on-maximum-likelihood"},"author":{"@type":"Person","name":"Ivan Xiao"},"description":"Let \\(\\data\\) be a set of data generated from some distribution parameterized by \\(\\theta\\). We want to estimate the unknown parameter \\(\\theta\\). What we can do?","@context":"https://schema.org"}</script>
-<!-- End Jekyll SEO tag -->
-
-
+      <meta name="twitter:image" content="https://www.ivansiu.com/images/logo.png">
+    
   
 
-  <script>
-    /* Cut the mustard */
-    if ( 'querySelector' in document && 'addEventListener' in window ) {
-      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
-    }
-  </script>
+  
+    <meta name="twitter:creator" content="@ivanzxiao">
+  
 
-  <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="stylesheet" href="/assets/css/skins/dark.css">
-  <link rel="alternate" type="application/atom+xml" title="Ivan Xiao" href="/feed.xml">
-<!-- start custom head snippets -->
+
+
+  <meta property="article:published_time" content="2014-09-24T20:41:44+00:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://www.ivansiu.com/2014/09/24/notes-on-maximum-likelihood">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://www.ivansiu.com/",
+      "sameAs": ["https://twitter.com/ivanzxiao","https://www.linkedin.com/in/ivanzxiao"]
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Ivan Xiao Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
 
 <!-- insert favicons. use http://realfavicongenerator.net/ -->
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -58,91 +127,236 @@
 
 <!-- end custom head snippets -->
 
-</head>
+  </head>
 
-
-  <body class="layout--post  notes-on-maximum-likelihood-maximum-a-posteriori-and-naive-bayes">
+  <body class="layout--single">
     <nav class="skip-links">
   <h2 class="screen-reader-text">Skip links</h2>
   <ul>
-    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
     <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
     <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
   </ul>
 </nav>
 
-    
-  <div class="navigation-wrapper">
-    <a href="#menu-toggle" id="menu-toggle">Menu</a>
-    <nav id="primary-nav" class="site-nav animated drop">
-      <ul><li><a href="/">Home</a></li><li><a href="/archive/">Archive</a></li><li><a href="/categories/">Categories</a></li><li><a href="/tags/">Tags</a></li><li><a href="/search/">Search</a></li></ul>
-    </nav>
-  </div><!-- /.navigation-wrapper -->
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
 
-
-    <header class="masthead">
-  <div class="wrap">
-    
-      <a href="/" class="site-logo" rel="home" title="Ivan Xiao">
-        <img src="/images/xiao.png" class="site-logo-img animated fadeInDown" alt="Ivan Xiao">
-      </a>
-    
-    
-    
-      
-        <div class="site-title animated fadeIn"><a href="/">Ivan Xiao</a></div>
-      
-      <p class="site-description animated fadeIn" itemprop="description">Engineer. Father. Cat Lover. Guitarist. Ballroom Dancer. Woodworker.</p>
-    
-  </div>
-</header><!-- /.masthead -->
-
-
-    <main id="main" class="main-content" aria-label="Content">
-  <article class="h-entry">
     
 
-    <div class="page-wrapper">
-      <header class="page-header">
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
         
+          <a class="site-logo" href="/"><img src="/images/logo.png" alt=""></a>
         
-          <h1 id="page-title" class="page-title p-name">Notes on Maximum Likelihood, Maximum A Posteriori and Naive Bayes
-</h1>
+        <a class="site-title" href="/">
+          Ivan Xiao
+          <span class="site-subtitle">Tech, Money and Enjoying Life.</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/archive/">Archive</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/search/">Search</a>
+            </li></ul>
         
-      </header>
-
-      <div class="page-sidebar">
-        <div class="page-author h-card p-author"><img src="/images/ivan-memoji.jpg" class="author-avatar u-photo" alt="Ivan Xiao"><div class="author-info"><div class="author-name">
-        <span class="p-name">Ivan Xiao</span>
-      </div><ul class="author-links"><li class="author-link">
-            <a class="u-url" rel="me" href="https://about.me/iveney"><i class="fas fa-external-link-square-alt fa-lg" title="About"></i></a>
-          </li><li class="author-link">
-            <a class="u-url" rel="me" href="https://twitter.com/ivanzxiao"><i class="fab fa-twitter-square fa-lg" title="Twitter"></i></a>
-          </li><li class="author-link">
-            <a class="u-url" rel="me" href="https://github.com/iveney"><i class="fab fa-github-square fa-lg" title="GitHub"></i></a>
-          </li></ul>
-
-<span class="read-time">4 min read</span>
-
-    <time class="page-date dt-published" datetime="2014-09-24T20:41:44+00:00"><a class="u-url" href="">September 24, 2014</a>
-</time>
-
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
   </div>
 </div>
 
-        
-  <h3 class="page-taxonomies-title">Categories</h3>
-  <ul class="page-taxonomies"><li class="page-taxonomy"><a class="p-category" href="/categories/#machine-learning" title="Pages filed under machine learning">machine learning</a></li><li class="page-taxonomy"><a class="p-category" href="/categories/#probability" title="Pages filed under probability">probability</a></li>
-  </ul>
+
+    <div class="initial-content">
+      
 
 
-        
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/images/ivan-memoji.jpg" alt="Ivan Xiao" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Ivan Xiao</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Engineer. Father. Cat Lover. Guitarist. Ballroom Dancer. Woodworker.</p>
 
       </div>
+    
+  </div>
 
-      <div class="page-content">
-        <div class="e-content">
-          <p>Let \(\data\) be a set of data generated from some distribution parameterized by
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+            <li><a href="https://about.me/iveney" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">About</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/iveney" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/ivanzxiao" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Notes on Maximum Likelihood, Maximum A Posteriori and Naive Bayes">
+    <meta itemprop="description" content="Let \(\data\) be a set of data generated from some distribution parameterized by\(\theta\). We want to estimate the unknown parameter \(\theta\). What we can do?">
+    <meta itemprop="datePublished" content="2014-09-24T20:41:44+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Notes on Maximum Likelihood, Maximum A Posteriori and Naive Bayes
+</h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2014-09-24T20:41:44+00:00">September 24, 2014</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu">
+  <li><a href="#maximum-likelihood-estimation-mle">Maximum Likelihood Estimation (MLE)</a></li>
+  <li><a href="#maximum-a-posteriori-map">Maximum A Posteriori (MAP)</a></li>
+  <li><a href="#naive-bayes-classifier">Naive Bayes Classifier</a></li>
+  <li><a href="#conclusion">Conclusion</a></li>
+  <li><a href="#thoughts">Thoughts</a></li>
+</ul>
+
+            </nav>
+          </aside>
+        
+        <p>Let \(\data\) be a set of data generated from some distribution parameterized by
 \(\theta\). We want to <em>estimate</em> the unknown parameter \(\theta\). What we can do?</p>
 
 <!-- more -->
@@ -285,63 +499,298 @@ By contrast, <em>bayesian estimation</em> computes the full posterior distributi
 </ul>
 
 
-        </div>
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/machine-learning" class="page__taxonomy-item" rel="tag">machine learning</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/categories/probability" class="page__taxonomy-item" rel="tag">probability</a>
+    
+    </span>
+  </p>
+
 
         
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2014-09-24T20:41:44+00:00">September 24, 2014</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?via=ivanzxiao&text=Notes+on+Maximum+Likelihood%2C+Maximum+A+Posteriori+and+Naive+Bayes%20https%3A%2F%2Fwww.ivansiu.com%2F2014%2F09%2F24%2Fnotes-on-maximum-likelihood" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.ivansiu.com%2F2014%2F09%2F24%2Fnotes-on-maximum-likelihood" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.ivansiu.com%2F2014%2F09%2F24%2Fnotes-on-maximum-likelihood" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2014/05/29/fix-mid-2009-mbp-ram-not-recognized-issue" class="pagination--pager" title="Fix Mid 2009 MBP RAM not recognized issue
+">Previous</a>
+    
+    
+      <a href="/2014/10/02/jing-ying-zhu-yi-yu-tou-piao-kao-shi" class="pagination--pager" title="精英主义与投票考试
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comments</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/images/teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2021/01/21/a-few-gotchas-in-kramdown-with-mathjax" rel="permalink">A few gotchas in Kramdown with MathJax
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-01-21T01:33:00+00:00">January 21, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">As I recently just migrated my blog to use jekyll + github pages, a lot of things have changed.
+Most notably, the markdown processor is kramdown by default. ...</p>
+  </article>
+</div>
 
         
           
-  <div class="page-comments">
-    <div id="disqus_thread"></div>
-    <script>
-      var disqus_config = function () {
-        this.page.url = 'https://www.ivansiu.com/2014/09/24/notes-on-maximum-likelihood';
-        this.page.identifier = 'https://www.ivansiu.com/2014/09/24/notes-on-maximum-likelihood';
-      };
 
-      (function() {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://iveney.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-      })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-  </div>
 
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/images/teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2021/01/20/goodbye-octopress-hello-jekyll" rel="permalink">Goodbye Octopress. Hello Jekyll.
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-01-20T19:28:00+00:00">January 20, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I have been using Octopress for blogging since 2013. Octopress is essentially a framework built on top of Jekyll, which offers vast convenient at the time, s...</p>
+  </article>
+</div>
 
         
+          
 
-        <nav class="page-pagination" role="navigation">
-  
-    <a class="page-previous" href="/2014/05/29/fix-mid-2009-mbp-ram-not-recognized-issue">
-      <h4 class="page-pagination-label">Previous</h4>
-      <span class="page-pagination-title">
-        <i class="fas fa-arrow-left"></i> Fix Mid 2009 MBP RAM not recognized issue
 
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/images/teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2021/01/15/zai-wan-qu-gong-zuo-yi-nian-da-gai-neng-zan-xia-lai-duo-shao-qian" rel="permalink">在湾区工作一年大概能攒下来多少钱?
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-01-15T00:43:47+00:00">January 15, 2021</time>
       </span>
-    </a>
-  
+    
 
-  
-    <a class="page-next" href="/2014/10/02/jing-ying-zhu-yi-yu-tou-piao-kao-shi">
-      <h4 class="page-pagination-label">Next</h4>
-      <span class="page-pagination-title">
-        精英主义与投票考试
- <i class="fas fa-arrow-right"></i>
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
       </span>
-    </a>
-  
-</nav>
+    
+  </p>
 
+
+    <p class="archive__item-excerpt" itemprop="description">本文首发于知乎，作为《在湾区工作一年大概能攒下来多少钱？》的回答。里面的意见仅代表本人，我不是 CPA 也不是律师，里面的建议不能作为任何报税、投资的客观指导。
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/images/teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2021/01/12/the-white-coat-investor-du-shu-bi-ji" rel="permalink">The White Coat Investor 读书笔记
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-01-12T19:31:54+00:00">January 12, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">最近开始阅读 The White Coat Investor。 之前在网上搜投资理财时已经知道这个作者，并且大致看过他的网站，印象不错。最近准备在 Books 上看一些书，刚好给我推荐了这本。总的来说，这本书算是一本投资理财的入门书，里面提到的东西基本上我都零散地学习过。如今能系统地学习，索性写下一些笔记来加深理...</p>
+  </article>
+</div>
+
+        
       </div>
     </div>
-  </article>
-</main>
+  
+  
+</div>
 
+    </div>
 
-    <footer id="footer" class="site-footer">
-  <!-- start custom footer snippets -->
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
   TeX: {
@@ -356,22 +805,75 @@ By contrast, <em>bayesian estimation</em> computes the full posterior distributi
   }
   });
 </script>
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 <!-- end custom footer snippets -->
-<div class="social-icons"><a class="social-icon" href="https://about.me/iveney"><i class="fas fa-external-link-square-alt fa-2x" title="About"></i></a><a class="social-icon" href="https://twitter.com/ivanzxiao"><i class="fab fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://github.com/iveney"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a><a class="social-icon" href="https://www.linkedin.com/in/zgxiao/"><i class="fab fa-linkedin fa-2x" title="LinkedIn"></i></a><a class="social-icon" href="/atom.xml"><i class="fas fa-rss-square fa-2x" title="Feed"></i></a></div><div class="copyright">
-    
-      <p>&copy; 2021 Ivan Xiao. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p>
-    
-  </div>
-</footer>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://about.me/iveney" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> About</a></li>
+        
+      
+        
+          <li><a href="https://twitter.com/ivanzxiao" rel="nofollow noopener noreferrer"><i class="fab fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+          <li><a href="https://github.com/iveney" rel="nofollow noopener noreferrer"><i class="fab fa-github-square" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.linkedin.com/in/ivanzxiao/" rel="nofollow noopener noreferrer"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Ivan Xiao. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
   <script src="/assets/js/main.min.js"></script>
-  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
 
 
-<!-- MathJax -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://www.ivansiu.com/2014/09/24/notes-on-maximum-likelihood";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/2014/09/24/notes-on-maximum-likelihood"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://iveney.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
 
   </body>
-
 </html>
