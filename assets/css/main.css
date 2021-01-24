@@ -527,7 +527,7 @@ audio:not([controls]) {
   display: none; }
 
 a {
-  color: #2f7d95; }
+  color: #474747; }
 
 /* Apply focus state */
 /* Remove outline from links */
@@ -726,9 +726,9 @@ blockquote {
 
 /* links */
 a:visited {
-  color: #4e91a5; }
+  color: #636363; }
 a:hover {
-  color: #235e70;
+  color: #353535;
   outline: 0; }
 
 /* buttons */
@@ -830,7 +830,7 @@ figcaption {
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out; }
     figcaption a:hover {
-      color: #235e70; }
+      color: #353535; }
 
 /* Fix IE9 SVG bug */
 svg:not(:root) {
@@ -1810,7 +1810,7 @@ th {
       border: 1px solid #b6b6b6;
       border-radius: 0; }
       .pagination li a:hover {
-        color: #235e70; }
+        color: #353535; }
       .pagination li a.current, .pagination li a.current.disabled {
         color: #fff;
         background: #6f777d; }
@@ -3257,7 +3257,7 @@ body {
   border-radius: 4px; }
   .page__taxonomy-item:hover {
     text-decoration: none;
-    color: #235e70; }
+    color: #353535; }
 
 .taxonomy__section {
   margin-bottom: 2em;
@@ -4225,3 +4225,6 @@ body {
   .adsbygoogle {
     display: none !important;
     height: 1px !important; } }
+@media (min-width: 37.5em) {
+  .feature__item__photo {
+    margin-bottom: 1.6949152542%; } }

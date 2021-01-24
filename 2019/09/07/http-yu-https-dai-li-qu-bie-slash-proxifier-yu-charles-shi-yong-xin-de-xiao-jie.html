@@ -30,7 +30,7 @@
 
 
 
-  <meta property="og:image" content="https://www.ivansiu.com/images/logo.png">
+  <meta property="og:image" content="https://www.ivansiu.com/images/post_http_proxy.jpg">
 
 
 
@@ -40,10 +40,8 @@
   <meta name="twitter:url" content="https://www.ivansiu.com/2019/09/07/http-yu-https-dai-li-qu-bie-slash-proxifier-yu-charles-shi-yong-xin-de-xiao-jie">
 
   
-    <meta name="twitter:card" content="summary">
-    
-      <meta name="twitter:image" content="https://www.ivansiu.com/images/logo.png">
-    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://www.ivansiu.com/images/post_http_proxy.jpg">
   
 
   
@@ -159,11 +157,15 @@
         <ul class="visible-links"><li class="masthead__menu-item">
               <a href="/">Home</a>
             </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
               <a href="/archive/">Archive</a>
             </li><li class="masthead__menu-item">
               <a href="/categories/">Categories</a>
             </li><li class="masthead__menu-item">
               <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/photos/">Photos</a>
             </li></ul>
         
         <button class="search__toggle" type="button">
@@ -186,6 +188,68 @@
 
     <div class="initial-content">
       
+  
+
+
+
+
+
+
+
+<div class="page__hero--overlay"
+  style=" background-image: url('/images/post_http_proxy.jpg');"
+>
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          Http 与 Https 代理区别 / Proxifier 与 Charles 使用心得小结
+
+        
+      </h1>
+      
+        <p class="page__lead">HTTP Proxy 与 HTTPS Proxy 的区别很容易混淆。本文通过使用 Proxifier 与 Charles 实战作为一个笔记备忘。
+
+</p>
+      
+      
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2019-09-07T22:41:54+00:00">September 7, 2019</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+      
+      
+    </div>
+  
+  
+    <span class="page__hero-caption"><a href="https://unsplash.com/photos/J6Shwtc8hXY">via</a>
+</span>
+  
+</div>
+
+
 
 
 
@@ -223,10 +287,6 @@
       
 
       
-        
-          
-            <li><a href="https://about.me/iveney" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">About</span></a></li>
-          
         
           
             <li><a href="https://github.com/iveney" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
@@ -311,38 +371,6 @@
     
 
     <div class="page__inner-wrap">
-      
-        <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Http 与 Https 代理区别 / Proxifier 与 Charles 使用心得小结
-</h1>
-          
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2019-09-07T22:41:54+00:00">September 7, 2019</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          3 minute read
-        
-      </span>
-    
-  </p>
-
-
-        </header>
       
 
       <section class="page__content" itemprop="text">
@@ -442,12 +470,39 @@ To install the certificate in Mozilla Firefox, first configure Firefox to use Ch
     
       
       
-      <a href="/tags/notes" class="page__taxonomy-item" rel="tag">notes</a>
+      <a href="/tags/charles" class="page__taxonomy-item" rel="tag">charles</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/notes" class="page__taxonomy-item" rel="tag">notes</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/proxy" class="page__taxonomy-item" rel="tag">proxy</a>
     
     </span>
   </p>
 
 
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/network-security" class="page__taxonomy-item" rel="tag">network security</a>
+    
+    </span>
+  </p>
 
 
         
@@ -754,10 +809,6 @@ nocite:
     
 
     
-      
-        
-          <li><a href="https://about.me/iveney" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> About</a></li>
-        
       
         
           <li><a href="https://twitter.com/ivanzxiao" rel="nofollow noopener noreferrer"><i class="fab fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
