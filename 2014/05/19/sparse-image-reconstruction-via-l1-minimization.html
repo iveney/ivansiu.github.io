@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>Sparse Image Reconstruction via L1-minimization - Ivan Xiao</title>
-<meta name="description" content="nocite:   ‘@candes2005l1, @hesthavensparse, @pant2013new, @candes2006robust’ —">
+<meta name="description" content="Original       Minimum Energy Reconstruction       Sparse Reconstruction">
 
 
   <meta name="author" content="Ivan Xiao">
@@ -26,23 +26,23 @@
 <meta property="og:url" content="https://www.ivansiu.com/2014/05/19/sparse-image-reconstruction-via-l1-minimization">
 
 
-  <meta property="og:description" content="nocite:   ‘@candes2005l1, @hesthavensparse, @pant2013new, @candes2006robust’ —">
+  <meta property="og:description" content="Original       Minimum Energy Reconstruction       Sparse Reconstruction">
 
 
 
-  <meta property="og:image" content="https://www.ivansiu.com/images/logo.png">
+  <meta property="og:image" content="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/cameraman.png">
 
 
 
   <meta name="twitter:site" content="@ivanzxiao">
   <meta name="twitter:title" content="Sparse Image Reconstruction via L1-minimization">
-  <meta name="twitter:description" content="nocite:   ‘@candes2005l1, @hesthavensparse, @pant2013new, @candes2006robust’ —">
+  <meta name="twitter:description" content="Original       Minimum Energy Reconstruction       Sparse Reconstruction">
   <meta name="twitter:url" content="https://www.ivansiu.com/2014/05/19/sparse-image-reconstruction-via-l1-minimization">
 
   
     <meta name="twitter:card" content="summary">
     
-      <meta name="twitter:image" content="https://www.ivansiu.com/images/logo.png">
+      <meta name="twitter:image" content="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/cameraman.png">
     
   
 
@@ -306,7 +306,7 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Sparse Image Reconstruction via L1-minimization">
-    <meta itemprop="description" content="nocite:  ‘@candes2005l1, @hesthavensparse, @pant2013new, @candes2006robust’—">
+    <meta itemprop="description" content="                                      Original      Minimum Energy Reconstruction      Sparse Reconstruction      ">
     <meta itemprop="datePublished" content="2014-05-19T20:12:36+00:00">
     
 
@@ -335,7 +335,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          4 minute read
+          5 minute read
         
       </span>
     
@@ -361,15 +361,20 @@
             </nav>
           </aside>
         
-        <hr />
-<p>nocite:
-  ‘@candes2005l1, @hesthavensparse, @pant2013new, @candes2006robust’
-—</p>
-
-<hr />
-<p><img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/phantom_orig.png" alt="phantom_orig" />\      <img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/phantom_backproj.png" alt="phantom_backproj" />\              <img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/phantom_tv.png" alt="phantom_tv" /><br />
-    Original           Minimum Energy Reconstruction     Sparse Reconstruction
-——————–  ——————————-  ————————-</p>
+        <table class="figure-table">
+  <tbody>
+    <tr>
+      <td><img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/phantom_orig.png" alt="phantom_orig" /></td>
+      <td><img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/phantom_backproj.png" alt="phantom_backproj" /></td>
+      <td><img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/phantom_tv.png" alt="phantom_tv" /></td>
+    </tr>
+    <tr>
+      <td>Original</td>
+      <td>Minimum Energy Reconstruction</td>
+      <td>Sparse Reconstruction</td>
+    </tr>
+  </tbody>
+</table>
 
 <h2 id="introduction">Introduction</h2>
 
@@ -425,10 +430,20 @@ magnitude (2-norm) of both components:</p>
 
 <p>The following shows <code class="language-plaintext highlighter-rouge">Gx</code>, <code class="language-plaintext highlighter-rouge">Gy</code> and <code class="language-plaintext highlighter-rouge">G</code> of the phantom image:</p>
 
-<hr />
-<p><img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/phantom_gx.png" alt="phantom_gx" />\     <img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/phantom_gy.png" alt="phantom_gy" />\     <img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/phantom_gI.png" alt="phantom_gI" /><br />
-    <code class="language-plaintext highlighter-rouge">Gx(I)</code>             <code class="language-plaintext highlighter-rouge">Gy(I)</code>             <code class="language-plaintext highlighter-rouge">G(I)</code>
-—————–  —————–  —————–</p>
+<table class="figure-table">
+  <tbody>
+    <tr>
+      <td><img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/phantom_gx.png" alt="phantom_gx" /></td>
+      <td><img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/phantom_gy.png" alt="phantom_gy" /></td>
+      <td><img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/phantom_gI.png" alt="phantom_gI" /></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Gx(I)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Gy(I)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">G(I)</code></td>
+    </tr>
+  </tbody>
+</table>
 
 <p>The <em>total variation</em> <code class="language-plaintext highlighter-rouge">TV(I)</code> of an image is just the sum of
 this discrete gradient at every point.</p>
@@ -463,15 +478,35 @@ minimized.</p>
 the <em>L2-minimization</em> does a poor job, either for a random measurement or
 a radial measurement [@candes2006robust] in Fourier domain.</p>
 
-<hr />
-<p><img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/measurement_random.png" alt="M rand" />            <img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/phantom_rand_bp.png" alt="phantom rand bp" />     <img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/phantom_rand_tv.png" alt="phantom rand tv" />
- Random measurement     L2-minimization        L1-minimization
-——————–  ———————  ——————–</p>
+<table class="figure-table">
+  <tbody>
+    <tr>
+      <td><img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/measurement_random.png" alt="M rand" /></td>
+      <td><img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/phantom_rand_bp.png" alt="phantom rand bp" /></td>
+      <td><img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/phantom_rand_tv.png" alt="phantom rand tv" /></td>
+    </tr>
+    <tr>
+      <td>Random measurement</td>
+      <td>L2-minimization</td>
+      <td>L1-minimization</td>
+    </tr>
+  </tbody>
+</table>
 
-<hr />
-<p><img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/measurement_radial.png" alt="M radial" />          <img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/phantom_backproj.png" alt="phantom_backproj" />     <img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/phantom_tv.png" alt="phantom_tv" />
- Radial measurement     L2-minimization       L1-minimization
-——————–  ———————  ——————–</p>
+<table class="figure-table">
+  <tbody>
+    <tr>
+      <td><img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/measurement_radial.png" alt="M radial" /></td>
+      <td><img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/phantom_backproj.png" alt="phantom_backproj" /></td>
+      <td><img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/phantom_tv.png" alt="phantom_tv" /></td>
+    </tr>
+    <tr>
+      <td>Radial measurement</td>
+      <td>L2-minimization</td>
+      <td>L1-minimization</td>
+    </tr>
+  </tbody>
+</table>
 
 <p>To utilize the sparse information, we add a L1-regularization term
 to the above objective function, which yields the following:</p>
@@ -492,18 +527,38 @@ Leave a comment if you have any question.</p>
 <p>Now, take a look at another example <code class="language-plaintext highlighter-rouge">cameraman</code>, which has the following
 gradients (intensity rescaled using matlab’s <code class="language-plaintext highlighter-rouge">imagesc</code>.</p>
 
-<hr />
-<p><img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/cameraman.png" alt="cameraman" />       <img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/cameraman_grad.png" alt="cameraman_grad" />
-    Cameraman             Gradient
-——————  ——————–</p>
+<table class="figure-table">
+  <tbody>
+    <tr>
+      <td><img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/cameraman.png" alt="cameraman" /></td>
+      <td><img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/cameraman_grad.png" alt="cameraman_grad" /></td>
+    </tr>
+    <tr>
+      <td>Cameraman</td>
+      <td>Gradient</td>
+    </tr>
+  </tbody>
+</table>
 
 <p>The following shows the reconstructions (left two are using random measurements,
 right two are using radial measurements).</p>
 
-<hr />
-<p><img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/cameraman_rand_bp.png" alt="cameraman_rand_bp" />    <img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/cameraman_rand_tv.png" alt="cameraman_rand_tv" />    <img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/cameraman_bp.png" alt="cameraman_bp" />    <img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/cameraman_tv.png" alt="cameraman_tv" />
-      Rand (L2)             Rand (L1)              Radial (L2)        Radial (L1)
-———————-  ———————-  —————–  —————–</p>
+<table class="figure-table">
+  <tbody>
+    <tr>
+      <td><img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/cameraman_rand_bp.png" alt="cameraman_rand_bp" /></td>
+      <td><img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/cameraman_rand_tv.png" alt="cameraman_rand_tv" /></td>
+      <td><img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/cameraman_bp.png" alt="cameraman_bp" /></td>
+      <td><img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/cameraman_tv.png" alt="cameraman_tv" /></td>
+    </tr>
+    <tr>
+      <td>Rand (L2)</td>
+      <td>Rand (L1)</td>
+      <td>Radial (L2)</td>
+      <td>Radial (L1)</td>
+    </tr>
+  </tbody>
+</table>
 
 <p>As we can see, the results are not as good. In fact, the non-zero ratio of its
 gradient is 0.9928, which is not sparse at all. However, if we plot the histogram
@@ -531,7 +586,13 @@ If you have any thoughts, do not hesitate to leave a comment.</em></p>
 
 <h2 id="references">References</h2>
 
-<p>For interested readers, the following references will be helpful.</p>
+<p>For interested readers, the following references will be helpful.
+<a class="citation" href="#candes2005l1">[1], [2], [3], [4]</a></p>
+
+<ol class="bibliography"><li><span id="candes2005l1">[1]E. Candes and J. Romberg, “l1-magic: Recovery of sparse signals via convex programming,” vol. 4, 2005.</span></li>
+<li><span id="hesthavensparse">[2]J. S. Hesthaven, K. Chowdhary, E. Walsh, and others, “Sparse Gradient Image Reconstruction from Incomplete Fourier Measurements and Prior Edge Information,” <i>IEEE TRANSACTIONS ON IMAGE PROCESSING</i>, 2012.</span></li>
+<li><span id="pant2013new">[3]J. K. Pant, W.-S. Lu, and A. Antoniou, “A new algorithm for compressive sensing based on total-variation norm,” in <i>Circuits and Systems (ISCAS), 2013 IEEE International Symposium on</i>, 2013, pp. 1352–1355.</span></li>
+<li><span id="candes2006robust">[4]E. J. Candès, J. Romberg, and T. Tao, “Robust uncertainty principles: Exact signal reconstruction from highly incomplete frequency information,” <i>Information Theory, IEEE Transactions on</i>, vol. 52, no. 2, pp. 489–509, 2006.</span></li></ol>
 
 
         
@@ -641,7 +702,7 @@ If you have any thoughts, do not hesitate to leave a comment.</em></p>
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
       <div class="archive__item-teaser">
-        <img src="/images/teaser.jpg" alt="">
+        <img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/sparse_signal_reconstruction.png" alt="">
       </div>
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
@@ -692,7 +753,7 @@ If you have any thoughts, do not hesitate to leave a comment.</em></p>
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
       <div class="archive__item-teaser">
-        <img src="/images/teaser.jpg" alt="">
+        <img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/2014-05-14-a-comparison-of-least-square-l2-regularization-and-l1-regularization/coef.png" alt="">
       </div>
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
