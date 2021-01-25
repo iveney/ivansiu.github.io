@@ -30,7 +30,7 @@
 
 
 
-  <meta property="og:image" content="https://www.ivansiu.com/images/logo.png">
+  <meta property="og:image" content="https://www.ivansiu.com/images/post_blogging.jpg">
 
 
 
@@ -42,7 +42,7 @@
   
     <meta name="twitter:card" content="summary">
     
-      <meta name="twitter:image" content="https://www.ivansiu.com/images/logo.png">
+      <meta name="twitter:image" content="https://www.ivansiu.com/images/post_blogging.jpg">
     
   
 
@@ -381,7 +381,7 @@ I think it is right time to share my flow as a reference.</p>
 
 <h2 id="the-flow">The Flow</h2>
 
-<p>The following sections outlines the flow. The last section 
+<p>The following sections outlines the flow. The last section
 contains assorted tips and tricks. For the basic configuration
 of Octopress, please refer to the official <a href="http://octopress.org">website</a>.
 I also recommend installing <a href="http://www.alfredapp.com">Alfred.app</a>.</p>
@@ -409,7 +409,7 @@ ST Package Control to install it.</p>
 
 <h3 id="previewing-pow--rake-watch--pow-alfred-workflow">Previewing: pow + rake watch + pow alfred workflow</h3>
 
-<p>To preview the generate website, simply install <a href="http://pow.cx">pow</a> and execute 
+<p>To preview the generate website, simply install <a href="http://pow.cx">pow</a> and execute
 <code class="language-plaintext highlighter-rouge">rake watch</code> under octopress directory to monitor the change.
 Octopress official website provides <a href="http://octopress.org/docs/blogging/">some explanation</a>. After installation, you can view your website locally at
 <a href="http://octopress.dev">http://octopress.dev</a>.</p>
@@ -421,15 +421,15 @@ help you open pow website in a breeze.</p>
 
 <h3 id="math-rendering-mathjax">Math Rendering: MathJax</h3>
 
-<p>Since I am an EECS student, I write a lot of 
+<p>Since I am an EECS student, I write a lot of
 <a href="//optimization">Optimization</a>,
 <a href="//machine-learning">Machine Learning</a>
 and
 <a href="//computer-vision">Computer Vision</a> stuff, which
 relies heavily on mathematics. Thus, writing math formulas is a must for me.
 <a href="http://mathjax.org">MathJax</a> is a javascript library for rendering
-math by writing LaTeX math. To do this, one needs to configure 
-the site and link to the library. Put these two lines into 
+math by writing LaTeX math. To do this, one needs to configure
+the site and link to the library. Put these two lines into
 <code class="language-plaintext highlighter-rouge">&lt;octopress&gt;/source/_includes/custom/head.html</code>:</p>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span>
@@ -443,7 +443,7 @@ in <code class="language-plaintext highlighter-rouge">source/javascripts/MathJax
 macro there. For instance:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Config</span><span class="p">({</span>
-	<span class="na">TeX</span><span class="p">:</span> <span class="p">{</span> 
+	<span class="na">TeX</span><span class="p">:</span> <span class="p">{</span>
 		<span class="na">equationNumbers</span><span class="p">:</span> <span class="p">{</span> <span class="na">autoNumber</span><span class="p">:</span> <span class="dl">"</span><span class="s2">AMS</span><span class="dl">"</span> <span class="p">},</span>
 		<span class="na">TagSide</span><span class="p">:</span> <span class="dl">"</span><span class="s2">left</span><span class="dl">"</span><span class="p">,</span>
 		<span class="na">Macros</span><span class="p">:</span> <span class="p">{</span>
@@ -489,7 +489,7 @@ is a swiss-army knife like tool that convert documents in multiple
 formats to several dozens of output formats. I mainly use it as the
 markdown converter for Octopress. A <a href="https://github.com/dsanson/jekyll-pandoc-plugin">plugin</a> can help you with that.</p>
 
-<p>After installation, I update the <code class="language-plaintext highlighter-rouge">markdown</code> section of <code class="language-plaintext highlighter-rouge">_config.yml</code> 
+<p>After installation, I update the <code class="language-plaintext highlighter-rouge">markdown</code> section of <code class="language-plaintext highlighter-rouge">_config.yml</code>
 with the following:</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">markdown</span><span class="pi">:</span> <span class="s">pandoc</span>
@@ -556,6 +556,29 @@ Please leave your comments.</em></p>
       <footer class="page__meta">
         
         
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/jekyll" class="page__taxonomy-item" rel="tag">jekyll</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/octopress" class="page__taxonomy-item" rel="tag">octopress</a>
+    
+    </span>
+  </p>
+
+
 
 
   
@@ -571,11 +594,7 @@ Please leave your comments.</em></p>
     
       
       
-      <a href="/categories/blogging" class="page__taxonomy-item" rel="tag">blogging</a><span class="sep">, </span>
-    
-      
-      
-      <a href="/categories/octopress" class="page__taxonomy-item" rel="tag">octopress</a>
+      <a href="/categories/blogging" class="page__taxonomy-item" rel="tag">blogging</a>
     
     </span>
   </p>
