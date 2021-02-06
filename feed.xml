@@ -1,4 +1,26 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://www.ivanxiao.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.ivanxiao.com/" rel="alternate" type="text/html" /><updated>2021-01-28T23:53:24+00:00</updated><id>https://www.ivanxiao.com/feed.xml</id><title type="html">Ivan Xiao</title><subtitle>Ivan's blog.</subtitle><author><name>Ivan Xiao</name></author><entry><title type="html">A few gotchas in Kramdown with MathJax</title><link href="https://www.ivanxiao.com/2021/01/21/a-few-gotchas-in-kramdown-with-mathjax" rel="alternate" type="text/html" title="A few gotchas in Kramdown with MathJax" /><published>2021-01-21T01:33:00+00:00</published><updated>2021-01-21T01:33:00+00:00</updated><id>https://www.ivanxiao.com/2021/01/21/a-few-gotchas-in-kramdown-with-mathjax</id><content type="html" xml:base="https://www.ivanxiao.com/2021/01/21/a-few-gotchas-in-kramdown-with-mathjax">&lt;p&gt;As I recently just migrated my blog to use &lt;a href=&quot;/2021/01/20/goodbye-octopress-hello-jekyll&quot;&gt;jekyll + github pages&lt;/a&gt;, a lot of things have changed.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://www.ivanxiao.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.ivanxiao.com/" rel="alternate" type="text/html" /><updated>2021-02-06T02:55:08+00:00</updated><id>https://www.ivanxiao.com/feed.xml</id><title type="html">Ivan Xiao</title><subtitle>Ivan's blog.</subtitle><author><name>Ivan Xiao</name></author><entry><title type="html">Ray Dalio’s thought on Bitcoin</title><link href="https://www.ivanxiao.com/2021/01/29/ray-dalio-s-thought-on-bitcoin" rel="alternate" type="text/html" title="Ray Dalio’s thought on Bitcoin" /><published>2021-01-29T19:45:00+00:00</published><updated>2021-01-29T19:45:00+00:00</updated><id>https://www.ivanxiao.com/2021/01/29/ray-dalio-s-thought-on-bitcoin</id><content type="html" xml:base="https://www.ivanxiao.com/2021/01/29/ray-dalio-s-thought-on-bitcoin">&lt;p&gt;Ray Dalio &lt;a href=&quot;https://www.linkedin.com/pulse/what-i-really-think-bitcoin-ray-dalio/&quot;&gt;shares&lt;/a&gt; what he thinks about BTC.&lt;/p&gt;
+
+&lt;p&gt;He thinks positively about bitcoin, as it is one of a kind invention. It is similar to gold that has limited supply.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;I believe Bitcoin is one hell of an invention. To have invented a new type of money via a system that is programmed into a computer and that has worked for around 10 years and is rapidly gaining popularity as both a type of money and a storehold of wealth is an amazing accomplishment.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Because there aren’t many of these gold-like storehold of wealth assets that can be held in privacy and because the sizes of their markets are relatively small, there exists the possibility that Bitcoin and its competitors can fill that growing need.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;However, he argues that the supply does not merely mean the quantity of bitcoin itself:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Although Bitcoin is limited in supply, digital currencies are not limited in supply because new ones have come along and will continue to come along to compete so the supply of Bitcoin-like assets should, and competition will, play a role in determining Bitcoin and other cryptocurrency prices.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The biggest risk is that how it plays well with goverment. Since it is unregulated like the government-backed currency, there is a risk that it’s privacy and use could be limited:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;As an extension of Bitcoin being digital are the questions of how private it is and what the government will allow and not allow it to be&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>Ivan Xiao</name></author><category term="[&quot;personal finance&quot;]" /><category term="bitcoin" /><category term="Ray Dalio" /><summary type="html">Ray Dalio shares what he thinks about BTC.</summary></entry><entry><title type="html">A few gotchas in Kramdown with MathJax</title><link href="https://www.ivanxiao.com/2021/01/21/a-few-gotchas-in-kramdown-with-mathjax" rel="alternate" type="text/html" title="A few gotchas in Kramdown with MathJax" /><published>2021-01-21T01:33:00+00:00</published><updated>2021-01-21T01:33:00+00:00</updated><id>https://www.ivanxiao.com/2021/01/21/a-few-gotchas-in-kramdown-with-mathjax</id><content type="html" xml:base="https://www.ivanxiao.com/2021/01/21/a-few-gotchas-in-kramdown-with-mathjax">&lt;p&gt;As I recently just migrated my blog to use &lt;a href=&quot;/2021/01/20/goodbye-octopress-hello-jekyll&quot;&gt;jekyll + github pages&lt;/a&gt;, a lot of things have changed.
 Most notably, the markdown processor is &lt;a href=&quot;https://kramdown.gettalong.org/&quot;&gt;kramdown&lt;/a&gt; by default. There are a few gotchas I ran into so I am writing down some notes here.&lt;/p&gt;
 
 &lt;ol&gt;
@@ -21,6 +43,8 @@ Most notably, the markdown processor is &lt;a href=&quot;https://kramdown.gettal
 
 &lt;p&gt;Since migration from octopress is &lt;a href=&quot;https://import.jekyllrb.com/&quot;&gt;not officially supported&lt;/a&gt; by jekyll, I spent some time working around the migration. Rough steps I’ve taken:&lt;/p&gt;
 
+&lt;p&gt;&lt;img src=&quot;https://paper-attachments.dropbox.com/s_1CB6C317569EFE292A1EB00C0AE0B368DB90ED63C4882C5D4DD9B7914B1244DE_1611173993785_image.png&quot; alt=&quot;state of the art of my old octopress plugins&quot; class=&quot;align-right&quot; /&gt;&lt;/p&gt;
+
 &lt;ol&gt;
   &lt;li&gt;Create a jekyll site following the &lt;a href=&quot;https://docs.github.com/en/github/working-with-github-pages/setting-up-a-github-pages-site-with-jekyll&quot;&gt;instructions&lt;/a&gt;.&lt;/li&gt;
   &lt;li&gt;Configure custom domain.&lt;/li&gt;
@@ -29,8 +53,6 @@ Most notably, the markdown processor is &lt;a href=&quot;https://kramdown.gettal
   &lt;li&gt;Configure the theme. This took the most time. A lot of new things to learn and include.&lt;/li&gt;
   &lt;li&gt;Use plugins such as &lt;a href=&quot;https://github.com/jekyll/jekyll-compose&quot;&gt;jekyll-compose&lt;/a&gt; to help the publishing flow, e.g., create a new post and automatically open up my editor.&lt;/li&gt;
 &lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://paper-attachments.dropbox.com/s_1CB6C317569EFE292A1EB00C0AE0B368DB90ED63C4882C5D4DD9B7914B1244DE_1611173993785_image.png&quot; alt=&quot;state of the art of my old octopress plugins&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;There are a few things that I didn’t solve quite nicely and on-going:&lt;/p&gt;
 
@@ -616,62 +638,4 @@ Mac 的设置参考了&lt;a href=&quot;https://www.sheyilin.com/2019/06/unblockn
 
 &lt;h2 id=&quot;3-copy-paste-the-downloaded-markdown-to-your-blog-system&quot;&gt;3. Copy paste the downloaded markdown to your blog system&lt;/h2&gt;
 
-&lt;p&gt;After clicking ‘Download’, a md file will be downloaded. In my case, I use Octopress. You can easily fix up the metadata and preview. What is super-nice is that the image is automatically uploaded to cloud and you can use it as is, unless you want to upload it to your own host. Of course, this is also a disadvantage, you will need to manually upload those photos. I haven’t figured out a way to automate this yet.&lt;/p&gt;</content><author><name>Ivan Xiao</name></author><category term="blogging" /><category term="tips" /><category term="dropbox paper" /><summary type="html">My new workflow is using Dropbox Paper so that I can easily write in WYSIWYG style (rich text), and easily export as Markdown. Very convenient.</summary></entry><entry><title type="html">Backdoor Roth IRA and Mega Backdoor Roth IRA</title><link href="https://www.ivanxiao.com/2018/01/19/backdoor-roth-ira-and-mega-backdoor-roth-ira" rel="alternate" type="text/html" title="Backdoor Roth IRA and Mega Backdoor Roth IRA" /><published>2018-01-19T07:08:40+00:00</published><updated>2018-01-19T07:08:40+00:00</updated><id>https://www.ivanxiao.com/2018/01/19/backdoor-roth-ira-and-mega-backdoor-roth-ira</id><content type="html" xml:base="https://www.ivanxiao.com/2018/01/19/backdoor-roth-ira-and-mega-backdoor-roth-ira">&lt;p&gt;A while ago I came across “&lt;a href=&quot;https://thecollegeinvestor.com/17561/understanding-the-mega-backdoor-roth-ira/&quot;&gt;Mega Backdoor Roth IRA&lt;/a&gt;”, which is a good way to place fund with tax-efficiency. I read a few documents and found that even though there are lots of good materials on it in English, not quite so in Chinese. So I want to write down my notes and share the knowledge here.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/post_coins.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;!-- more --&gt;
-
-&lt;h2 id=&quot;背景知识美国税务与退休金制度&quot;&gt;背景知识：美国税务与退休金制度&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;美国的个人所得税包括联邦税，州税，社会保险，联邦医疗保险（Medicare） 以及 联邦医疗补助（Medicaid）。而最重要的 federal tax 是累进的。&lt;/li&gt;
-  &lt;li&gt;美国常见的退休金账户分为 401(k) 与 IRA，其中 401(k) 是公司提供的账户，IRA 是个人申请的账户。&lt;/li&gt;
-  &lt;li&gt;401(k) 又分为 Traditional 401(k) 与 Roth 401(k)：
-    &lt;ul&gt;
-      &lt;li&gt;Traditional 401(k) 是所谓的推迟收税账户 (tax-deferred account)，即存入这个账户的钱当时不需要交税，而退休取出来的时候需要收税，但是你可以控制每个月提取的金额。可想而知，这里有两个因素决定你究竟延迟交税是省了还是亏了：1是你每个月取多少，2是未来的税阶会变成怎样。理论上来说，如果你控制每个月提取额度并且未来税是逐渐降低的，那么你则是省了税。另外，放在账户里的钱可以用来投资，但投资的收入一样需要交税。&lt;/li&gt;
-      &lt;li&gt;Roth 401(k) 存入的时候需要交税，也就是说存的是税后的钱。因为交过税了，所以取出来时不需要再交。主要好处是这个账户的投资收入也是免税的！因此如果投资合理，盈利是很可观的。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;类似地，IRA 与分为 Traditional IRA 以及 Roth IRA。&lt;/li&gt;
-  &lt;li&gt;每年个人存进 401(k)的资金有上限，2018年是 $18500。一般公司会匹配一定的程度，但个人与匹配加起来最高不超过一定限额，2018是 $55000。&lt;/li&gt;
-  &lt;li&gt;类似地， IRA的上限是 $5500。但是，当你的收入超过一定程度，则会受到一定限制：
-    &lt;ul&gt;
-      &lt;li&gt;Traditional IRA: 当收入超过限额，则免税额递减至0。但是你仍然可以存税后的钱到这个账户——这是后文要提到的 backdoor IRA 的基础。&lt;/li&gt;
-      &lt;li&gt;Roth IRA: 当收入超过限额，则可存资金递减至0。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;backdoor-roth-ira&quot;&gt;Backdoor Roth IRA&lt;/h2&gt;
-
-&lt;p&gt;对于一般雇员来说，一个好的策略是至少存一定量的 401(k)，使得能拿到公司匹配的最大限额（相当于免费的钱）。另外，很多人其实是会存至上限 (max out) ，因为 traditional 和 roth 的优惠都好。可是对于收入很高的人来说，他们没办法免税地存钱到 IRA，也不能存到 Roth IRA，有什么办法可以做到呢？那就是所谓的 backdoor IRA。&lt;/p&gt;
-
-&lt;p&gt;虽然我们没法免税存钱到 IRA，但是我们仍然可以&lt;strong&gt;存税后的钱到 IRA&lt;/strong&gt;。资金到位后，我们可以把这笔钱从 traditional IRA 转到 Roth IRA 账户。这样的好处是显而易见的：本来这些税后的钱在 IRA 账户投资收入是未来要交税的，转为 Roth 后，不用交税了！由于 $5500 的上限，用这种方法最多可以 backdoor $5500 到 Roth IRA。虽然这个方法被称为 “backdoor”，但它完全是&lt;strong&gt;合法的&lt;/strong&gt;。&lt;/p&gt;
-
-&lt;p&gt;更细节的操作方法，请参考&lt;a href=&quot;https://thecollegeinvestor.com/17561/understanding-the-mega-backdoor-roth-ira/&quot;&gt;这篇文章&lt;/a&gt;。&lt;/p&gt;
-
-&lt;h2 id=&quot;mega-backdoor-roth-ira&quot;&gt;Mega Backdoor Roth IRA&lt;/h2&gt;
-
-&lt;p&gt;那么我们有没办法超越 $5500 的上限？答案是肯定的！使用类似 backdoor IRA 的方法，我们可以存高至 $35000 的钱到 Roth IRA。因为这个钱几乎是 backdoor 的六倍，因此大家也叫它为 Mega backdoor Roth IRA。当然，这个方法需要有一定前提条件：公司的 401(k) 必须支持这个操作。&lt;/p&gt;
-
-&lt;p&gt;具体方法跟 backdoor 很类似，我们先 max out limit，假设是 2018 的 $18500，并且公司给 match 了 $6000，那么你还能再存 $55000-$18500-$6000=$30500 的税后资金到 401(k)。这笔钱有两种转换方法：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;In plan conversion，直接转换为 Roth 401(k)&lt;/li&gt;
-  &lt;li&gt;Roll over to Roth IRA，如果 broker 支持的话，可以让它们把这笔 Roth 401(k) 转存到 Roth IRA。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;具体的限制也请参考&lt;a href=&quot;https://thecollegeinvestor.com/17561/understanding-the-mega-backdoor-roth-ira/&quot;&gt;文章&lt;/a&gt;。&lt;/p&gt;
-
-&lt;h2 id=&quot;tax-efficient-fund-placement&quot;&gt;Tax-efficient fund placement&lt;/h2&gt;
-
-&lt;p&gt;使用以上两种办法，可以有如下的退休金储蓄计划：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Max out 401(k) （税前 $18500），或者 Max out Roth 401(k) （税后 $18500）&lt;/li&gt;
-  &lt;li&gt;Max out backdoor Roth IRA - $5500&lt;/li&gt;
-  &lt;li&gt;Max out Mega backdoor Roth IRA&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;其中第一步究竟是哪种要见仁见智。但是一般的说法是，如果处于事业上升期，那么应该优先 max out Roth，因为现阶段的税阶并不是职业生涯里最高的，并且早期的投资可以有更高的复利，而这些复利最终又是免税的。&lt;/p&gt;</content><author><name>Ivan Xiao</name></author><category term="personal finance" /><category term="notes" /><category term="tax" /><summary type="html">A while ago I came across “Mega Backdoor Roth IRA”, which is a good way to place fund with tax-efficiency. I read a few documents and found that even though there are lots of good materials on it in English, not quite so in Chinese. So I want to write down my notes and share the knowledge here.</summary></entry></feed>
+&lt;p&gt;After clicking ‘Download’, a md file will be downloaded. In my case, I use Octopress. You can easily fix up the metadata and preview. What is super-nice is that the image is automatically uploaded to cloud and you can use it as is, unless you want to upload it to your own host. Of course, this is also a disadvantage, you will need to manually upload those photos. I haven’t figured out a way to automate this yet.&lt;/p&gt;</content><author><name>Ivan Xiao</name></author><category term="blogging" /><category term="tips" /><category term="dropbox paper" /><summary type="html">My new workflow is using Dropbox Paper so that I can easily write in WYSIWYG style (rich text), and easily export as Markdown. Very convenient.</summary></entry></feed>
