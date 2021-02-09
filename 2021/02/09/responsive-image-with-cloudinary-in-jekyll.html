@@ -1,0 +1,965 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Responsive Image with Cloudinary in Jekyll - Ivan Xiao</title>
+<meta name="description" content="I’ve been using Cloudinary for hosting my images in this blog for a while. However, I switched to use Dropbox paper to draft my posts, as it offers really awesome UI, editing features and can export to markdown without much tweaks to publish as a Jekyll post.">
+
+
+  <meta name="author" content="Ivan Xiao">
+  
+  <meta property="article:author" content="Ivan Xiao">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Ivan Xiao">
+<meta property="og:title" content="Responsive Image with Cloudinary in Jekyll">
+<meta property="og:url" content="https://www.ivanxiao.com/2021/02/09/responsive-image-with-cloudinary-in-jekyll">
+
+
+  <meta property="og:description" content="I’ve been using Cloudinary for hosting my images in this blog for a while. However, I switched to use Dropbox paper to draft my posts, as it offers really awesome UI, editing features and can export to markdown without much tweaks to publish as a Jekyll post.">
+
+
+
+  <meta property="og:image" content="https://www.ivanxiao.com/images/post_responsive_image.jpg">
+
+
+
+  <meta name="twitter:site" content="@ivanzxiao">
+  <meta name="twitter:title" content="Responsive Image with Cloudinary in Jekyll">
+  <meta name="twitter:description" content="I’ve been using Cloudinary for hosting my images in this blog for a while. However, I switched to use Dropbox paper to draft my posts, as it offers really awesome UI, editing features and can export to markdown without much tweaks to publish as a Jekyll post.">
+  <meta name="twitter:url" content="https://www.ivanxiao.com/2021/02/09/responsive-image-with-cloudinary-in-jekyll">
+
+  
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://www.ivanxiao.com/images/post_responsive_image.jpg">
+  
+
+  
+    <meta name="twitter:creator" content="@ivanzxiao">
+  
+
+
+
+  <meta property="article:published_time" content="2021-02-09T05:20:00+00:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://www.ivanxiao.com/2021/02/09/responsive-image-with-cloudinary-in-jekyll">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://www.ivanxiao.com/",
+      "sameAs": ["https://twitter.com/ivanzxiao","https://www.linkedin.com/in/ivanzxiao"]
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Ivan Xiao Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/images/logo.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          Ivan Xiao
+          <span class="site-subtitle">Tech, Money and Enjoying Life.</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/archive/">Archive</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/gallery/">Gallery</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero--overlay"
+  style=" background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/images/post_responsive_image.jpg');"
+>
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          Responsive Image with Cloudinary in Jekyll
+
+        
+      </h1>
+      
+        <p class="page__lead">Leverage cloudinary to achieve easy responsive image
+</p>
+      
+      
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-02-09T05:20:00+00:00">February 9, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+      
+      
+    </div>
+  
+  
+    <span class="page__hero-caption"><a href="https://unsplash.com/photos/EhTcC9sYXsw">via</a>
+</span>
+  
+</div>
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/images/ivan-memoji.jpg" alt="Ivan Xiao" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Ivan Xiao</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Engineer. Father. Cat Lover. Guitarist. Ballroom Dancer. Woodworker.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+            <li><a href="https://github.com/iveney" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/ivanzxiao" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Responsive Image with Cloudinary in Jekyll">
+    <meta itemprop="description" content="I’ve been using Cloudinary for hosting my images in this blog for a while.However, I switched to use Dropbox paper to draft my posts, as it offers really awesome UI, editing features and can export to markdown without much tweaks to publish as a Jekyll post.">
+    <meta itemprop="datePublished" content="2021-02-09T05:20:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu">
+  <li><a href="#a-cloudinary-primer">A Cloudinary Primer</a></li>
+  <li><a href="#using-jekyll-cloudinary">Using jekyll-cloudinary</a></li>
+  <li><a href="#avoid-recursive-fetching">Avoid recursive fetching</a></li>
+  <li><a href="#conclusion">Conclusion</a></li>
+</ul>
+
+            </nav>
+          </aside>
+        
+        <p>I’ve been using <a href="http://cloudinary.com/">Cloudinary</a> for hosting my images in this blog for a while.
+However, I <a href="/2018/01/21/write-blog-post-with-dropbox-paper">switched</a> to use Dropbox paper to draft my posts, as it offers really awesome UI, editing features and can export to markdown without much tweaks to publish as a Jekyll post.</p>
+
+<p>The most notable feature I liked was I can simply copy paste an image in paper, and when exporting, it is magically hosted at Dropbox. Until recently, when I was <a href="/2021/01/20/goodbye-octopress-hello-jekyll">migrating my blog to Jekyll</a>, I also explored some of the awesome <a href="https://github.com/planetjekyll/awesome-jekyll-plugins">Jekyll plugins</a>. One of them caught my notice: <a href="https://github.com/wildlyinaccurate/jekyll-responsive-image">jekyll-responsive-image</a>. A few searches showed me that <a href="https://timkadlec.com/2013/06/why-we-need-responsive-images/">72% of image bytes served up by responsive pages are wasted</a>. There is <a href="https://responsiveimages.org/">workforce</a> to build a better experience and save bandwidth. It seems a good thing to include for my sites.</p>
+
+<p>After some digging, I realized that <a href="https://github.com/wildlyinaccurate/jekyll-responsive-image">jekyll-responsive-image</a> might not be the best fit for me, as it was assuming my images are hosted locally. I didn’t think it was a good idea like five years ago and always used CDN solution such as <a href="http://cloudinary.com/">Cloudinary</a><sup id="fnref:LFS" role="doc-noteref"><a href="#fn:LFS" class="footnote">1</a></sup>. I then searched for jekyll + cloundinary, and found that there is already (but no longer maintained) <a href="https://cloudinary.com/blog/how_i_used_cloudinary_to_solve_responsive_image_needs_in_my_jekyll_website_and_shared_the_magic_in_a_plugin">solution</a> for it. I read through it: <a href="https://github.com/nhoizey/jekyll-cloudinary">jekyll-cloudinary</a>. It made a lot of sense to me, therefore, I spent some time configuring and actually forked to make an improvement to fit my use case. This post will show the details.</p>
+
+<h2 id="a-cloudinary-primer">A Cloudinary Primer</h2>
+
+<p>This solution relies on <a href="http://cloudinary.com/">Cloudinary</a>, therefore you need to register it first. Free account offers 10GB storage and 20GB bandwidth, which should be ample for nobody like me. You can sign up <a href="https://cloudinary.com/invites/lpov9zyyucivvxsnalc5/qebjx4vsaxc746ormmqa">for free</a> here.</p>
+
+<p>There are two important features here:</p>
+
+<p><strong><a href="https://cloudinary.com/documentation/image_transformations">Dynamic transformation via URL</a></strong>. That is, you can upload an image and change its size on-the-fly via the URL.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Original image:
+https://res.cloudinary.com/demo/image/upload/w_200/lady.jpg
+
+# Transformed image:
+https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_crop,g_face,r_max/w_200/lady.jpg
+</code></pre></div></div>
+
+<table class="figure-table wrapper">
+  <tbody>
+    <tr>
+      <td><img src="https://res.cloudinary.com/demo/image/upload/w_200/lady.jpg" alt="" /></td>
+      <td><img src="https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_crop,g_face,r_max/w_200/lady.jpg" alt="" /></td>
+    </tr>
+    <tr>
+      <td>Original image</td>
+      <td>Transformed image</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong><a href="https://cloudinary.com/documentation/fetch_remote_images">Auto fetch and upload images</a></strong>. If you put a remote URL under their <code class="language-plaintext highlighter-rouge">/image/fetch/</code> path, they will fetch it and cache to optimize the delivery. You can also apply transformation to the original image! A related feature is the auto-upload, which maps a destination URL to cloudinary, so that each time when the mapped URL is visited, it will be fetched and uploaded to cloudinary, whereas the fetch is simply a cache and won’t be stored at your account.</p>
+
+<h2 id="using-jekyll-cloudinary">Using <a href="https://github.com/nhoizey/jekyll-cloudinary">jekyll-cloudinary</a></h2>
+
+<p>Now that we have cloudinary ready, we can go ahead and set up <a href="https://github.com/nhoizey/jekyll-cloudinary">jekyll-cloudinary</a>. The installation is as straightforward as in the plugin’s <a href="https://nhoizey.github.io/jekyll-cloudinary/">readme page</a>. What it does essentially, is providing a Liquid tag <code class="language-plaintext highlighter-rouge">cloudinary</code> and it generates the <code class="language-plaintext highlighter-rouge">fetch</code> call so that cloudinary can cache and generate different sized images, and these generated images can then be served via <code class="language-plaintext highlighter-rouge">srcset</code> in the <code class="language-plaintext highlighter-rouge">&lt;img&gt;</code> tag. More info about using <code class="language-plaintext highlighter-rouge">srcset</code> for responsive images <a href="https://cloudinary.com/blog/responsive_images_with_srcset_sizes_and_cloudinary">here</a>. The plugin works amazingly in a way that it supports local images as well as remote URLs.</p>
+
+<figure>
+<img src="https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_800/https://www.ivanxiao.com/images/post_responsive_image.jpg" srcset="https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_320/https://www.ivanxiao.com/images/post_responsive_image.jpg 320w,
+https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_640/https://www.ivanxiao.com/images/post_responsive_image.jpg 640w,
+https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_960/https://www.ivanxiao.com/images/post_responsive_image.jpg 960w,
+https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_1280/https://www.ivanxiao.com/images/post_responsive_image.jpg 1280w,
+https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_1600/https://www.ivanxiao.com/images/post_responsive_image.jpg 1600w" sizes="(min-width: 50rem) 50rem, 90vw" width="6000" height="4000" />
+<figcaption><p>Teaser image for this post, hosted with the page sources.</p>
+</figcaption>
+</figure>
+
+<figure>
+<img src="https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_800/https://upload.wikimedia.org/wikipedia/commons/a/aa/The_water_transfer.jpg" srcset="https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_320/https://upload.wikimedia.org/wikipedia/commons/a/aa/The_water_transfer.jpg 320w,
+https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_640/https://upload.wikimedia.org/wikipedia/commons/a/aa/The_water_transfer.jpg 640w,
+https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_960/https://upload.wikimedia.org/wikipedia/commons/a/aa/The_water_transfer.jpg 960w,
+https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_1280/https://upload.wikimedia.org/wikipedia/commons/a/aa/The_water_transfer.jpg 1280w,
+https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_1600/https://upload.wikimedia.org/wikipedia/commons/a/aa/The_water_transfer.jpg 1600w" sizes="(min-width: 50rem) 50rem, 90vw" width="5214" height="3476" />
+<figcaption><p>Remote image from Wikipedia.</p>
+</figcaption>
+</figure>
+
+<p>Pro tip: if you inspect the above image with chrome’s developer tool, and change the device to one of the smaller size one such as iPhone 5, it shows the image being used has width=640.</p>
+
+<figure>
+<img src="https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_800/v1612844962/inspecting_generated_responsive_image_tag.jpg" srcset="https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_320/v1612844962/inspecting_generated_responsive_image_tag.jpg 320w,
+https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_640/v1612844962/inspecting_generated_responsive_image_tag.jpg 640w,
+https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_960/v1612844962/inspecting_generated_responsive_image_tag.jpg 960w,
+https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_1280/v1612844962/inspecting_generated_responsive_image_tag.jpg 1280w,
+https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_1486/v1612844962/inspecting_generated_responsive_image_tag.jpg 1486w" sizes="(min-width: 50rem) 50rem, 90vw" width="1486" height="742" />
+<figcaption><p>Inspecting the above image with chrome developer tools and verify the intrinsic size.</p>
+</figcaption>
+</figure>
+
+<h2 id="avoid-recursive-fetching">Avoid recursive fetching</h2>
+
+<p>Notice that if you manually uploaded an image to cloundinary, get the link and plug into the <code class="language-plaintext highlighter-rouge">cloudinary</code> liquid tag, it will be fetched as a remote media. This is a waste since the image is already hosted. It’ll be awesome if it is served directly without fetching. If you want to have this behavior, feel free to use <a href="https://github.com/iveney/jekyll-cloudinary">my fork</a> instead. It parses the image URL and see if the delivery_type is <code class="language-plaintext highlighter-rouge">upload</code>, and will generate the transformations directly without fetching. I didn’t bother to make a separate gem for it, so please use the git method to add this as a jekyll plugin. In your Gemfile:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">group</span> <span class="ss">:jekyll_plugins</span> <span class="k">do</span>
+  <span class="n">gem</span> <span class="s1">'jekyll-cloudinary'</span><span class="p">,</span> <span class="ss">:github</span> <span class="o">=&gt;</span> <span class="s1">'iveney/jekyll-cloudinary'</span><span class="p">,</span> <span class="ss">:branch</span> <span class="o">=&gt;</span> <span class="s1">'master'</span>
+<span class="k">end</span></code></pre></figure>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>Inserting image in Markdown appears to be way more complicated than it appears - responsive image, styling, storage etc. Hopefully this solution can help to speed up your workflow so you can stay more focused on writing.</p>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:LFS" role="doc-endnote">
+      <p>I also discovered <a href="https://git-lfs.github.com/">git LFS</a> which solves the large media issue in Git, and I knew that netlify is offering solution to host the <a href="https://www.netlify.com/products/large-media/">large media</a>. I need to explore this solution a bit more. <a href="#fnref:LFS" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/cloudinary" class="page__taxonomy-item" rel="tag">cloudinary</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/responsive-image" class="page__taxonomy-item" rel="tag">responsive image</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/blogging" class="page__taxonomy-item" rel="tag">blogging</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-02-09T05:20:00+00:00">February 9, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?via=ivanzxiao&text=Responsive+Image+with+Cloudinary+in+Jekyll%20https%3A%2F%2Fwww.ivanxiao.com%2F2021%2F02%2F09%2Fresponsive-image-with-cloudinary-in-jekyll" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.ivanxiao.com%2F2021%2F02%2F09%2Fresponsive-image-with-cloudinary-in-jekyll" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.ivanxiao.com%2F2021%2F02%2F09%2Fresponsive-image-with-cloudinary-in-jekyll" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2021/01/29/ray-dalio-s-thought-on-bitcoin" class="pagination--pager" title="Ray Dalio’s thought on Bitcoin
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comments</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          <!--
+Note: this is a copy of original minimal-mistake's file.
+Modifications:
+1. show the teaser in list layout.
+   See: https://github.com/mmistakes/minimal-mistakes/issues/1717#issuecomment-559617503
+2. allow more words in excerpt (truncation)
+-->
+
+
+
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/images/post_goodbye.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2021/01/20/goodbye-octopress-hello-jekyll" rel="permalink">Goodbye Octopress. Hello Jekyll.
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-01-20T19:28:00+00:00">January 20, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    
+    <p class="archive__item-excerpt" itemprop="description">I have been using Octopress for blogging since 2013. Octopress is essentially a framework built on top of Jekyll, which offers vast convenient at the time, such as nice themes, automating in publishing to github, etc. I considered Jekyll a bit bar...</p>
+  </article>
+</div>
+
+        
+          <!--
+Note: this is a copy of original minimal-mistake's file.
+Modifications:
+1. show the teaser in list layout.
+   See: https://github.com/mmistakes/minimal-mistakes/issues/1717#issuecomment-559617503
+2. allow more words in excerpt (truncation)
+-->
+
+
+
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/images/post_blogging.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2014/05/23/my-octopress-blogging-flow" rel="permalink">My Octopress Blogging Flow
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2014-05-23T03:38:07+00:00">May 23, 2014</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    
+    <p class="archive__item-excerpt" itemprop="description">
+After blogging with Octopress for a while, I have already gained
+some insights on it, and my publishing flow has been smoother.
+I think it is right time to share my flow as a reference.
+
+</p>
+  </article>
+</div>
+
+        
+          <!--
+Note: this is a copy of original minimal-mistake's file.
+Modifications:
+1. show the teaser in list layout.
+   See: https://github.com/mmistakes/minimal-mistakes/issues/1717#issuecomment-559617503
+2. allow more words in excerpt (truncation)
+-->
+
+
+
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/cameraman.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2014/05/19/sparse-image-reconstruction-via-l1-minimization" rel="permalink">Sparse Image Reconstruction via L1-minimization
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2014-05-19T20:12:36+00:00">May 19, 2014</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          5 minute read
+        
+      </span>
+    
+  </p>
+
+
+    
+    <p class="archive__item-excerpt" itemprop="description">
+  
+    
+      
+      
+      
+    
+    
+      Original
+      Minimum Energy Reconstruction
+      Sparse Reconstruction
+    
+  
+
+
+</p>
+  </article>
+</div>
+
+        
+          <!--
+Note: this is a copy of original minimal-mistake's file.
+Modifications:
+1. show the teaser in list layout.
+   See: https://github.com/mmistakes/minimal-mistakes/issues/1717#issuecomment-559617503
+2. allow more words in excerpt (truncation)
+-->
+
+
+
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/images/post_blogging.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2017/04/03/migrating-from-dropbox-public-folder" rel="permalink">Migrating from dropbox public folder
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2017-04-03T09:22:32+00:00">April 3, 2017</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    
+    <p class="archive__item-excerpt" itemprop="description">Dropbox recently removed its public folder feature, which was used to host my blog’s images. I have to figure out a solution to host and fix the paths to these images…
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  TeX: {
+    extensions: ["mediawiki-texvc.js"],
+    Macros: {
+      complex: ['\\mathbb{C}'],
+      norm: ['\\left\\lVert#1\\right\\rVert', 1],
+      given: ['\\mathbin{\\vert}'],
+      data: ['\\mathcal{D}'],
+      argmax: ['\\mathop{\\arg\\,\\max}\\limits'],
+    }
+  }
+  });
+</script>
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<!-- end custom footer snippets -->
+
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/ivanzxiao" rel="nofollow noopener noreferrer"><i class="fab fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+          <li><a href="https://github.com/iveney" rel="nofollow noopener noreferrer"><i class="fab fa-github-square" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.linkedin.com/in/ivanzxiao/" rel="nofollow noopener noreferrer"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Ivan Xiao. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0VSNB8LB2P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0VSNB8LB2P', { 'anonymize_ip': false});
+</script>
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://www.ivanxiao.com/2021/02/09/responsive-image-with-cloudinary-in-jekyll";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/2021/02/09/responsive-image-with-cloudinary-in-jekyll"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://iveney.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

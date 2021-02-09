@@ -1,4 +1,94 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://www.ivanxiao.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.ivanxiao.com/" rel="alternate" type="text/html" /><updated>2021-02-06T02:55:08+00:00</updated><id>https://www.ivanxiao.com/feed.xml</id><title type="html">Ivan Xiao</title><subtitle>Ivan's blog.</subtitle><author><name>Ivan Xiao</name></author><entry><title type="html">Ray Dalio’s thought on Bitcoin</title><link href="https://www.ivanxiao.com/2021/01/29/ray-dalio-s-thought-on-bitcoin" rel="alternate" type="text/html" title="Ray Dalio’s thought on Bitcoin" /><published>2021-01-29T19:45:00+00:00</published><updated>2021-01-29T19:45:00+00:00</updated><id>https://www.ivanxiao.com/2021/01/29/ray-dalio-s-thought-on-bitcoin</id><content type="html" xml:base="https://www.ivanxiao.com/2021/01/29/ray-dalio-s-thought-on-bitcoin">&lt;p&gt;Ray Dalio &lt;a href=&quot;https://www.linkedin.com/pulse/what-i-really-think-bitcoin-ray-dalio/&quot;&gt;shares&lt;/a&gt; what he thinks about BTC.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://www.ivanxiao.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.ivanxiao.com/" rel="alternate" type="text/html" /><updated>2021-02-09T05:25:18+00:00</updated><id>https://www.ivanxiao.com/feed.xml</id><title type="html">Ivan Xiao</title><subtitle>Ivan's blog.</subtitle><author><name>Ivan Xiao</name></author><entry><title type="html">Responsive Image with Cloudinary in Jekyll</title><link href="https://www.ivanxiao.com/2021/02/09/responsive-image-with-cloudinary-in-jekyll" rel="alternate" type="text/html" title="Responsive Image with Cloudinary in Jekyll" /><published>2021-02-09T05:20:00+00:00</published><updated>2021-02-09T05:20:00+00:00</updated><id>https://www.ivanxiao.com/2021/02/09/responsive-image-with-cloudinary-in-jekyll</id><content type="html" xml:base="https://www.ivanxiao.com/2021/02/09/responsive-image-with-cloudinary-in-jekyll">&lt;p&gt;I’ve been using &lt;a href=&quot;http://cloudinary.com/&quot;&gt;Cloudinary&lt;/a&gt; for hosting my images in this blog for a while.
+However, I &lt;a href=&quot;/2018/01/21/write-blog-post-with-dropbox-paper&quot;&gt;switched&lt;/a&gt; to use Dropbox paper to draft my posts, as it offers really awesome UI, editing features and can export to markdown without much tweaks to publish as a Jekyll post.&lt;/p&gt;
+
+&lt;p&gt;The most notable feature I liked was I can simply copy paste an image in paper, and when exporting, it is magically hosted at Dropbox. Until recently, when I was &lt;a href=&quot;/2021/01/20/goodbye-octopress-hello-jekyll&quot;&gt;migrating my blog to Jekyll&lt;/a&gt;, I also explored some of the awesome &lt;a href=&quot;https://github.com/planetjekyll/awesome-jekyll-plugins&quot;&gt;Jekyll plugins&lt;/a&gt;. One of them caught my notice: &lt;a href=&quot;https://github.com/wildlyinaccurate/jekyll-responsive-image&quot;&gt;jekyll-responsive-image&lt;/a&gt;. A few searches showed me that &lt;a href=&quot;https://timkadlec.com/2013/06/why-we-need-responsive-images/&quot;&gt;72% of image bytes served up by responsive pages are wasted&lt;/a&gt;. There is &lt;a href=&quot;https://responsiveimages.org/&quot;&gt;workforce&lt;/a&gt; to build a better experience and save bandwidth. It seems a good thing to include for my sites.&lt;/p&gt;
+
+&lt;p&gt;After some digging, I realized that &lt;a href=&quot;https://github.com/wildlyinaccurate/jekyll-responsive-image&quot;&gt;jekyll-responsive-image&lt;/a&gt; might not be the best fit for me, as it was assuming my images are hosted locally. I didn’t think it was a good idea like five years ago and always used CDN solution such as &lt;a href=&quot;http://cloudinary.com/&quot;&gt;Cloudinary&lt;/a&gt;&lt;sup id=&quot;fnref:LFS&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:LFS&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. I then searched for jekyll + cloundinary, and found that there is already (but no longer maintained) &lt;a href=&quot;https://cloudinary.com/blog/how_i_used_cloudinary_to_solve_responsive_image_needs_in_my_jekyll_website_and_shared_the_magic_in_a_plugin&quot;&gt;solution&lt;/a&gt; for it. I read through it: &lt;a href=&quot;https://github.com/nhoizey/jekyll-cloudinary&quot;&gt;jekyll-cloudinary&lt;/a&gt;. It made a lot of sense to me, therefore, I spent some time configuring and actually forked to make an improvement to fit my use case. This post will show the details.&lt;/p&gt;
+
+&lt;h2 id=&quot;a-cloudinary-primer&quot;&gt;A Cloudinary Primer&lt;/h2&gt;
+
+&lt;p&gt;This solution relies on &lt;a href=&quot;http://cloudinary.com/&quot;&gt;Cloudinary&lt;/a&gt;, therefore you need to register it first. Free account offers 10GB storage and 20GB bandwidth, which should be ample for nobody like me. You can sign up &lt;a href=&quot;https://cloudinary.com/invites/lpov9zyyucivvxsnalc5/qebjx4vsaxc746ormmqa&quot;&gt;for free&lt;/a&gt; here.&lt;/p&gt;
+
+&lt;p&gt;There are two important features here:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://cloudinary.com/documentation/image_transformations&quot;&gt;Dynamic transformation via URL&lt;/a&gt;&lt;/strong&gt;. That is, you can upload an image and change its size on-the-fly via the URL.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Original image:
+https://res.cloudinary.com/demo/image/upload/w_200/lady.jpg
+
+# Transformed image:
+https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_crop,g_face,r_max/w_200/lady.jpg
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;table class=&quot;figure-table wrapper&quot;&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;img src=&quot;https://res.cloudinary.com/demo/image/upload/w_200/lady.jpg&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_crop,g_face,r_max/w_200/lady.jpg&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Original image&lt;/td&gt;
+      &lt;td&gt;Transformed image&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://cloudinary.com/documentation/fetch_remote_images&quot;&gt;Auto fetch and upload images&lt;/a&gt;&lt;/strong&gt;. If you put a remote URL under their &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/image/fetch/&lt;/code&gt; path, they will fetch it and cache to optimize the delivery. You can also apply transformation to the original image! A related feature is the auto-upload, which maps a destination URL to cloudinary, so that each time when the mapped URL is visited, it will be fetched and uploaded to cloudinary, whereas the fetch is simply a cache and won’t be stored at your account.&lt;/p&gt;
+
+&lt;h2 id=&quot;using-jekyll-cloudinary&quot;&gt;Using &lt;a href=&quot;https://github.com/nhoizey/jekyll-cloudinary&quot;&gt;jekyll-cloudinary&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;Now that we have cloudinary ready, we can go ahead and set up &lt;a href=&quot;https://github.com/nhoizey/jekyll-cloudinary&quot;&gt;jekyll-cloudinary&lt;/a&gt;. The installation is as straightforward as in the plugin’s &lt;a href=&quot;https://nhoizey.github.io/jekyll-cloudinary/&quot;&gt;readme page&lt;/a&gt;. What it does essentially, is providing a Liquid tag &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cloudinary&lt;/code&gt; and it generates the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fetch&lt;/code&gt; call so that cloudinary can cache and generate different sized images, and these generated images can then be served via &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;srcset&lt;/code&gt; in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;img&amp;gt;&lt;/code&gt; tag. More info about using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;srcset&lt;/code&gt; for responsive images &lt;a href=&quot;https://cloudinary.com/blog/responsive_images_with_srcset_sizes_and_cloudinary&quot;&gt;here&lt;/a&gt;. The plugin works amazingly in a way that it supports local images as well as remote URLs.&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;img src=&quot;https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_800/https://www.ivanxiao.com/images/post_responsive_image.jpg&quot; srcset=&quot;https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_320/https://www.ivanxiao.com/images/post_responsive_image.jpg 320w,
+https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_640/https://www.ivanxiao.com/images/post_responsive_image.jpg 640w,
+https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_960/https://www.ivanxiao.com/images/post_responsive_image.jpg 960w,
+https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_1280/https://www.ivanxiao.com/images/post_responsive_image.jpg 1280w,
+https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_1600/https://www.ivanxiao.com/images/post_responsive_image.jpg 1600w&quot; sizes=&quot;(min-width: 50rem) 50rem, 90vw&quot; width=&quot;6000&quot; height=&quot;4000&quot; /&gt;
+&lt;figcaption&gt;&lt;p&gt;Teaser image for this post, hosted with the page sources.&lt;/p&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure&gt;
+&lt;img src=&quot;https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_800/https://upload.wikimedia.org/wikipedia/commons/a/aa/The_water_transfer.jpg&quot; srcset=&quot;https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_320/https://upload.wikimedia.org/wikipedia/commons/a/aa/The_water_transfer.jpg 320w,
+https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_640/https://upload.wikimedia.org/wikipedia/commons/a/aa/The_water_transfer.jpg 640w,
+https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_960/https://upload.wikimedia.org/wikipedia/commons/a/aa/The_water_transfer.jpg 960w,
+https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_1280/https://upload.wikimedia.org/wikipedia/commons/a/aa/The_water_transfer.jpg 1280w,
+https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_1600/https://upload.wikimedia.org/wikipedia/commons/a/aa/The_water_transfer.jpg 1600w&quot; sizes=&quot;(min-width: 50rem) 50rem, 90vw&quot; width=&quot;5214&quot; height=&quot;3476&quot; /&gt;
+&lt;figcaption&gt;&lt;p&gt;Remote image from Wikipedia.&lt;/p&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Pro tip: if you inspect the above image with chrome’s developer tool, and change the device to one of the smaller size one such as iPhone 5, it shows the image being used has width=640.&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;img src=&quot;https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_800/v1612844962/inspecting_generated_responsive_image_tag.jpg&quot; srcset=&quot;https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_320/v1612844962/inspecting_generated_responsive_image_tag.jpg 320w,
+https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_640/v1612844962/inspecting_generated_responsive_image_tag.jpg 640w,
+https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_960/v1612844962/inspecting_generated_responsive_image_tag.jpg 960w,
+https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_1280/v1612844962/inspecting_generated_responsive_image_tag.jpg 1280w,
+https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_1486/v1612844962/inspecting_generated_responsive_image_tag.jpg 1486w&quot; sizes=&quot;(min-width: 50rem) 50rem, 90vw&quot; width=&quot;1486&quot; height=&quot;742&quot; /&gt;
+&lt;figcaption&gt;&lt;p&gt;Inspecting the above image with chrome developer tools and verify the intrinsic size.&lt;/p&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;avoid-recursive-fetching&quot;&gt;Avoid recursive fetching&lt;/h2&gt;
+
+&lt;p&gt;Notice that if you manually uploaded an image to cloundinary, get the link and plug into the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cloudinary&lt;/code&gt; liquid tag, it will be fetched as a remote media. This is a waste since the image is already hosted. It’ll be awesome if it is served directly without fetching. If you want to have this behavior, feel free to use &lt;a href=&quot;https://github.com/iveney/jekyll-cloudinary&quot;&gt;my fork&lt;/a&gt; instead. It parses the image URL and see if the delivery_type is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;upload&lt;/code&gt;, and will generate the transformations directly without fetching. I didn’t bother to make a separate gem for it, so please use the git method to add this as a jekyll plugin. In your Gemfile:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:jekyll_plugins&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'jekyll-cloudinary'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:github&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'iveney/jekyll-cloudinary'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:branch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'master'&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Inserting image in Markdown appears to be way more complicated than it appears - responsive image, styling, storage etc. Hopefully this solution can help to speed up your workflow so you can stay more focused on writing.&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:LFS&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;I also discovered &lt;a href=&quot;https://git-lfs.github.com/&quot;&gt;git LFS&lt;/a&gt; which solves the large media issue in Git, and I knew that netlify is offering solution to host the &lt;a href=&quot;https://www.netlify.com/products/large-media/&quot;&gt;large media&lt;/a&gt;. I need to explore this solution a bit more. &lt;a href=&quot;#fnref:LFS&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Ivan Xiao</name></author><category term="[&quot;blogging&quot;]" /><category term="cloudinary" /><category term="responsive image" /><summary type="html">I’ve been using Cloudinary for hosting my images in this blog for a while. However, I switched to use Dropbox paper to draft my posts, as it offers really awesome UI, editing features and can export to markdown without much tweaks to publish as a Jekyll post.</summary></entry><entry><title type="html">Ray Dalio’s thought on Bitcoin</title><link href="https://www.ivanxiao.com/2021/01/29/ray-dalio-s-thought-on-bitcoin" rel="alternate" type="text/html" title="Ray Dalio’s thought on Bitcoin" /><published>2021-01-29T19:45:00+00:00</published><updated>2021-01-29T19:45:00+00:00</updated><id>https://www.ivanxiao.com/2021/01/29/ray-dalio-s-thought-on-bitcoin</id><content type="html" xml:base="https://www.ivanxiao.com/2021/01/29/ray-dalio-s-thought-on-bitcoin">&lt;p&gt;Ray Dalio &lt;a href=&quot;https://www.linkedin.com/pulse/what-i-really-think-bitcoin-ray-dalio/&quot;&gt;shares&lt;/a&gt; what he thinks about BTC.&lt;/p&gt;
 
 &lt;p&gt;He thinks positively about bitcoin, as it is one of a kind invention. It is similar to gold that has limited supply.&lt;/p&gt;
 
@@ -622,20 +712,4 @@ Mac 的设置参考了&lt;a href=&quot;https://www.sheyilin.com/2019/06/unblockn
 补一个有意思的数据：&lt;a href=&quot;https://demographics.virginia.edu/DotMap/index.html&quot;&gt;https://demographics.virginia.edu/DotMap/index.html&lt;/a&gt;
 这个图显示了人种分布，不过亚裔没有“细分”，所以看不出是老中还是老印。从图可以看出，Fremont, Milpitas, Sunnyvale, Cupertino 都是亚洲人聚居地（其中 Cupertino 据说是台湾人的天下）。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://pic1.zhimg.com/50/v2-43e18a5ebb2ee6a2f57b5bedd45b0963_hd.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content><author><name>Ivan Xiao</name></author><category term="personal finance" /><category term="house buying" /><category term="investing" /><category term="mortgage" /><summary type="html">本文首发于知乎，作为《2018年在Fremont买房是否时机合适，与在湾区桥对面买房有何优劣？》的回答。手动搬运回博客。仅代表本人拙见，仅供参考。</summary></entry><entry><title type="html">Write Blog Post with Dropbox Paper</title><link href="https://www.ivanxiao.com/2018/01/21/write-blog-post-with-dropbox-paper" rel="alternate" type="text/html" title="Write Blog Post with Dropbox Paper" /><published>2018-01-21T03:20:35+00:00</published><updated>2018-01-21T03:20:35+00:00</updated><id>https://www.ivanxiao.com/2018/01/21/write-blog-post-with-dropbox-paper</id><content type="html" xml:base="https://www.ivanxiao.com/2018/01/21/write-blog-post-with-dropbox-paper">&lt;p&gt;My new workflow is using Dropbox Paper so that I can easily write in WYSIWYG style (rich text), and easily export as Markdown. Very convenient.&lt;/p&gt;
-
-&lt;!-- more --&gt;
-
-&lt;p&gt;My previous blogpost was written using this method. Steps as below.&lt;/p&gt;
-
-&lt;h2 id=&quot;1-write-your-post&quot;&gt;1. Write your post&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;https://paper-attachments.dropbox.com/s_4103A3F76CAE554E4D694B1801AAB4B486D3FE4DF7E362E98E1839B120DBD00E_1610787715221_image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;2-export-as-markdown&quot;&gt;2. Export as markdown&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;https://paper-attachments.dropbox.com/s_4103A3F76CAE554E4D694B1801AAB4B486D3FE4DF7E362E98E1839B120DBD00E_1610787734799_image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://paper-attachments.dropbox.com/s_4103A3F76CAE554E4D694B1801AAB4B486D3FE4DF7E362E98E1839B120DBD00E_1610787743272_image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;3-copy-paste-the-downloaded-markdown-to-your-blog-system&quot;&gt;3. Copy paste the downloaded markdown to your blog system&lt;/h2&gt;
-
-&lt;p&gt;After clicking ‘Download’, a md file will be downloaded. In my case, I use Octopress. You can easily fix up the metadata and preview. What is super-nice is that the image is automatically uploaded to cloud and you can use it as is, unless you want to upload it to your own host. Of course, this is also a disadvantage, you will need to manually upload those photos. I haven’t figured out a way to automate this yet.&lt;/p&gt;</content><author><name>Ivan Xiao</name></author><category term="blogging" /><category term="tips" /><category term="dropbox paper" /><summary type="html">My new workflow is using Dropbox Paper so that I can easily write in WYSIWYG style (rich text), and easily export as Markdown. Very convenient.</summary></entry></feed>
+&lt;p&gt;&lt;img src=&quot;https://pic1.zhimg.com/50/v2-43e18a5ebb2ee6a2f57b5bedd45b0963_hd.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content><author><name>Ivan Xiao</name></author><category term="personal finance" /><category term="house buying" /><category term="investing" /><category term="mortgage" /><summary type="html">本文首发于知乎，作为《2018年在Fremont买房是否时机合适，与在湾区桥对面买房有何优劣？》的回答。手动搬运回博客。仅代表本人拙见，仅供参考。</summary></entry></feed>
