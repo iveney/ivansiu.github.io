@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Minimal Mistakes Jekyll Theme 4.22.0 by Michael Rose
   Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
@@ -84,7 +84,9 @@
 <!-- end _includes/seo.html -->
 
 
-<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Ivan Xiao Feed">
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Ivan Xiao Feed">
+
 
 <!-- https://t.co/dKP3o1e -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -111,7 +113,6 @@
     }
   </style>
 <![endif]-->
-
 
 
     <!-- start custom head snippets -->
@@ -350,14 +351,7 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu">
-  <li><a href="#problem-setting">Problem Setting</a>
-    <ul>
-      <li><a href="#an-example">An Example</a></li>
-      <li><a href="#probing-further">Probing Further</a></li>
-    </ul>
-  </li>
-</ul>
+              <ul class="toc__menu"><li><a href="#problem-setting">Problem Setting</a><ul><li><a href="#an-example">An Example</a></li><li><a href="#probing-further">Probing Further</a></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -514,19 +508,13 @@ that adds a Laplacian (L1) or Gaussian (L2) prior to the original objective.</p>
 
 
   
-  
-  
 
   <p class="page__taxonomy">
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      
-      
       <a href="/tags/least-square" class="page__taxonomy-item" rel="tag">least square</a><span class="sep">, </span>
     
-      
-      
       <a href="/tags/regularization" class="page__taxonomy-item" rel="tag">regularization</a>
     
     </span>
@@ -539,15 +527,11 @@ that adds a Laplacian (L1) or Gaussian (L2) prior to the original objective.</p>
 
 
   
-  
-  
 
   <p class="page__taxonomy">
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      
-      
       <a href="/categories/machine-learning" class="page__taxonomy-item" rel="tag">machine learning</a>
     
     </span>
@@ -931,7 +915,9 @@ over-complete 的 basis，使得输入数据 x 可以表示为这些 basis 的�
       
     
 
-    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
   </ul>
 </div>
 
@@ -976,7 +962,7 @@ over-complete 的 basis，使得输入数据 x 可以表示为这些 basis 的�
     };
     (function() { /* DON'T EDIT BELOW THIS LINE */
       var d = document, s = d.createElement('script');
-      s.src = 'https://iveney.disqus.com/embed.js';
+      s.src = 'https://ivanxiao.disqus.com/embed.js';
       s.setAttribute('data-timestamp', +new Date());
       (d.head || d.body).appendChild(s);
     })();

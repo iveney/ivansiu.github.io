@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Minimal Mistakes Jekyll Theme 4.22.0 by Michael Rose
   Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
@@ -84,7 +84,9 @@
 <!-- end _includes/seo.html -->
 
 
-<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Ivan Xiao Feed">
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Ivan Xiao Feed">
+
 
 <!-- https://t.co/dKP3o1e -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -111,7 +113,6 @@
     }
   </style>
 <![endif]-->
-
 
 
     <!-- start custom head snippets -->
@@ -369,15 +370,11 @@
 
 
   
-  
-  
 
   <p class="page__taxonomy">
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      
-      
       <a href="/categories/octopress" class="page__taxonomy-item" rel="tag">octopress</a>
     
     </span>
@@ -456,7 +453,7 @@ Modifications:
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/2013/10/08/graph-matching-hopcroft-karp-algorithm" rel="permalink">Graph Matching: Hopcroft-Karp Algorithm
+        <a href="/2013/10/07/network-flow-push-relabel-algorithm" rel="permalink">Network Flow: Push-relabel algorithm
 </a>
       
     </h2>
@@ -467,7 +464,7 @@ Modifications:
       
       <span class="page__meta-date">
         <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2013-10-08T15:59:00+00:00">October 8, 2013</time>
+        <time datetime="2013-10-07T18:08:00+00:00">October 7, 2013</time>
       </span>
     
 
@@ -488,7 +485,68 @@ Modifications:
 
 
     
-    <p class="archive__item-excerpt" itemprop="description">Overview
+    <p class="archive__item-excerpt" itemprop="description">According to CLRS: Many of the asymptotically fastest maximum-flow algorithms are push-relabel algorithms, and the fastest actual implementations of maximum-flow algorithms are based on the push-relabel method. Push-relabel methods also efficientl...</p>
+  </article>
+</div>
+
+        
+          <!--
+Note: this is a copy of original minimal-mistake's file.
+Modifications:
+1. show the teaser in list layout.
+   See: https://github.com/mmistakes/minimal-mistakes/issues/1717#issuecomment-559617503
+2. allow more words in excerpt (truncation)
+-->
+
+
+
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/images/post_math.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2014/09/24/notes-on-maximum-likelihood" rel="permalink">Notes on Maximum Likelihood, Maximum A Posteriori and Naive Bayes
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2014-09-24T20:41:44+00:00">September 24, 2014</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    
+    <p class="archive__item-excerpt" itemprop="description">Let \(\data\) be a set of data generated from some distribution parameterized by
+\(\theta\). We want to estimate the unknown parameter \(\theta\). What we can do?
 </p>
   </article>
 </div>
@@ -512,13 +570,13 @@ Modifications:
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
       <div class="archive__item-teaser">
-        <img src="/images/post_responsive_image.jpg" alt="">
+        <img src="https://media-exp1.licdn.com/dms/image/C5612AQG3FuGzeVbOlg/article-cover_image-shrink_423_752/0/1611865595174?e=1617235200&v=beta&t=7kfL-jszrez4qg5ShKwrS419TAgQuSeYiWz-e3rHugc" alt="">
       </div>
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/2021/02/09/responsive-image-with-cloudinary-in-jekyll" rel="permalink">Responsive Image with Cloudinary in Jekyll
-</a>
+        <a href="https://www.linkedin.com/pulse/what-i-really-think-bitcoin-ray-dalio/">Ray Dalio’s thought on Bitcoin
+</a> <a href="/2021/01/29/ray-dalio-s-thought-on-bitcoin" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
       
     </h2>
     
@@ -528,7 +586,7 @@ Modifications:
       
       <span class="page__meta-date">
         <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2021-02-09T05:20:00+00:00">February 9, 2021</time>
+        <time datetime="2021-01-29T19:45:00+00:00">January 29, 2021</time>
       </span>
     
 
@@ -541,7 +599,7 @@ Modifications:
       <span class="page__meta-readtime">
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
-          3 minute read
+          1 minute read
         
       </span>
     
@@ -549,76 +607,7 @@ Modifications:
 
 
     
-    <p class="archive__item-excerpt" itemprop="description">I’ve been using Cloudinary for hosting my images in this blog for a while.
-However, I switched to use Dropbox paper to draft my posts, as it offers really awesome UI, editing features and can export to markdown without much tweaks to publish as a ...</p>
-  </article>
-</div>
-
-        
-          <!--
-Note: this is a copy of original minimal-mistake's file.
-Modifications:
-1. show the teaser in list layout.
-   See: https://github.com/mmistakes/minimal-mistakes/issues/1717#issuecomment-559617503
-2. allow more words in excerpt (truncation)
--->
-
-
-
-
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/watches/top10.jpg" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/2015/05/04/popular-watches-under-150" rel="permalink">Popular watches under $150
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2015-05-04T18:24:35+00:00">May 4, 2015</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          2 minute read
-        
-      </span>
-    
-  </p>
-
-
-    
-    <p class="archive__item-excerpt" itemprop="description">
-  
-      
-
-    
-
-I’ve been looking around entry-level watches for some time. Recently,
-I answered a question
-in Zhihu (Chinese Quora), and I feel like to transcribe this collection in my blog.
+    <p class="archive__item-excerpt" itemprop="description">Ray Dalio shares what he thinks about BTC.
 </p>
   </article>
 </div>
@@ -642,12 +631,12 @@ Modifications:
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
       <div class="archive__item-teaser">
-        <img src="/images/post_personal_capital.jpg" alt="">
+        <img src="/images/post_hit_the_road.jpg" alt="">
       </div>
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/2020/05/26/tui-jian-yi-ge-hao-yong-de-li-cai-wang-zhan-personal-capital" rel="permalink">推荐一个好用的理财网站: Personal Capital
+        <a href="/2013/08/28/roadtrips-in-us-2013" rel="permalink">Roadtrip in America 2013
 </a>
       
     </h2>
@@ -658,7 +647,7 @@ Modifications:
       
       <span class="page__meta-date">
         <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2020-05-26T05:49:45+00:00">May 26, 2020</time>
+        <time datetime="2013-08-28T16:17:00+00:00">August 28, 2013</time>
       </span>
     
 
@@ -671,7 +660,7 @@ Modifications:
       <span class="page__meta-readtime">
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
-          1 minute read
+          less than 1 minute read
         
       </span>
     
@@ -679,7 +668,8 @@ Modifications:
 
 
     
-    <p class="archive__item-excerpt" itemprop="description">从小家里就给我灌输记账的习惯，一直没有养成，因为懒…… 直到来了美国之后，这个问题神奇地被解决了——因为信用卡普及光并且使用方便，基本上 eliminate 了我使用现金的需求（大多数都是去中国餐馆）。结合理财软件 mint，所有的消费一目了然。可惜自从 mint 被 intuit 收购之后，一直处于维护状态，很多功能停滞不前，很多时候也连不上银行。最近半年开始试用 Personal Capital，发觉非常好用。它更像是一个财富管理软件而不是记账软件。随着资产的积累，我发觉我不再经常 r...</p>
+    <p class="archive__item-excerpt" itemprop="description">In this year, I did several crazy road trips, each trip has about 3k miles. Here’re them.
+</p>
   </article>
 </div>
 
@@ -748,7 +738,9 @@ Modifications:
       
     
 
-    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
   </ul>
 </div>
 
@@ -793,7 +785,7 @@ Modifications:
     };
     (function() { /* DON'T EDIT BELOW THIS LINE */
       var d = document, s = d.createElement('script');
-      s.src = 'https://iveney.disqus.com/embed.js';
+      s.src = 'https://ivanxiao.disqus.com/embed.js';
       s.setAttribute('data-timestamp', +new Date());
       (d.head || d.body).appendChild(s);
     })();
