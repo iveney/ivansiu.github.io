@@ -1,13 +1,386 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://www.ivanxiao.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.ivanxiao.com/" rel="alternate" type="text/html" /><updated>2021-02-09T06:44:52+00:00</updated><id>https://www.ivanxiao.com/feed.xml</id><title type="html">Ivan Xiao</title><subtitle>Ivan's blog.</subtitle><author><name>Ivan Xiao</name></author><entry><title type="html">Responsive Image with Cloudinary in Jekyll</title><link href="https://www.ivanxiao.com/2021/02/09/responsive-image-with-cloudinary-in-jekyll" rel="alternate" type="text/html" title="Responsive Image with Cloudinary in Jekyll" /><published>2021-02-09T05:20:00+00:00</published><updated>2021-02-09T05:20:00+00:00</updated><id>https://www.ivanxiao.com/2021/02/09/responsive-image-with-cloudinary-in-jekyll</id><content type="html" xml:base="https://www.ivanxiao.com/2021/02/09/responsive-image-with-cloudinary-in-jekyll">&lt;p&gt;I’ve been using &lt;a href=&quot;http://cloudinary.com/&quot;&gt;Cloudinary&lt;/a&gt; for hosting my images in this blog for a while.
-However, I &lt;a href=&quot;/2018/01/21/write-blog-post-with-dropbox-paper&quot;&gt;switched&lt;/a&gt; to use Dropbox paper to draft my posts, as it offers really awesome UI, editing features and can export to markdown without much tweaks to publish as a Jekyll post.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://www.ivanxiao.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.ivanxiao.com/" rel="alternate" type="text/html" /><updated>2021-02-11T00:09:57+00:00</updated><id>https://www.ivanxiao.com/feed.xml</id><title type="html">Ivan Xiao</title><subtitle>Ivan's blog.</subtitle><author><name>Ivan Xiao</name></author><entry><title type="html">On ARK Invest Big Ideas 2021: Part II</title><link href="https://www.ivanxiao.com/2021/02/11/on-ark-invest-big-ideas-2021-part-ii" rel="alternate" type="text/html" title="On ARK Invest Big Ideas 2021: Part II" /><published>2021-02-11T00:02:00+00:00</published><updated>2021-02-11T00:02:00+00:00</updated><id>https://www.ivanxiao.com/2021/02/11/on-ark-invest-big-ideas-2021-part-ii</id><content type="html" xml:base="https://www.ivanxiao.com/2021/02/11/on-ark-invest-big-ideas-2021-part-ii">&lt;p&gt;This is the second installment in the series in discussing &lt;a href=&quot;https://research.ark-invest.com/hubfs/1_Download_Files_ARK-Invest/White_Papers/ARK%E2%80%93Invest_BigIdeas_2021.pdf&quot;&gt;ARK invest’s Big Ideas publication&lt;/a&gt;. In the first part, I reviewed and shared my read to their the 1st to 6th ideas. This post will cover the next five ideas.&lt;/p&gt;
 
-&lt;p&gt;The most notable feature I liked was I can simply copy paste an image in paper, and when exporting, it is magically hosted at Dropbox. Until recently, when I was &lt;a href=&quot;/2021/01/20/goodbye-octopress-hello-jekyll&quot;&gt;migrating my blog to Jekyll&lt;/a&gt;, I also explored some of the awesome &lt;a href=&quot;https://github.com/planetjekyll/awesome-jekyll-plugins&quot;&gt;Jekyll plugins&lt;/a&gt;. One of them caught my notice: &lt;a href=&quot;https://github.com/wildlyinaccurate/jekyll-responsive-image&quot;&gt;jekyll-responsive-image&lt;/a&gt;. A few searches showed me that &lt;a href=&quot;https://timkadlec.com/2013/06/why-we-need-responsive-images/&quot;&gt;72% of image bytes served up by responsive pages are wasted&lt;/a&gt;. There is &lt;a href=&quot;https://responsiveimages.org/&quot;&gt;workforce&lt;/a&gt; to build a better experience and save bandwidth. It seems a good thing to include for my sites.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://paper-attachments.dropbox.com/s_A2437573015A66BA35A7D43E9EF4C4EBABEC985297355C182180DD45A0DB3E6D_1612586895817_image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;After some digging, I realized that &lt;a href=&quot;https://github.com/wildlyinaccurate/jekyll-responsive-image&quot;&gt;jekyll-responsive-image&lt;/a&gt; might not be the best fit for me, as it was assuming my images are hosted locally. I didn’t think it was a good idea like five years ago and always used CDN solution such as &lt;a href=&quot;http://cloudinary.com/&quot;&gt;Cloudinary&lt;/a&gt;&lt;sup id=&quot;fnref:LFS&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:LFS&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. I then searched for jekyll + cloundinary, and found that there is already (but no longer maintained) &lt;a href=&quot;https://cloudinary.com/blog/how_i_used_cloudinary_to_solve_responsive_image_needs_in_my_jekyll_website_and_shared_the_magic_in_a_plugin&quot;&gt;solution&lt;/a&gt; for it. I read through it: &lt;a href=&quot;https://github.com/nhoizey/jekyll-cloudinary&quot;&gt;jekyll-cloudinary&lt;/a&gt;. It made a lot of sense to me, therefore, I spent some time configuring and actually forked to make an improvement to fit my use case. This post will show the details.&lt;/p&gt;
+&lt;h2 id=&quot;electric-vehicles-evs&quot;&gt;Electric Vehicles (EVs)&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Based on Wright’s Law, ARK forecasts that EV sales should increase roughly 20-fold from ~2.2 million in 2020 to 40 million units in 2025.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Key takeaways:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;EV sales have been increasing, while gas-powered vehicles are decreasing&lt;/li&gt;
+  &lt;li&gt;Battery cost is the major barrier to lower EV’s overall cost. Wright’s Law&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; has predicted nicely the cost of battery cells. EV ownership cost is expected to break even with gas vehicles in 2023 and lower in 2025.&lt;/li&gt;
+  &lt;li&gt;EV range and performance are improving, where Tesla is leading the competition.&lt;/li&gt;
+  &lt;li&gt;ARK believes traditional automakers lack the resource (software and engineers) to transition themselves and embrace the change&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://paper-attachments.dropbox.com/s_C71A1FDAE29C63155B9D6ED14201E0B9D175692D93B52479E4D1CB3A9E044096_1612758658619_image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;My confidence: &lt;strong&gt;9/10&lt;/strong&gt;. Tesla has revolutionized the EV industry. For people that still have doubt three years ago, they probably feel differently by now (me included). There are two major observations:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;EV’s range and cost are still higher, but it’s getting pretty close. People are getting comfortable paying the upfront cost for lower gas bills in the future, plus the “green” label for the pride.&lt;/li&gt;
+  &lt;li&gt;More and more automakers are joining the EV competition. For example, Volvo says &lt;a href=&quot;https://www.theguardian.com/business/2017/jul/05/volvo-cars-electric-hybrid-2019&quot;&gt;all their cars from 2019 onward would be fully electric or hybrid-electric&lt;/a&gt;. Luxury brands like Porsche are also investing in EVs.&lt;/li&gt;
+  &lt;li&gt;If ARK’s prediction about autonomous ride-hailing was right, it will certainly accelerate the EV’s growth.
+    &lt;h2 id=&quot;automation&quot;&gt;Automation&lt;/h2&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;ARK believes automation will add 5%, or $1.2 trillion to US GDP during the next five years.
+&lt;img src=&quot;https://paper-attachments.dropbox.com/s_C71A1FDAE29C63155B9D6ED14201E0B9D175692D93B52479E4D1CB3A9E044096_1612760845746_image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Contrary to common beliefs (or fears), ARK believes that more automation will not simply destroy jobs, but empower humans, increasing productivity and wage growth. The reason being that increased automation leads to higher productivity and output, which potentially leads to either 1) higher wages for employees 2) lower prices for consumers, 3) higher margins for companies, and 4) higher investments to create virtuous cycles.&lt;/p&gt;
+
+&lt;p&gt;This is backed by their research finding that labor cost drops lead to higher operating margins. Some people will indeed lose their job, but the loss of jobs in an industry does not mean the total employment will decline. Instead, it creates new job demand and more people will be benefited as a whole.&lt;/p&gt;
+
+&lt;p&gt;ARK believes that the automation adoption will go through an exponential growth in the next five years, this translates to 1.2 trillion to US GDP.&lt;/p&gt;
+
+&lt;p&gt;My confidence: &lt;strong&gt;8/10&lt;/strong&gt;. As a person with CS degrees (bachelor, MS, and Ph.D.), I’ve always taught, leveraged, witnessed, and convinced a core mission in CS is automation. For example, “lazy” CS grad will write scripts to &lt;a href=&quot;https://scrapy.org/&quot;&gt;crawl&lt;/a&gt; product prices instead of doing them manually. A more serious example is the ML applications, such as object recognition, which enables us to &lt;a href=&quot;https://www.google.com/imghp?hl=en&quot;&gt;search for particular objects&lt;/a&gt; within trillions of images with a breeze. These are all proofs of why automation is a huge productivity boost and it’s the future. The only downside I found it a bit hand-wavy is that ARK’s paper does not show more evidence, data, or examples of how automation is and will be benefiting human beings, and what are some of the typical innovative technologies or companies they are talking about. It’ll be much more convincing if they share those.&lt;/p&gt;
+
+&lt;h2 id=&quot;autonomous-ride-hailing&quot;&gt;Autonomous ride-hailing&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;ARK’s research suggests that autonomous ride-hailing platforms will generate more than $1 trillion in profits per year by 2030. In addition, automakers and fleet owners could enjoy profits of $250 billion and $70 billion, respectively.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Ride-hailing isn’t a new idea. We’ve already seen Uber/Lyft for some time and both of them have already successfully IPO-ed. ARK pointed out that the current market generates ~$150 billion, and the profit margin is as high as 50%. Therefore, autonomous ride-hailing may achieve similar margins with lower prices, lead to up to $6-7 trillion in revenue by 2030.&lt;/p&gt;
+
+&lt;p&gt;ARK suggests that there are three autonomous strategies right now, each with its pros and cons.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Approach&lt;/th&gt;
+      &lt;th&gt;Pros&lt;/th&gt;
+      &lt;th&gt;Cons&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Tesla - Camera-based&lt;/td&gt;
+      &lt;td&gt;Scalable, faster to roll out&lt;/td&gt;
+      &lt;td&gt;Less accurate&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Waymo - LiDAR, HD mapping&lt;/td&gt;
+      &lt;td&gt;Most accurate, moderate scalability&lt;/td&gt;
+      &lt;td&gt;Need more time and resource to scale&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Apollo - sensor infrastructure&lt;/td&gt;
+      &lt;td&gt;Moderate accuracy&lt;/td&gt;
+      &lt;td&gt;Least scalable, significant investment to infrastructure&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://paper-attachments.dropbox.com/s_C71A1FDAE29C63155B9D6ED14201E0B9D175692D93B52479E4D1CB3A9E044096_1612995532257_image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ARK believes autonomous ride-hailing has higher demand in developed countries, and can cut human cost by 90% in the US and 50% in China.&lt;/p&gt;
+
+&lt;p&gt;My confidence: &lt;strong&gt;7/10&lt;/strong&gt;. ARK is a strong believer in Tesla. They have significant portfolio weight in Tesla in most of their ETFs such as ARKK. I buy in the idea of autonomous ride-hailing, but less confident about how soon that can be done. This is a very high-risk task for computers and requires extremely high precision to avoid accidents at all costs. There are other operators in the wild there that might not as predictable as the stationary roads or the other robotaxi on the roads, and I am wondering how soon this problem can be addressed.&lt;/p&gt;
+
+&lt;h2 id=&quot;drones-delivery&quot;&gt;Drones Delivery&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;ARK believes that drone delivery platforms will generate roughly $275 billion in delivery revenues, $50 billion in hardware sales, and $12 billion in mapping revenue by 2030.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Autonomous air travel has improved in both range and costs. As of 2020, drones’ pilot range has increased to 12 miles, and the cost of 10-mile drone delivery is as low as $0.25.&lt;/p&gt;
+
+&lt;p&gt;Due to its cost savings and convenience, many applications are suitable for drone delivery, such as pharmaceutical delivery, bridge inspection, and parcel delivery. Federal Aviation Authority (FAA) allowed companies to operator drones beyond line of sight in the past two years. ARK estimates more than 20% of parcels can be shipped by drones.&lt;/p&gt;
+
+&lt;p&gt;COVID-19 has accelerated the online food delivery sales by 40% in 2020. This also signals drone delivery has a huge market opportunity here.&lt;/p&gt;
+
+&lt;p&gt;My conclusion: &lt;strong&gt;9/10&lt;/strong&gt;. Drone delivery is one of the applications of automation. As a consumer, I use online food delivery and online merchants such as Amazon frequently. I strongly believe drone delivery can make the shipments faster. Besides drones, I am also excited about the possibility of using robotic delivery to solve the last mile problem for either food or parcel. For example, Nuro has been pilot-testing their &lt;a href=&quot;https://nuro.ai/product&quot;&gt;self-driving vehicles&lt;/a&gt; in Mountain View neighborhoods.&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;img src=&quot;https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_800/v1612999744/nuro-vehicle.png&quot; srcset=&quot;https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_320/v1612999744/nuro-vehicle.png 320w,
+https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_540/v1612999744/nuro-vehicle.png 540w,
+https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_760/v1612999744/nuro-vehicle.png 760w,
+https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_980/v1612999744/nuro-vehicle.png 980w,
+https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_1000/v1612999744/nuro-vehicle.png 1000w&quot; sizes=&quot;(min-width: 50rem) 50rem, 90vw&quot; width=&quot;1000&quot; height=&quot;751&quot; /&gt;
+&lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;orbital-aerospace&quot;&gt;Orbital Aerospace&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;According to ARK’s research, the orbital aerospace opportunity – including satellite connectivity and hypersonic flight – will exceed $370 billion annually.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I didn’t find the exact definition of orbital aerospace, but I do notice that ARK is about to launch its new &lt;a href=&quot;https://ark-invest.com/strategy/space-exploration/&quot;&gt;ETF in the space exploration&lt;/a&gt; territory. Here’s their definition (&lt;a href=&quot;https://www.cnbc.com/2021/01/13/cathie-woods-ark-invest-plans-space-exploration-etf-arkx.html&quot;&gt;source&lt;/a&gt;):&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Orbital Aerospace Companies are companies that launch, make, service, or operate platforms in the orbital space, including satellites and launch vehicles. Suborbital Aerospace Companies are companies that launch, make, service, or operate platforms in the suborbital space, including drones, air taxis and electric aviation vehicles.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The major argument is that the satellite launch cost has lowered (again, SpaceX, another Elon Musk company), and therefore the number of satellites scheduled for orbit has increased significantly: there are less than 5000 happened in 2020, and there are 25000+ scheduled.&lt;/p&gt;
+
+&lt;p&gt;These satellites enable serving the population without broadband access, and ARK estimates the satellite connectivity market could approach $100 billion annually over the medium term.&lt;/p&gt;
+
+&lt;p&gt;My conclusion: &lt;strong&gt;5/10&lt;/strong&gt;. Space exploration has been mainly a state effort and distant from general consumers for many years. SpaceX is the first one that opens it up and pictures the possibility of more consumer use. The fact that it is so new makes it a bit risky to bet heavily at this point.&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Pioneered by Theodore Wright in 1936, Wright’s Law aims to provide a reliable framework for forecasting cost declines as a function of cumulative production. Specifically, it states that for every cumulative doubling of units produced, costs will fall by a constant percentage. &lt;a href=&quot;https://ark-invest.com/wrights-law/&quot;&gt;Source&lt;/a&gt;. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Ivan Xiao</name></author><category term="[&quot;personal finance&quot;]" /><category term="ark" /><category term="etf" /><summary type="html">This is the second installment in the series in discussing ARK invest’s Big Ideas publication. In the first part, I reviewed and shared my read to their the 1st to 6th ideas. This post will cover the next five ideas.</summary></entry><entry><title type="html">On ARK Invest Big Ideas 2021: Part I</title><link href="https://www.ivanxiao.com/2021/02/09/on-ark-invest-big-ideas-2021-part-i" rel="alternate" type="text/html" title="On ARK Invest Big Ideas 2021: Part I" /><published>2021-02-09T22:28:00+00:00</published><updated>2021-02-09T22:28:00+00:00</updated><id>https://www.ivanxiao.com/2021/02/09/on-ark-invest-big-ideas-2021-part-i</id><content type="html" xml:base="https://www.ivanxiao.com/2021/02/09/on-ark-invest-big-ideas-2021-part-i">&lt;p&gt;ARK invest has published their &lt;a href=&quot;https://research.ark-invest.com/hubfs/1_Download_Files_ARK-Invest/White_Papers/ARK%E2%80%93Invest_BigIdeas_2021.pdf&quot;&gt;Big Ideas 2021 report&lt;/a&gt;, which is a very interesting read.&lt;/p&gt;
+
+&lt;p&gt;ARK’s investment philosophy is to focus on disruptive innovations. There are about 15 ideas they covered in the report. I summarized their expected market size in the following table.&lt;/p&gt;
+
+&lt;p&gt;Note:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Please read the original paper for assumptions, they didn’t publish a consistent format.&lt;/li&gt;
+  &lt;li&gt;Cells listed as “N/A” mean they didn’t share explicit info.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Idea&lt;/th&gt;
+      &lt;th&gt;Estimated market cap&lt;/th&gt;
+      &lt;th&gt;In What Year&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Deep Learning&lt;/td&gt;
+      &lt;td&gt;30 trillion&lt;/td&gt;
+      &lt;td&gt;2035-2040&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Re-Invention of Data Center&lt;/td&gt;
+      &lt;td&gt;41 billion&lt;/td&gt;
+      &lt;td&gt;2030&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Virtual Worlds&lt;/td&gt;
+      &lt;td&gt;390 billion&lt;/td&gt;
+      &lt;td&gt;2025&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Digital Wallets&lt;/td&gt;
+      &lt;td&gt;4.6 trillion&lt;/td&gt;
+      &lt;td&gt;2025&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Bitcoin Value&lt;/td&gt;
+      &lt;td&gt;$840 billion&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+      &lt;td&gt;N/A&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Bitcoin for institutions&lt;/td&gt;
+      &lt;td&gt;1 trillion&lt;/td&gt;
+      &lt;td&gt;2025-2030&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;EV&lt;/td&gt;
+      &lt;td&gt;40 million&lt;/td&gt;
+      &lt;td&gt;2025&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Automation&lt;/td&gt;
+      &lt;td&gt;1.2 trillion&lt;/td&gt;
+      &lt;td&gt;2025&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Autonomous Ride-Hailing&lt;/td&gt;
+      &lt;td&gt;1 trillion&lt;/td&gt;
+      &lt;td&gt;2030&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Drone Delivery&lt;/td&gt;
+      &lt;td&gt;300 billion&lt;/td&gt;
+      &lt;td&gt;2030&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Orbital Aerospace&lt;/td&gt;
+      &lt;td&gt;270 billion&lt;/td&gt;
+      &lt;td&gt;N/A&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Long-Read Sequencing&lt;/td&gt;
+      &lt;td&gt;5 billion&lt;/td&gt;
+      &lt;td&gt;2025&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Multi-Cancer Screening&lt;/td&gt;
+      &lt;td&gt;150 billion&lt;/td&gt;
+      &lt;td&gt;N/A&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Cell and Gene Therapy&lt;/td&gt;
+      &lt;td&gt;260 billion&lt;/td&gt;
+      &lt;td&gt;N/A&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;A lot of these are super exciting fields that I personally also concur with. Let’s take a look at what they are. Since there are 15 of them, I am going to share my thoughts in the next couple of posts.&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;img src=&quot;https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_800/v1612833800/ark-big-idea-list.png&quot; srcset=&quot;https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_320/v1612833800/ark-big-idea-list.png 320w,
+https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_540/v1612833800/ark-big-idea-list.png 540w,
+https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_760/v1612833800/ark-big-idea-list.png 760w,
+https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_980/v1612833800/ark-big-idea-list.png 980w,
+https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_1200/v1612833800/ark-big-idea-list.png 1200w&quot; sizes=&quot;(min-width: 50rem) 50rem, 90vw&quot; width=&quot;1434&quot; height=&quot;802&quot; /&gt;
+&lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;deep-learning&quot;&gt;Deep Learning&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;ARK believes that deep learning will add $30 trillion to equity market capitalizations during the next 15-20 years.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Deep learning (DL) happens to be the field that I am most familiar with. All my previous and current work involve machine learning, ranking &amp;amp; relevance, recommendation systems, all of which involved deep learning in a certain way. ML has been a heated field in the last couple of years, especially deep learning techniques. It has become a sort of a buzz word that everyone knows.&lt;/p&gt;
+
+&lt;p&gt;The bet is based on the fact that DL has been powering some of the most promising technologies, including conversation computers (e.g., Alexa), self-driving cars (Waymo, Tesla), and popular consumer apps (TikTok).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://paper-attachments.dropbox.com/s_A2437573015A66BA35A7D43E9EF4C4EBABEC985297355C182180DD45A0DB3E6D_1612587443012_image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;One of the most innovative breakthroughs is the &lt;a href=&quot;https://en.wikipedia.org/wiki/GPT-3&quot;&gt;GPT-3 model&lt;/a&gt;, which brings AI to accomplish tasks that were used to only achievable by humans, such as writing emails or even code.&lt;/p&gt;
+
+&lt;p&gt;Meanwhile, due to the inherent computational resource required from deep learning, there is a huge demand for new chips that specialized in DL. There will also be a boom to AI chips.&lt;/p&gt;
+
+&lt;p&gt;My confidence: &lt;strong&gt;9/10&lt;/strong&gt;. While I haven’t seen too many standalone AI companies are making huge success, existing companies such as FB and Google has been working in this area for years and has already deployed DL to a vast array of things. I have no doubt it will lead to more large-scale automation to replace humans from mundane tasks.&lt;/p&gt;
+
+&lt;h2 id=&quot;data-center-reinvented&quot;&gt;Data Center Reinvented&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;In the data center, we believe accelerators, dominated by GPUs, will become the dominant processors for new workloads, growing 21% at an annual rate to $41 billion by 2030.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Intel has been dominating the CPU market for years, until recently. It is pointed out that:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Intel delayed its 10nm processor by four years, allowing its competitors—TSMC and AMD—to lead the market in 2020.&lt;/p&gt;
+
+  &lt;p&gt;As of 2020, Intel still has not shipped a 10nm server chip. A full generation ahead of Intel, TSMC is mass producing 5nm processors.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;A major event recently, is that Apple has switched the Mac from x86 to ARM CPU (&lt;a href=&quot;https://www.apple.com/mac/m1/&quot;&gt;Apple M1&lt;/a&gt;).&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;We believe that the combination of ARM and RISC-V will move from 0% market share in 2020 to 71% of the server market by 2030.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;My confidence: &lt;strong&gt;6/10&lt;/strong&gt;. I think there are two main questions here. First is that why Intel is not making much progress to deeper nodes (5nm and beyond). It could very well be that Intel can overcome some of its issues and come back. Secondly, it is clearly a trend that ARM/RISC is coming back, but it’s hard to tell whether it can fully disrupt Intel’s architecture. Further investigation needs to be done to examine this statement:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;According to ARK’s research, by 2030 most developer PCs could be powered by ARM CPUs, marking the end of the Intel x86 era.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;virtual-worlds&quot;&gt;Virtual Worlds&lt;/h2&gt;
+
+&lt;p&gt;This consists of video games, augmented reality, and virtual reality.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;According to our research, revenue from virtual worlds will compound 17% annually from roughly $180 billion today to $390 billion by 2025.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Key takeaways:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;The video game industry is booming, the monetization is increasing.&lt;/li&gt;
+  &lt;li&gt;Companies like Snapchat, Facebook are investing in augmented reality&lt;/li&gt;
+  &lt;li&gt;VR could be a reality by 2030 according to the current projection&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Based on our research, the global gaming market will increase at a 16% compound annual rate during the next five years, from $175 billion in 2020 to roughly $365 billion by 2025.&lt;/p&gt;
+
+  &lt;p&gt;The AR &amp;amp; VR markets will grow at a 59% compound annual rate during the next five years, from $3 billion to $28 billion in 2025&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;My confidence: &lt;strong&gt;7/10&lt;/strong&gt;. The gaming industry is indeed coming strong. Compared to traditional gaming, there are two significant trends:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Online gaming and live streaming have become a “commodity”. With the advent of streaming, people can enjoy gaming by watching others play, rather than themselves playing it.&lt;/li&gt;
+  &lt;li&gt;Competitive gaming becomes a real thing. There are worldwide competitions and grand prizes for popular games. There are also emerging degrees in gaming as well as professional gamers.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;However, not quite confident about AR/VR. AR/VR hyped in the past few years, but it seems still not benefiting enough people. There aren’t many widely available or popular applications so far.&lt;/p&gt;
+
+&lt;h2 id=&quot;digital-wallets&quot;&gt;Digital Wallets&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;According to ARK’s research, digital wallets are valued between $250 and $1,900 per user today but could scale to $20,000 per user, representing a $4.6 trillion opportunity in the US by 2025.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://paper-attachments.dropbox.com/s_A2437573015A66BA35A7D43E9EF4C4EBABEC985297355C182180DD45A0DB3E6D_1612661552298_image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The paper shared some surprising numbers:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;China’s mobile payment volume is estimated at $36 trillion, 3x the size of China’s GDP in 2020.&lt;/li&gt;
+  &lt;li&gt;US digital wallet users are surpassing the number of deposit accounts. It took Chase about 30 years to get to 60 million Annual Active users (AAUs), while it only took Square and Venmo less than 10 years.&lt;/li&gt;
+  &lt;li&gt;Digital wallet users’ acquisition cost is really low compared to traditional bank accounts.&lt;/li&gt;
+  &lt;li&gt;ARK estimates each digital wallet user worth roughly $19900 (!). To date, current valuation per customer is discounted (undervalued), e.g., Venmo = $250, Cash App = $700. This means they are undervalued and poses a huge opportunity.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;My confidence: &lt;strong&gt;9/10&lt;/strong&gt;. China has been leading the way in the mobile payment / digital wallet playfield. If you’ve been to China, literally everyone uses either WeChat/Taobao for payment, from larger purchases in department stores to your neighborhood stores. There is a joke that even the beggars in the street have QR code plates for you to scan and tip for your convenience. I have no doubt the US and other places around the world will catch up due to its huge convenience.&lt;/p&gt;
+
+&lt;h2 id=&quot;bitcoins-fundamentals&quot;&gt;Bitcoin’s Fundamentals&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;As bitcoin’s price hit an all-time high, ARK’s research indicated that its network fundamentals remained healthy.&lt;/p&gt;
+
+  &lt;p&gt;If all S&amp;amp;P 500 companies were to allocate 1% of their cash to bitcoin, ARK estimates that its price would increase by approximately $40,000.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;ARK believes that even the price of bitcoin has hit an all-time high, its fundamentals remained healthy. Some evidence includes: Bitcoin holder has been more long-term focused, rather than speculative nature (e.g., day trading).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://paper-attachments.dropbox.com/s_A2437573015A66BA35A7D43E9EF4C4EBABEC985297355C182180DD45A0DB3E6D_1612662098537_image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;My confidence: &lt;strong&gt;4/10.&lt;/strong&gt; Hmm, I have lower confidence in this one. Some of the arguments aren’t particularly convincing. For example, ARK thinks 60% of bitcoin’s supply had not moved in more than a year, then it means people are more willing to hold. However, this should be normalized by the individuals, as this could just mean that some of the bigger players have been longing and dominates the 60%. Also, bitcoin is relatively new and only enters the public’s eyes in a recent years, the people that are holding it &amp;gt; 5 years will only reach &amp;gt; 5 years when they entered early enough.&lt;/p&gt;
+
+&lt;p&gt;Another flaw IMO is that the cost basis. It hits an all-time high, and they think it suggests “early investors are taking profits, while newer investors are establishing positions and creating higher price support levels”. This is not a very strong argument to its fundamental value, but simply supply and demand has changed. As Ray Dalio has mentioned in his &lt;a href=&quot;https://www.linkedin.com/pulse/what-i-really-think-bitcoin-ray-dalio/&quot;&gt;recent article&lt;/a&gt;, he recognizes there is a need for bitcoin as it has similar attributes as gold that is limited in supply, but one has to estimate the demand to estimate its price.&lt;/p&gt;
+
+&lt;h2 id=&quot;bitcoin-preparing-for-institutions&quot;&gt;Bitcoin: Preparing for institutions&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;As our analysis suggests, it could scale from roughly $500 billion to $1-5 trillion in network capitalization during the next five to ten years.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;More regulations and banks are starting to accept bitcoin. Some companies started to invest in bitcoin, most notably Square, which invests 1% of assets in bitcoin.&lt;/p&gt;
+
+&lt;p&gt;One interesting data ARK showed here is the correlation matrix between bitcoin and other asset classes. It is believed that bitcoin has a low correlation with these asset classes, which suggests that it can be a potential asset to invest in.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://paper-attachments.dropbox.com/s_A2437573015A66BA35A7D43E9EF4C4EBABEC985297355C182180DD45A0DB3E6D_1612666401909_image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Another observation is that Bitcoin’s trading volume is already comparable to that of a large-cap stock.&lt;/p&gt;
+
+&lt;p&gt;ARK ran a Monte-Carlo simulation of portfolios and found that the &lt;a href=&quot;https://www.investopedia.com/terms/e/efficientfrontier.asp&quot;&gt;efficient frontier&lt;/a&gt; suggests the optimal &lt;a href=&quot;https://www.investopedia.com/terms/s/sharperatio.asp&quot;&gt;Sharpe ratio&lt;/a&gt; is achieved at 2.55% - 6.55% bitcoin investments.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://paper-attachments.dropbox.com/s_A2437573015A66BA35A7D43E9EF4C4EBABEC985297355C182180DD45A0DB3E6D_1612681962320_image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;My confidence: &lt;strong&gt;5/10&lt;/strong&gt;. While I agree that it’s very possible and likely that Bitcoin is onto something, e.g., getting recognized just as a currency similar to USD, or gold, there are two major risks that I don’t feel very comfortable about:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;what’s the realistic and practical usage of bitcoin, and whether other cryptocurrencies will “solve” its supply issue&lt;/li&gt;
+  &lt;li&gt;how will the governments regulate bitcoin. As Ray Dalio mentioned in &lt;a href=&quot;https://www.linkedin.com/pulse/what-i-really-think-bitcoin-ray-dalio/&quot;&gt;his article&lt;/a&gt;, governments may want to probe into the holdings due to reasons such as national security, money laundering, how can it protect against people’s privacy which is one of its selling points.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In conclusion, there are just too many risks associated and I would not invest in something that I don’t feel I have a good understanding of.&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;​I derived this by: price estimated at $40,000, and there are a total of &lt;a href=&quot;https://www.investopedia.com/tech/what-happens-bitcoin-after-21-million-mined&quot;&gt;21 million bitcoins&lt;/a&gt;. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Ivan Xiao</name></author><category term="[&quot;personal finance&quot;]" /><category term="ark" /><category term="etf" /><summary type="html">ARK invest has published their Big Ideas 2021 report, which is a very interesting read.</summary></entry><entry><title type="html">Responsive Image with Cloudinary in Jekyll</title><link href="https://www.ivanxiao.com/2021/02/09/responsive-image-with-cloudinary-in-jekyll" rel="alternate" type="text/html" title="Responsive Image with Cloudinary in Jekyll" /><published>2021-02-09T05:20:00+00:00</published><updated>2021-02-09T05:20:00+00:00</updated><id>https://www.ivanxiao.com/2021/02/09/responsive-image-with-cloudinary-in-jekyll</id><content type="html" xml:base="https://www.ivanxiao.com/2021/02/09/responsive-image-with-cloudinary-in-jekyll">&lt;p&gt;I’ve been using &lt;a href=&quot;http://cloudinary.com/&quot;&gt;Cloudinary&lt;/a&gt; for hosting my images in this blog for a while.
+However, I &lt;a href=&quot;/2018/01/21/write-blog-post-with-dropbox-paper&quot;&gt;switched&lt;/a&gt; to use Dropbox paper to draft my posts, as it offers awesome UI, editing features and can export to markdown without many tweaks to publish as a Jekyll post.&lt;/p&gt;
+
+&lt;p&gt;The most notable feature I liked was I can simply copy-paste an image in Paper, and when exporting, it is magically hosted at Dropbox. Until recently, when I was &lt;a href=&quot;/2021/01/20/goodbye-octopress-hello-jekyll&quot;&gt;migrating my blog to Jekyll&lt;/a&gt;, I also explored some of the awesome &lt;a href=&quot;https://github.com/planetjekyll/awesome-jekyll-plugins&quot;&gt;Jekyll plugins&lt;/a&gt;. One of them caught my notice: &lt;a href=&quot;https://github.com/wildlyinaccurate/jekyll-responsive-image&quot;&gt;jekyll-responsive-image&lt;/a&gt;. A few searches showed me that &lt;a href=&quot;https://timkadlec.com/2013/06/why-we-need-responsive-images/&quot;&gt;72% of image bytes served up by responsive pages are wasted&lt;/a&gt;. There is &lt;a href=&quot;https://responsiveimages.org/&quot;&gt;workforce&lt;/a&gt; to build a better experience and save bandwidth. It seems a good thing to include for my sites.&lt;/p&gt;
+
+&lt;p&gt;After some digging, I realized that &lt;a href=&quot;https://github.com/wildlyinaccurate/jekyll-responsive-image&quot;&gt;jekyll-responsive-image&lt;/a&gt; might not be the best fit for me, as it was assuming my images are hosted locally. I didn’t think it was a good idea like five years ago and always used CDN solutions such as &lt;a href=&quot;http://cloudinary.com/&quot;&gt;Cloudinary&lt;/a&gt;&lt;sup id=&quot;fnref:LFS&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:LFS&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. I then searched for Jekyll + Cloudinary and found that there is already (but no longer maintained) &lt;a href=&quot;https://cloudinary.com/blog/how_i_used_cloudinary_to_solve_responsive_image_needs_in_my_jekyll_website_and_shared_the_magic_in_a_plugin&quot;&gt;solution&lt;/a&gt; for it. I read through it: &lt;a href=&quot;https://github.com/nhoizey/jekyll-cloudinary&quot;&gt;jekyll-cloudinary&lt;/a&gt;. It made a lot of sense to me, therefore, I spent some time configuring and forked to make an improvement to fit my use case. This post will show the details.&lt;/p&gt;
 
 &lt;h2 id=&quot;a-cloudinary-primer&quot;&gt;A Cloudinary Primer&lt;/h2&gt;
 
-&lt;p&gt;This solution relies on &lt;a href=&quot;http://cloudinary.com/&quot;&gt;Cloudinary&lt;/a&gt;, therefore you need to register it first. Free account offers 10GB storage and 20GB bandwidth, which should be ample for nobody like me. You can sign up &lt;a href=&quot;https://cloudinary.com/invites/lpov9zyyucivvxsnalc5/qebjx4vsaxc746ormmqa&quot;&gt;for free&lt;/a&gt; here.&lt;/p&gt;
+&lt;p&gt;This solution relies on &lt;a href=&quot;http://cloudinary.com/&quot;&gt;Cloudinary&lt;/a&gt;, therefore you need to register it first. A free account offers 10GB storage and 20GB bandwidth, which should be ample for nobody like me. You can sign up &lt;a href=&quot;https://cloudinary.com/invites/lpov9zyyucivvxsnalc5/qebjx4vsaxc746ormmqa&quot;&gt;for free&lt;/a&gt; here.&lt;/p&gt;
 
 &lt;p&gt;There are two important features here:&lt;/p&gt;
 
@@ -33,54 +406,54 @@ https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_crop,g_face,r_max/w_2
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://cloudinary.com/documentation/fetch_remote_images&quot;&gt;Auto fetch and upload images&lt;/a&gt;&lt;/strong&gt;. If you put a remote URL under their &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/image/fetch/&lt;/code&gt; path, they will fetch it and cache to optimize the delivery. You can also apply transformation to the original image! A related feature is the auto-upload, which maps a destination URL to cloudinary, so that each time when the mapped URL is visited, it will be fetched and uploaded to cloudinary, whereas the fetch is simply a cache and won’t be stored at your account.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://cloudinary.com/documentation/fetch_remote_images&quot;&gt;Auto fetch and upload images&lt;/a&gt;&lt;/strong&gt;. If you put a remote URL under their &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/image/fetch/&lt;/code&gt; path, they will fetch it and cache it to optimize the delivery. You can also apply transformations to the original image! A related feature is the auto-upload, which maps a destination URL to Cloudinary, so that each time when the mapped URL is visited, it will be fetched and uploaded to Cloudinary, whereas the fetch is simply a cache and won’t be stored at your account.&lt;/p&gt;
 
 &lt;h2 id=&quot;using-jekyll-cloudinary&quot;&gt;Using &lt;a href=&quot;https://github.com/nhoizey/jekyll-cloudinary&quot;&gt;jekyll-cloudinary&lt;/a&gt;&lt;/h2&gt;
 
-&lt;p&gt;Now that we have cloudinary ready, we can go ahead and set up &lt;a href=&quot;https://github.com/nhoizey/jekyll-cloudinary&quot;&gt;jekyll-cloudinary&lt;/a&gt;. The installation is as straightforward as in the plugin’s &lt;a href=&quot;https://nhoizey.github.io/jekyll-cloudinary/&quot;&gt;readme page&lt;/a&gt;. What it does essentially, is providing a Liquid tag &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cloudinary&lt;/code&gt; and it generates the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fetch&lt;/code&gt; call so that cloudinary can cache and generate different sized images, and these generated images can then be served via &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;srcset&lt;/code&gt; in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;img&amp;gt;&lt;/code&gt; tag. More info about using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;srcset&lt;/code&gt; for responsive images &lt;a href=&quot;https://cloudinary.com/blog/responsive_images_with_srcset_sizes_and_cloudinary&quot;&gt;here&lt;/a&gt;. The plugin works amazingly in a way that it supports local images as well as remote URLs.&lt;/p&gt;
+&lt;p&gt;Now that we have Cloudinary ready, we can go ahead and set up &lt;a href=&quot;https://github.com/nhoizey/jekyll-cloudinary&quot;&gt;jekyll-cloudinary&lt;/a&gt;. The installation is as straightforward as in the plugin’s &lt;a href=&quot;https://nhoizey.github.io/jekyll-cloudinary/&quot;&gt;readme page&lt;/a&gt;. What it does essentially, is providing a Liquid tag &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cloudinary&lt;/code&gt; and it generates the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fetch&lt;/code&gt; call so that Cloudinary can cache and generate different sized images, and these generated images can then be served via &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;srcset&lt;/code&gt; in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;img&amp;gt;&lt;/code&gt; tag. More info about using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;srcset&lt;/code&gt; for responsive images &lt;a href=&quot;https://cloudinary.com/blog/responsive_images_with_srcset_sizes_and_cloudinary&quot;&gt;here&lt;/a&gt;. The plugin works amazingly in a way that it supports local images as well as remote URLs.&lt;/p&gt;
 
 &lt;figure&gt;
 &lt;img src=&quot;https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_800/https://www.ivanxiao.com/images/post_responsive_image.jpg&quot; srcset=&quot;https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_320/https://www.ivanxiao.com/images/post_responsive_image.jpg 320w,
-https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_640/https://www.ivanxiao.com/images/post_responsive_image.jpg 640w,
-https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_960/https://www.ivanxiao.com/images/post_responsive_image.jpg 960w,
-https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_1280/https://www.ivanxiao.com/images/post_responsive_image.jpg 1280w,
-https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_1600/https://www.ivanxiao.com/images/post_responsive_image.jpg 1600w&quot; sizes=&quot;(min-width: 50rem) 50rem, 90vw&quot; width=&quot;6000&quot; height=&quot;4000&quot; /&gt;
+https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_540/https://www.ivanxiao.com/images/post_responsive_image.jpg 540w,
+https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_760/https://www.ivanxiao.com/images/post_responsive_image.jpg 760w,
+https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_980/https://www.ivanxiao.com/images/post_responsive_image.jpg 980w,
+https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_1200/https://www.ivanxiao.com/images/post_responsive_image.jpg 1200w&quot; sizes=&quot;(min-width: 50rem) 50rem, 90vw&quot; width=&quot;6000&quot; height=&quot;4000&quot; /&gt;
 &lt;figcaption&gt;&lt;p&gt;Teaser image for this post, hosted with the page sources.&lt;/p&gt;
 &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;figure&gt;
 &lt;img src=&quot;https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_800/https://upload.wikimedia.org/wikipedia/commons/a/aa/The_water_transfer.jpg&quot; srcset=&quot;https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_320/https://upload.wikimedia.org/wikipedia/commons/a/aa/The_water_transfer.jpg 320w,
-https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_640/https://upload.wikimedia.org/wikipedia/commons/a/aa/The_water_transfer.jpg 640w,
-https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_960/https://upload.wikimedia.org/wikipedia/commons/a/aa/The_water_transfer.jpg 960w,
-https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_1280/https://upload.wikimedia.org/wikipedia/commons/a/aa/The_water_transfer.jpg 1280w,
-https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_1600/https://upload.wikimedia.org/wikipedia/commons/a/aa/The_water_transfer.jpg 1600w&quot; sizes=&quot;(min-width: 50rem) 50rem, 90vw&quot; width=&quot;5214&quot; height=&quot;3476&quot; /&gt;
+https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_540/https://upload.wikimedia.org/wikipedia/commons/a/aa/The_water_transfer.jpg 540w,
+https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_760/https://upload.wikimedia.org/wikipedia/commons/a/aa/The_water_transfer.jpg 760w,
+https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_980/https://upload.wikimedia.org/wikipedia/commons/a/aa/The_water_transfer.jpg 980w,
+https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_1200/https://upload.wikimedia.org/wikipedia/commons/a/aa/The_water_transfer.jpg 1200w&quot; sizes=&quot;(min-width: 50rem) 50rem, 90vw&quot; width=&quot;5214&quot; height=&quot;3476&quot; /&gt;
 &lt;figcaption&gt;&lt;p&gt;Remote image from Wikipedia.&lt;/p&gt;
 &lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;Pro tip: if you inspect the above image with chrome’s developer tool, and change the device to one of the smaller size one such as iPhone 5, it shows the image being used has width=640.&lt;/p&gt;
+&lt;p&gt;Pro tip: if you inspect the above image with chrome’s developer tool, and change the device to one of the smaller sized ones such as iPhone 5, it shows the image being used has width=640.&lt;/p&gt;
 
 &lt;figure&gt;
 &lt;img src=&quot;https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_800/v1612844962/inspecting_generated_responsive_image_tag.jpg&quot; srcset=&quot;https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_320/v1612844962/inspecting_generated_responsive_image_tag.jpg 320w,
-https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_640/v1612844962/inspecting_generated_responsive_image_tag.jpg 640w,
-https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_960/v1612844962/inspecting_generated_responsive_image_tag.jpg 960w,
-https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_1280/v1612844962/inspecting_generated_responsive_image_tag.jpg 1280w,
-https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_1486/v1612844962/inspecting_generated_responsive_image_tag.jpg 1486w&quot; sizes=&quot;(min-width: 50rem) 50rem, 90vw&quot; width=&quot;1486&quot; height=&quot;742&quot; /&gt;
+https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_540/v1612844962/inspecting_generated_responsive_image_tag.jpg 540w,
+https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_760/v1612844962/inspecting_generated_responsive_image_tag.jpg 760w,
+https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_980/v1612844962/inspecting_generated_responsive_image_tag.jpg 980w,
+https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_1200/v1612844962/inspecting_generated_responsive_image_tag.jpg 1200w&quot; sizes=&quot;(min-width: 50rem) 50rem, 90vw&quot; width=&quot;1486&quot; height=&quot;742&quot; /&gt;
 &lt;figcaption&gt;&lt;p&gt;Inspecting the above image with chrome developer tools and verify the intrinsic size.&lt;/p&gt;
 &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&quot;avoid-recursive-fetching&quot;&gt;Avoid recursive fetching&lt;/h2&gt;
 
-&lt;p&gt;Notice that if you manually uploaded an image to cloundinary, get the link and plug into the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cloudinary&lt;/code&gt; liquid tag, it will be fetched as a remote media. This is a waste since the image is already hosted. It’ll be awesome if it is served directly without fetching. If you want to have this behavior, feel free to use &lt;a href=&quot;https://github.com/iveney/jekyll-cloudinary&quot;&gt;my fork&lt;/a&gt; instead. It parses the image URL and see if the delivery_type is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;upload&lt;/code&gt;, and will generate the transformations directly without fetching. I didn’t bother to make a separate gem for it, so please use the git method to add this as a jekyll plugin. In your Gemfile:&lt;/p&gt;
+&lt;p&gt;Notice that if you manually uploaded an image to Cloudinary, get the link, and plug it into the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cloudinary&lt;/code&gt; liquid tag, it will be fetched as remote media. This is a waste since the image is already hosted. It’ll be awesome if it is served directly without fetching. If you want to have this behavior, feel free to use &lt;a href=&quot;https://github.com/iveney/jekyll-cloudinary&quot;&gt;my fork&lt;/a&gt; instead. It parses the image URL and sees if the delivery_type is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;upload&lt;/code&gt;, and will generate the transformations directly without fetching. I didn’t bother to make a separate gem for it, so please use the git method to add this as a Jekyll plugin. In your Gemfile:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:jekyll_plugins&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
   &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'jekyll-cloudinary'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:github&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'iveney/jekyll-cloudinary'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:branch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'master'&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;Inserting image in Markdown appears to be way more complicated than it appears - responsive image, styling, storage etc. Hopefully this solution can help to speed up your workflow so you can stay more focused on writing.&lt;/p&gt;
+&lt;p&gt;Inserting images in Markdown appears to be way more complicated than it appears - responsive image, styling, storage, etc. Hopefully, this solution can help to speed up your workflow so you can stay more focused on writing.&lt;/p&gt;
 
 &lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
   &lt;ol&gt;
@@ -88,9 +461,9 @@ https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_1486/v161
       &lt;p&gt;I also discovered &lt;a href=&quot;https://git-lfs.github.com/&quot;&gt;git LFS&lt;/a&gt; which solves the large media issue in Git, and I knew that netlify is offering solution to host the &lt;a href=&quot;https://www.netlify.com/products/large-media/&quot;&gt;large media&lt;/a&gt;. I need to explore this solution a bit more. &lt;a href=&quot;#fnref:LFS&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Ivan Xiao</name></author><category term="[&quot;blogging&quot;]" /><category term="cloudinary" /><category term="responsive image" /><summary type="html">I’ve been using Cloudinary for hosting my images in this blog for a while. However, I switched to use Dropbox paper to draft my posts, as it offers really awesome UI, editing features and can export to markdown without much tweaks to publish as a Jekyll post.</summary></entry><entry><title type="html">Ray Dalio’s thought on Bitcoin</title><link href="https://www.ivanxiao.com/2021/01/29/ray-dalio-s-thought-on-bitcoin" rel="alternate" type="text/html" title="Ray Dalio’s thought on Bitcoin" /><published>2021-01-29T19:45:00+00:00</published><updated>2021-01-29T19:45:00+00:00</updated><id>https://www.ivanxiao.com/2021/01/29/ray-dalio-s-thought-on-bitcoin</id><content type="html" xml:base="https://www.ivanxiao.com/2021/01/29/ray-dalio-s-thought-on-bitcoin">&lt;p&gt;Ray Dalio &lt;a href=&quot;https://www.linkedin.com/pulse/what-i-really-think-bitcoin-ray-dalio/&quot;&gt;shares&lt;/a&gt; what he thinks about BTC.&lt;/p&gt;
+&lt;/div&gt;</content><author><name>Ivan Xiao</name></author><category term="[&quot;blogging&quot;]" /><category term="cloudinary" /><category term="responsive image" /><summary type="html">I’ve been using Cloudinary for hosting my images in this blog for a while. However, I switched to use Dropbox paper to draft my posts, as it offers awesome UI, editing features and can export to markdown without many tweaks to publish as a Jekyll post.</summary></entry><entry><title type="html">Ray Dalio’s thought on Bitcoin</title><link href="https://www.ivanxiao.com/2021/01/29/ray-dalio-s-thought-on-bitcoin" rel="alternate" type="text/html" title="Ray Dalio’s thought on Bitcoin" /><published>2021-01-29T19:45:00+00:00</published><updated>2021-01-29T19:45:00+00:00</updated><id>https://www.ivanxiao.com/2021/01/29/ray-dalio-s-thought-on-bitcoin</id><content type="html" xml:base="https://www.ivanxiao.com/2021/01/29/ray-dalio-s-thought-on-bitcoin">&lt;p&gt;Ray Dalio &lt;a href=&quot;https://www.linkedin.com/pulse/what-i-really-think-bitcoin-ray-dalio/&quot;&gt;shares&lt;/a&gt; what he thinks about BTC.&lt;/p&gt;
 
-&lt;p&gt;He thinks positively about bitcoin, as it is one of a kind invention. It is similar to gold that has limited supply.&lt;/p&gt;
+&lt;p&gt;He thinks positively about bitcoin, as it is one of a kind invention. It is similar to gold that has a limited supply.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;I believe Bitcoin is one hell of an invention. To have invented a new type of money via a system that is programmed into a computer and that has worked for around 10 years and is rapidly gaining popularity as both a type of money and a storehold of wealth is an amazing accomplishment.&lt;/p&gt;
@@ -106,7 +479,7 @@ https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_1486/v161
   &lt;p&gt;Although Bitcoin is limited in supply, digital currencies are not limited in supply because new ones have come along and will continue to come along to compete so the supply of Bitcoin-like assets should, and competition will, play a role in determining Bitcoin and other cryptocurrency prices.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;The biggest risk is that how it plays well with goverment. Since it is unregulated like the government-backed currency, there is a risk that it’s privacy and use could be limited:&lt;/p&gt;
+&lt;p&gt;The biggest risk is that how it plays well with the government. Since it is unregulated like the government-backed currency, there is a risk that its privacy and use could be limited:&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;As an extension of Bitcoin being digital are the questions of how private it is and what the government will allow and not allow it to be&lt;/p&gt;
@@ -534,182 +907,4 @@ To install the certificate in Mozilla Firefox, first configure Firefox to use Ch
 
 &lt;p&gt;&lt;img src=&quot;https://d2mxuefqeaa7sj.cloudfront.net/s_553B645525E322D632E92E15E151778490F248AC9CEE526810CE6D8C11AAAF4E_1552886712011_image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;PS. 这位博主有一系列非常好的介绍文章，并且使用 nodejs 实现了 &lt;a href=&quot;https://imququ.com/post/web-proxy.html&quot;&gt;HTTP&lt;/a&gt; 与 &lt;a href=&quot;https://imququ.com/post/web-proxy-2.html&quot;&gt;HTTPS&lt;/a&gt; 代理。强烈推荐。&lt;/p&gt;</content><author><name>Ivan Xiao</name></author><category term="network security" /><category term="notes" /><category term="charles" /><category term="proxy" /><summary type="html">HTTP Proxy 与 HTTPS Proxy 的区别很容易混淆。本文通过使用 Proxifier 与 Charles 实战作为一个笔记备忘。</summary></entry><entry><title type="html">自建代理访问中国音乐服务</title><link href="https://www.ivanxiao.com/2019/08/10/zi-jian-dai-li-fang-wen-zhong-guo-yin-le-fu-wu" rel="alternate" type="text/html" title="自建代理访问中国音乐服务" /><published>2019-08-10T21:46:18+00:00</published><updated>2019-08-10T21:46:18+00:00</updated><id>https://www.ivanxiao.com/2019/08/10/zi-jian-dai-li-fang-wen-zhong-guo-yin-le-fu-wu</id><content type="html" xml:base="https://www.ivanxiao.com/2019/08/10/zi-jian-dai-li-fang-wen-zhong-guo-yin-le-fu-wu">&lt;p&gt;由于版权原因，在外国访问中国音乐服务即使付费会员也可能没法听到音乐。同时，中国音乐服务版权现状复杂，使得音乐版权分布在不同的服务之间，使得用户没办法在一个平台上听到所有喜欢的歌曲，体验很差。本文介绍一个项目的配置来解除一些限制。&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;h2 id=&quot;工作原理&quot;&gt;工作原理&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;使用 UnblockNeteaseMusic 建立代理，可以运行在本地或者云端（文本选择 host 在阿里云）
-    &lt;ul&gt;
-      &lt;li&gt;使用云端的好处是对于 iOS 可以设置自动代理，不需要自己设置一台本地机器作为服务器&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;使用 proxy.pac, proxifier 设置 iOS 以及 Mac 的代理&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;申请云服务器-vps&quot;&gt;申请云服务器 VPS&lt;/h2&gt;
-
-&lt;p&gt;使用腾讯云以及阿里云等都可以。似乎阿里云稍微便宜一点，因为我配置的 VPS 完全就是为了这个而服务，所以我申请的是最低级的一档，并且按照网络流量付费带宽（非固定带宽）。那么一个月大概是 24.1 元 + 流量：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://paper-attachments.dropbox.com/s_7A8C2C27C9746D5858735CD166097A4ADE48E37C9CDF7AF99B4EC4DDE045D922_1565467714331_image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;欢迎使用我的&lt;a href=&quot;https://promotion.aliyun.com/ntms/act/qwbk.html?userCode=3pew8zom&quot;&gt;购买链接&lt;/a&gt;进行注册。也欢迎留言让我知道哪里有更便宜的虚拟主机。&lt;/p&gt;
-
-&lt;h2 id=&quot;登录-vps-以及配置-unblockneteasemusic&quot;&gt;登录 VPS 以及配置 UnblockNeteaseMusic&lt;/h2&gt;
-
-&lt;p&gt;如何配置 VPS 以及登录这里就略过不谈了，应该在云服务器处都有教程。一般来说登录后要先安装一些必要的软件，比如 git, nodejs 等。&lt;/p&gt;
-
-&lt;p&gt;准备就绪后，安装 &lt;a href=&quot;https://github.com/nondanee/UnblockNeteaseMusic/&quot;&gt;&lt;strong&gt;UnblockNeteaseMusic&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone https://github.com/nondanee/UnblockNeteaseMusic.git
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;安装好后，可以按照项目说明运行服务器。我使用的是旧方法：&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;node app.js -p 8000:8043
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;其中 &lt;port1&gt;:&lt;port2&gt; 里面，port1 是提供给客户端的端口，port2 用于内部转发，应该随便一个都可以。&lt;/port2&gt;&lt;/port1&gt;&lt;/p&gt;
-
-&lt;p&gt;注意默认状态下阿里云的 8000 端口是关闭的，需要在阿里云的安全组里自行设置。这是一个例子：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://paper-attachments.dropbox.com/s_7A8C2C27C9746D5858735CD166097A4ADE48E37C9CDF7AF99B4EC4DDE045D922_1565468147793_image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Bonus：我一般在后台使用 mosh + tmux 对远程机器进行操控，免去每次登录。有兴趣的可以搜索如何配置。经观察，这似乎并不占用带宽并引起流量消费。&lt;/p&gt;
-
-&lt;h2 id=&quot;配置客户端&quot;&gt;配置客户端&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;iOS&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;iOS 的客户端类似 shadowrocket 等要钱，最简单的就是设置 proxy.pac 并且把相关服务 IP 重定向到服务器。下面是一个例子：&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function FindProxyForURL(t) {
-  return shExpMatch(t, &quot;http://*.music.163.com/*&quot;)
-  || shExpMatch(url, &quot;http://*.126.net/*&quot;)
-  || shExpMatch(url, &quot;http://ipservice.163.com/*&quot;)
-      ? &quot;PROXY &amp;lt;VPS IP&amp;gt;:8000&quot;
-      : &quot;DIRECT&quot;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;需要把 &lt;VPS IP=&quot;&quot;&gt; 设置成你的服务器的公网地址。把这段代码存成 proxy.pac。&lt;/VPS&gt;&lt;/p&gt;
-
-&lt;p&gt;你可以把这个文件放在 VPS 上，我选择了把它放在了 dropbox。所以我在 iOS 上填的是类似以下的地址：&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;https://www.dropbox.com/s/abcdefg/proxy.pac?dl=0
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;记得要把 dl=0 改成 dl=1，否则会定向到 dropbox 文件的下载页面，而不是文件本身。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Mac&lt;/strong&gt;
-Mac 的设置参考了&lt;a href=&quot;https://www.sheyilin.com/2019/06/unblockneteasemusic/&quot;&gt;这篇文章&lt;/a&gt;。这里使用了 proxifier 这个软件。设置很简单，只需要设置对应的服务器，以及规则即可。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://paper-attachments.dropbox.com/s_7A8C2C27C9746D5858735CD166097A4ADE48E37C9CDF7AF99B4EC4DDE045D922_1565473436155_image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://paper-attachments.dropbox.com/s_7A8C2C27C9746D5858735CD166097A4ADE48E37C9CDF7AF99B4EC4DDE045D922_1565473455528_image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;测试&quot;&gt;测试&lt;/h2&gt;
-
-&lt;p&gt;使用网易云音乐，查看一些平时看不到的灰色的歌曲，如果代理设置成功，可以看到服务器的输出，类似如下：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://paper-attachments.dropbox.com/s_7A8C2C27C9746D5858735CD166097A4ADE48E37C9CDF7AF99B4EC4DDE045D922_1565473520675_image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;参考文献&quot;&gt;参考文献&lt;/h2&gt;
-
-&lt;p&gt;[1] https://www.sheyilin.com/2019/06/unblockneteasemusic/&lt;/p&gt;</content><author><name>Ivan Xiao</name></author><category term="network security" /><category term="netease music" /><summary type="html">由于版权原因，在外国访问中国音乐服务即使付费会员也可能没法听到音乐。同时，中国音乐服务版权现状复杂，使得音乐版权分布在不同的服务之间，使得用户没办法在一个平台上听到所有喜欢的歌曲，体验很差。本文介绍一个项目的配置来解除一些限制。</summary></entry><entry><title type="html">2018年在Fremont买房是否时机合适之我见</title><link href="https://www.ivanxiao.com/2018/05/02/2018nian-zai-fremontmai-fang-shi-fou-shi-ji-he-gua-zhi-wo-jian" rel="alternate" type="text/html" title="2018年在Fremont买房是否时机合适之我见" /><published>2018-05-02T06:25:08+00:00</published><updated>2018-05-02T06:25:08+00:00</updated><id>https://www.ivanxiao.com/2018/05/02/2018nian-zai-fremontmai-fang-shi-fou-shi-ji-he-gua-zhi-wo-jian</id><content type="html" xml:base="https://www.ivanxiao.com/2018/05/02/2018nian-zai-fremontmai-fang-shi-fou-shi-ji-he-gua-zhi-wo-jian">&lt;p&gt;本文&lt;a href=&quot;https://www.zhihu.com/question/265838953/answer/301250174&quot;&gt;首发于知乎&lt;/a&gt;，作为《2018年在Fremont买房是否时机合适，与在湾区桥对面买房有何优劣？》的回答。手动搬运回博客。仅代表本人拙见，仅供参考。&lt;/p&gt;
-
-&lt;!-- more --&gt;
-
-&lt;p&gt;刚好最近在看，过来分享一下心得。&lt;/p&gt;
-
-&lt;p&gt;先说第一个问题的个人观点：合适，全湾区哪里买房都合适。看看 2017 年的美国科技股，涨得不要不要的。2018 年我还会继续看涨。不介意学区的话，Newark 倒是一个不错的地方，靠近 880，有大华和 Newpark mall，生活还是很便利的。房子相对也很便宜，120w 预算基本上能住得像个皇帝~&lt;/p&gt;
-
-&lt;p&gt;再说第二个问题，Fremont 买房的主要优点是房价便宜，相对安全，有 Bart，以及对于在 fb 上班的人来说交通算是便利。但是，相应地也要考虑几大问题：自然灾害，学区，交通，工作机会，生活环境，保值与升值。&lt;/p&gt;
-
-&lt;h2 id=&quot;自然灾害&quot;&gt;&lt;strong&gt;自然灾害&lt;/strong&gt;&lt;/h2&gt;
-
-&lt;p&gt;先说自然灾害，之前一场4.3级地震把大家都吓到了。Fremont 自古以来都是大家心中认为的“穷乡僻壤”，“自然灾害区“（不要说我 Fremont 黑，我也住在这，毕竟是穷人呐），不是没有来由的，因为的确这边蛮多问题的。现在先看好做好心理准备了，买房时看到 Natural Hazard Disclosure不会被吓尿。。这些资讯网上都能看到，比如 usgs 网站预测，未来几十年，湾区发生 6.7 级以上地震的概率是 72%，而东湾首当其冲，Hayward Fault 和 Calaveras Fault 直接穿过。。。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://pic3.zhimg.com/50/v2-6f7afe8fee5e13940d3f37b763503638_hd.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;source: https://pubs.usgs.gov/
-再来看看别的，&lt;a href=&quot;http://myhazards.caloes.ca.gov/&quot;&gt;Home Page - Cal MyHazards&lt;/a&gt;，有包括地震，火灾，洪水，海啸等的区域预测 。基本上大半个湾区都处于地震液化带：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://pic2.zhimg.com/50/v2-bff0acd354ceab0a3daf103d68ef8402_hd.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Fremont 看起来比较安全的是 880 往北，94536 那一块 (brookvale)，以及 central Fremont。但是，那里又直接被地震带穿过了…… 有一个说法是，湾区的房子基本上抗震的级别都很高，所以其实怕的不是地震，而是怕土壤液化。随便放狗搜一下有大量相关讨论，比如&lt;a href=&quot;https://www.weiming.info/zhuti/SanFrancisco/33565729/&quot;&gt;这个&lt;/a&gt;。Flood risk 也是稍微要注意的，幸好看起来只有 Ardenwood, Newark 那里稍微有点。&lt;/p&gt;
-
-&lt;p&gt;从自然灾害层面来说，南湾，特别是 82 / El camino Real 往南的一块，的确是有优势的。基本上避开了大部分自然灾害（当然也不能太南了，有个 San Andreas Fault）。传统好区，Palo Alto, Los Altos, MTV 94040, Sunnyvale 94087, Cupertino 等，都在这一块。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://pic4.zhimg.com/50/v2-b0adbd52e3af9d4c06dcccdca97c954a_hd.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;学区&quot;&gt;&lt;strong&gt;学区&lt;/strong&gt;&lt;/h2&gt;
-
-&lt;p&gt;再说说学区，Fremont 的 MSJ 可是很厉害的，在某些评分里可能比 Gunn High, Palo Alto High 什么的还要高。但是那边离 F, G, A, N, L，都很远。Ardenwood 也是大家趋之若鹜的地方，但是据说小学 overflow 得厉害，基本上住在那也要靠运气才能上到；而且大家都抱怨被印度人支配了 （所谓的小孟买..）。退而求其次的，可以考虑 Brookvale, Irvington 那一块。有 American High / Irvington High 做支撑。&lt;/p&gt;
-
-&lt;p&gt;为什么要考虑学区？即使没有小孩，这也是很重要的一点，意义在于学区基本上是跟社区安全，增值潜力挂钩的。有学区的地方不怕将来卖不出好价钱。华人向来注重教育，所以湾区几大名校总是挤满了老中，房价也是节节升高。&lt;/p&gt;
-
-&lt;h2 id=&quot;交通&quot;&gt;&lt;strong&gt;交通&lt;/strong&gt;&lt;/h2&gt;
-
-&lt;p&gt;交通的话东湾有 pros and cons。先说好处：Fremont 的位置很中庸，比较少互联网公司在这边，离哪里都不近，换句话说，离哪里都不远。因为有 Bart，所以对于有在城里上班的双职工其实位置很不错。84 / Dumbarton bridge 是个麻烦。不堵车其实很快，15-20分钟内就能到 fb 了。但是由于桥以及 willow，84交界是个瓶颈。平时一不小心就堵到收费站了。平时早上8-10am上班，基本要花个 30-40min。比如随手查的明天 8:30am 出发看起来是这样子。到 Google 就更远了，要 50-60min。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://pic4.zhimg.com/50/v2-60e3e125254f62e0f2cca17c6a20e5ec_hd.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;别小看这10分钟的差别，每天来回多个 20分钟，一年 52 周每周 5 个工作日，就 5200 分钟接近90个小时了。个人感觉是上班心情是随通勤时间指数下降的……&lt;/p&gt;
-
-&lt;p&gt;最坑爹是这桥上只有三个 lane，没有路肩，经常有车在上面抛锚，直接就使得桥上少了一个 lane，晚上 7pm, 8pm 也照赌不误，很是闹心。随着越来越多人才涌入湾区，买不起南湾的人会被 price out 到东湾，交通问题恐怕只会更赌。&lt;/p&gt;
-
-&lt;h2 id=&quot;工作机会&quot;&gt;&lt;strong&gt;工作机会&lt;/strong&gt;&lt;/h2&gt;
-
-&lt;p&gt;东湾对于科技人才来说，呃，几乎是没有什么就业机会吧，在 Paseo Padre 上面的科技园有些创业公司。Redfin 发布了一个 &lt;a href=&quot;https://www.redfin.com/blog/data-center&quot;&gt;opporturnity score&lt;/a&gt;，定义是在步行30分钟内能到达的工作数量与种类的丰富程度，湾区看起来是这样的：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://pic2.zhimg.com/50/v2-6d6e2f461290d1b12df6058246284494_hd.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;其中，刚过桥那一块，基本上就是住宅区了，opportunity score 巨低。我们可以看到，在 Palo Alto，Mountain View，一直延伸到 San Jose 那一块，101 与 280之间，基本上都是 80-90 的分数，这就是传统意义上的硅谷所在地了。从这方面来看，的确东湾的升值潜力会比南湾低一点。&lt;/p&gt;
-
-&lt;h2 id=&quot;生活环境&quot;&gt;&lt;strong&gt;生活环境&lt;/strong&gt;&lt;/h2&gt;
-
-&lt;p&gt;前面说的几点 Fremont 几乎没占到优势，但是生活环境倒算是有其独到之处。虽然不如 PA, MTV downtown 的 up and coming，但这边有很多很不错的中餐馆，也有不少的华人超市，包括大华。 Newark 的 plaza，Fremont 的 automall parkway，都是华人周末聚集之地。不过可惜，除了吃的之外，别的可能就差点。这边感觉主要年龄层次是 family，所以没有太多年轻人可以玩的地方。所以不少年轻人都喜欢在 MTV, PA 租房住，吃喝玩乐都比较丰富。&lt;/p&gt;
-
-&lt;p&gt;社区安全，低犯罪率也是大家津津乐道的一点。&lt;a href=&quot;https://www.trulia.com/real_estate/Fremont-California/crime/&quot;&gt;Trulia&lt;/a&gt; 上关于可以看到 Fremont crime rate 比较低：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://pic3.zhimg.com/50/v2-b69e9f1703a3045084db120c79691cdd_hd.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.crimereports.com/home/#!/dashboard?incident_types=Assault%252CAssault%2520with%2520Deadly%2520Weapon%252CBreaking%2520%2526%2520Entering%252CDisorder%252CDrugs%252CHomicide%252CKidnapping%252CLiquor%252COther%2520Sexual%2520Offense%252CProperty%2520Crime%252CProperty%2520Crime%2520Commercial%252CProperty%2520Crime%2520Residential%252CQuality%2520of%2520Life%252CRobbery%252CSexual%2520Assault%252CSexual%2520Offense%252CTheft%252CTheft%2520from%2520Vehicle%252CTheft%2520of%2520Vehicle&amp;amp;start_date=2018-01-07&amp;amp;end_date=2018-01-21&amp;amp;days=sunday%252Cmonday%252Ctuesday%252Cwednesday%252Cthursday%252Cfriday%252Csaturday&amp;amp;start_time=0&amp;amp;end_time=23&amp;amp;include_sex_offenders=false&amp;amp;lat=37.457826898772865&amp;amp;lng=-121.99939727783203&amp;amp;zoom=12&amp;amp;current_tab=list&amp;amp;shapeIds=&amp;amp;shape_id=false&quot;&gt;CrimeReports&lt;/a&gt;: 南湾人民生活在水深火热之中。。。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://pic2.zhimg.com/50/v2-d0c8b9d48b665728f265f89bb3a458c1_hd.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;虽然数据看起来是这样子，但不知道为什么老是有听说 Fremont 被抢劫什么的，比如：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://pic3.zhimg.com/50/v2-bd484ec539b200b04dc62565eca879bc_hd.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;保值与升值&quot;&gt;&lt;strong&gt;保值与升值&lt;/strong&gt;&lt;/h2&gt;
-
-&lt;p&gt;关于这点，大家谈论得比较多的应该就是看几次经济危机后，不同地区房屋降价以及恢复的水平吧。这个数据从 redfin，zillow 和 trulia 都能找到。&lt;a href=&quot;https://www.redfin.com/blog/data-center&quot;&gt;redfin 的数据&lt;/a&gt;是用 tableu 做的，但是数据只有几年，不是很能看出长期的trend。&lt;a href=&quot;https://www.zillow.com/fremont-ca-94555/home-values/&quot;&gt;zillow 的数据也有同样问题&lt;/a&gt;。我这里用 trulia 来讨论，因为它的数据似乎最齐，虽然没办法把几个city一起看。先贴几个 median sales price 的数据：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://pic4.zhimg.com/50/v2-961c7c35f41c546e787ea70947394794_hd.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://pic1.zhimg.com/50/v2-443fd639d992a4b25caee74815c569a7_hd.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://pic4.zhimg.com/50/v2-b2b8edc7288a23d3a653844aac2e227a_hd.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://pic1.zhimg.com/50/v2-ff600e8b1150d6fd141798fa04d31046_hd.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://pic3.zhimg.com/50/v2-e62cbd79e97532ed4039aec32743998c_hd.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://pic4.zhimg.com/50/v2-9a2630417a4f4038028e74d699adabe5_hd.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;我们可以看到，Mountain View，Palo Alto, Cupertino 这几个 city 基本上在08经济危机也是没怎么跌的。Sunnyvale, Santa Clara, Fremont 基本上跌到了 02，03年的水平。但是 Sunnyvale, Santa Clara 这几年猛地上涨，在经济危机前大家差不多都在 700k 左右的 median，Sunnyvale 在两年前就突破了 1m 的坎，Santa Clara 也在去年就过了。而 Fremont 还差一点，应该今年会达到。&lt;/p&gt;
-
-&lt;p&gt;我们再来玩玩 redfin 的&lt;a href=&quot;https://public.tableau.com/shared/35B39X4FX?:display_count=yes&quot;&gt;数据&lt;/a&gt;吧。在过去五年，基本上湾区的房子都在稳健地增长。相对来说，Fremont应该是涨幅比较小的。当然，用城市来看只是很笼统的看法，具体应该看到每个 neighborhood，比如 Ardenwood 和 Brookvale 就卖得挺好的。好区都涨得比较厉害。跟开篇说的结论呼应一下，只要没有黑天鹅事件，湾区房市算是一个不错的投资。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://pic3.zhimg.com/50/v2-51a76925f667d9b6f052e40d20056df8_hd.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;总的来说，还是印证了一个观点：买力所能及的房子。洋洋洒洒说了一大堆，希望能帮助到楼主。也希望无论如何买到哪里，正如大家所说的，回头看都是 deal :)&lt;/p&gt;
-
-&lt;p&gt;1/25 更新：
-补一个有意思的数据：&lt;a href=&quot;https://demographics.virginia.edu/DotMap/index.html&quot;&gt;https://demographics.virginia.edu/DotMap/index.html&lt;/a&gt;
-这个图显示了人种分布，不过亚裔没有“细分”，所以看不出是老中还是老印。从图可以看出，Fremont, Milpitas, Sunnyvale, Cupertino 都是亚洲人聚居地（其中 Cupertino 据说是台湾人的天下）。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://pic1.zhimg.com/50/v2-43e18a5ebb2ee6a2f57b5bedd45b0963_hd.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content><author><name>Ivan Xiao</name></author><category term="personal finance" /><category term="house buying" /><category term="investing" /><category term="mortgage" /><summary type="html">本文首发于知乎，作为《2018年在Fremont买房是否时机合适，与在湾区桥对面买房有何优劣？》的回答。手动搬运回博客。仅代表本人拙见，仅供参考。</summary></entry></feed>
+&lt;p&gt;PS. 这位博主有一系列非常好的介绍文章，并且使用 nodejs 实现了 &lt;a href=&quot;https://imququ.com/post/web-proxy.html&quot;&gt;HTTP&lt;/a&gt; 与 &lt;a href=&quot;https://imququ.com/post/web-proxy-2.html&quot;&gt;HTTPS&lt;/a&gt; 代理。强烈推荐。&lt;/p&gt;</content><author><name>Ivan Xiao</name></author><category term="network security" /><category term="notes" /><category term="charles" /><category term="proxy" /><summary type="html">HTTP Proxy 与 HTTPS Proxy 的区别很容易混淆。本文通过使用 Proxifier 与 Charles 实战作为一个笔记备忘。</summary></entry></feed>

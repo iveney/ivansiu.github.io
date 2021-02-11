@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>Responsive Image with Cloudinary in Jekyll - Ivan Xiao</title>
-<meta name="description" content="I’ve been using Cloudinary for hosting my images in this blog for a while. However, I switched to use Dropbox paper to draft my posts, as it offers really awesome UI, editing features and can export to markdown without much tweaks to publish as a Jekyll post.">
+<meta name="description" content="I’ve been using Cloudinary for hosting my images in this blog for a while. However, I switched to use Dropbox paper to draft my posts, as it offers awesome UI, editing features and can export to markdown without many tweaks to publish as a Jekyll post.">
 
 
   <meta name="author" content="Ivan Xiao">
@@ -26,7 +26,7 @@
 <meta property="og:url" content="https://www.ivanxiao.com/2021/02/09/responsive-image-with-cloudinary-in-jekyll">
 
 
-  <meta property="og:description" content="I’ve been using Cloudinary for hosting my images in this blog for a while. However, I switched to use Dropbox paper to draft my posts, as it offers really awesome UI, editing features and can export to markdown without much tweaks to publish as a Jekyll post.">
+  <meta property="og:description" content="I’ve been using Cloudinary for hosting my images in this blog for a while. However, I switched to use Dropbox paper to draft my posts, as it offers awesome UI, editing features and can export to markdown without many tweaks to publish as a Jekyll post.">
 
 
 
@@ -36,7 +36,7 @@
 
   <meta name="twitter:site" content="@ivanzxiao">
   <meta name="twitter:title" content="Responsive Image with Cloudinary in Jekyll">
-  <meta name="twitter:description" content="I’ve been using Cloudinary for hosting my images in this blog for a while. However, I switched to use Dropbox paper to draft my posts, as it offers really awesome UI, editing features and can export to markdown without much tweaks to publish as a Jekyll post.">
+  <meta name="twitter:description" content="I’ve been using Cloudinary for hosting my images in this blog for a while. However, I switched to use Dropbox paper to draft my posts, as it offers awesome UI, editing features and can export to markdown without many tweaks to publish as a Jekyll post.">
   <meta name="twitter:url" content="https://www.ivanxiao.com/2021/02/09/responsive-image-with-cloudinary-in-jekyll">
 
   
@@ -366,7 +366,7 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Responsive Image with Cloudinary in Jekyll">
-    <meta itemprop="description" content="I’ve been using Cloudinary for hosting my images in this blog for a while.However, I switched to use Dropbox paper to draft my posts, as it offers really awesome UI, editing features and can export to markdown without much tweaks to publish as a Jekyll post.">
+    <meta itemprop="description" content="I’ve been using Cloudinary for hosting my images in this blog for a while.However, I switched to use Dropbox paper to draft my posts, as it offers awesome UI, editing features and can export to markdown without many tweaks to publish as a Jekyll post.">
     <meta itemprop="datePublished" content="2021-02-09T05:20:00+00:00">
     
 
@@ -384,15 +384,15 @@
           </aside>
         
         <p>I’ve been using <a href="http://cloudinary.com/">Cloudinary</a> for hosting my images in this blog for a while.
-However, I <a href="/2018/01/21/write-blog-post-with-dropbox-paper">switched</a> to use Dropbox paper to draft my posts, as it offers really awesome UI, editing features and can export to markdown without much tweaks to publish as a Jekyll post.</p>
+However, I <a href="/2018/01/21/write-blog-post-with-dropbox-paper">switched</a> to use Dropbox paper to draft my posts, as it offers awesome UI, editing features and can export to markdown without many tweaks to publish as a Jekyll post.</p>
 
-<p>The most notable feature I liked was I can simply copy paste an image in paper, and when exporting, it is magically hosted at Dropbox. Until recently, when I was <a href="/2021/01/20/goodbye-octopress-hello-jekyll">migrating my blog to Jekyll</a>, I also explored some of the awesome <a href="https://github.com/planetjekyll/awesome-jekyll-plugins">Jekyll plugins</a>. One of them caught my notice: <a href="https://github.com/wildlyinaccurate/jekyll-responsive-image">jekyll-responsive-image</a>. A few searches showed me that <a href="https://timkadlec.com/2013/06/why-we-need-responsive-images/">72% of image bytes served up by responsive pages are wasted</a>. There is <a href="https://responsiveimages.org/">workforce</a> to build a better experience and save bandwidth. It seems a good thing to include for my sites.</p>
+<p>The most notable feature I liked was I can simply copy-paste an image in Paper, and when exporting, it is magically hosted at Dropbox. Until recently, when I was <a href="/2021/01/20/goodbye-octopress-hello-jekyll">migrating my blog to Jekyll</a>, I also explored some of the awesome <a href="https://github.com/planetjekyll/awesome-jekyll-plugins">Jekyll plugins</a>. One of them caught my notice: <a href="https://github.com/wildlyinaccurate/jekyll-responsive-image">jekyll-responsive-image</a>. A few searches showed me that <a href="https://timkadlec.com/2013/06/why-we-need-responsive-images/">72% of image bytes served up by responsive pages are wasted</a>. There is <a href="https://responsiveimages.org/">workforce</a> to build a better experience and save bandwidth. It seems a good thing to include for my sites.</p>
 
-<p>After some digging, I realized that <a href="https://github.com/wildlyinaccurate/jekyll-responsive-image">jekyll-responsive-image</a> might not be the best fit for me, as it was assuming my images are hosted locally. I didn’t think it was a good idea like five years ago and always used CDN solution such as <a href="http://cloudinary.com/">Cloudinary</a><sup id="fnref:LFS" role="doc-noteref"><a href="#fn:LFS" class="footnote">1</a></sup>. I then searched for jekyll + cloundinary, and found that there is already (but no longer maintained) <a href="https://cloudinary.com/blog/how_i_used_cloudinary_to_solve_responsive_image_needs_in_my_jekyll_website_and_shared_the_magic_in_a_plugin">solution</a> for it. I read through it: <a href="https://github.com/nhoizey/jekyll-cloudinary">jekyll-cloudinary</a>. It made a lot of sense to me, therefore, I spent some time configuring and actually forked to make an improvement to fit my use case. This post will show the details.</p>
+<p>After some digging, I realized that <a href="https://github.com/wildlyinaccurate/jekyll-responsive-image">jekyll-responsive-image</a> might not be the best fit for me, as it was assuming my images are hosted locally. I didn’t think it was a good idea like five years ago and always used CDN solutions such as <a href="http://cloudinary.com/">Cloudinary</a><sup id="fnref:LFS" role="doc-noteref"><a href="#fn:LFS" class="footnote">1</a></sup>. I then searched for Jekyll + Cloudinary and found that there is already (but no longer maintained) <a href="https://cloudinary.com/blog/how_i_used_cloudinary_to_solve_responsive_image_needs_in_my_jekyll_website_and_shared_the_magic_in_a_plugin">solution</a> for it. I read through it: <a href="https://github.com/nhoizey/jekyll-cloudinary">jekyll-cloudinary</a>. It made a lot of sense to me, therefore, I spent some time configuring and forked to make an improvement to fit my use case. This post will show the details.</p>
 
 <h2 id="a-cloudinary-primer">A Cloudinary Primer</h2>
 
-<p>This solution relies on <a href="http://cloudinary.com/">Cloudinary</a>, therefore you need to register it first. Free account offers 10GB storage and 20GB bandwidth, which should be ample for nobody like me. You can sign up <a href="https://cloudinary.com/invites/lpov9zyyucivvxsnalc5/qebjx4vsaxc746ormmqa">for free</a> here.</p>
+<p>This solution relies on <a href="http://cloudinary.com/">Cloudinary</a>, therefore you need to register it first. A free account offers 10GB storage and 20GB bandwidth, which should be ample for nobody like me. You can sign up <a href="https://cloudinary.com/invites/lpov9zyyucivvxsnalc5/qebjx4vsaxc746ormmqa">for free</a> here.</p>
 
 <p>There are two important features here:</p>
 
@@ -418,54 +418,54 @@ https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_crop,g_face,r_max/w_2
   </tbody>
 </table>
 
-<p><strong><a href="https://cloudinary.com/documentation/fetch_remote_images">Auto fetch and upload images</a></strong>. If you put a remote URL under their <code class="language-plaintext highlighter-rouge">/image/fetch/</code> path, they will fetch it and cache to optimize the delivery. You can also apply transformation to the original image! A related feature is the auto-upload, which maps a destination URL to cloudinary, so that each time when the mapped URL is visited, it will be fetched and uploaded to cloudinary, whereas the fetch is simply a cache and won’t be stored at your account.</p>
+<p><strong><a href="https://cloudinary.com/documentation/fetch_remote_images">Auto fetch and upload images</a></strong>. If you put a remote URL under their <code class="language-plaintext highlighter-rouge">/image/fetch/</code> path, they will fetch it and cache it to optimize the delivery. You can also apply transformations to the original image! A related feature is the auto-upload, which maps a destination URL to Cloudinary, so that each time when the mapped URL is visited, it will be fetched and uploaded to Cloudinary, whereas the fetch is simply a cache and won’t be stored at your account.</p>
 
 <h2 id="using-jekyll-cloudinary">Using <a href="https://github.com/nhoizey/jekyll-cloudinary">jekyll-cloudinary</a></h2>
 
-<p>Now that we have cloudinary ready, we can go ahead and set up <a href="https://github.com/nhoizey/jekyll-cloudinary">jekyll-cloudinary</a>. The installation is as straightforward as in the plugin’s <a href="https://nhoizey.github.io/jekyll-cloudinary/">readme page</a>. What it does essentially, is providing a Liquid tag <code class="language-plaintext highlighter-rouge">cloudinary</code> and it generates the <code class="language-plaintext highlighter-rouge">fetch</code> call so that cloudinary can cache and generate different sized images, and these generated images can then be served via <code class="language-plaintext highlighter-rouge">srcset</code> in the <code class="language-plaintext highlighter-rouge">&lt;img&gt;</code> tag. More info about using <code class="language-plaintext highlighter-rouge">srcset</code> for responsive images <a href="https://cloudinary.com/blog/responsive_images_with_srcset_sizes_and_cloudinary">here</a>. The plugin works amazingly in a way that it supports local images as well as remote URLs.</p>
+<p>Now that we have Cloudinary ready, we can go ahead and set up <a href="https://github.com/nhoizey/jekyll-cloudinary">jekyll-cloudinary</a>. The installation is as straightforward as in the plugin’s <a href="https://nhoizey.github.io/jekyll-cloudinary/">readme page</a>. What it does essentially, is providing a Liquid tag <code class="language-plaintext highlighter-rouge">cloudinary</code> and it generates the <code class="language-plaintext highlighter-rouge">fetch</code> call so that Cloudinary can cache and generate different sized images, and these generated images can then be served via <code class="language-plaintext highlighter-rouge">srcset</code> in the <code class="language-plaintext highlighter-rouge">&lt;img&gt;</code> tag. More info about using <code class="language-plaintext highlighter-rouge">srcset</code> for responsive images <a href="https://cloudinary.com/blog/responsive_images_with_srcset_sizes_and_cloudinary">here</a>. The plugin works amazingly in a way that it supports local images as well as remote URLs.</p>
 
 <figure>
 <img src="https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_800/https://www.ivanxiao.com/images/post_responsive_image.jpg" srcset="https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_320/https://www.ivanxiao.com/images/post_responsive_image.jpg 320w,
-https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_640/https://www.ivanxiao.com/images/post_responsive_image.jpg 640w,
-https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_960/https://www.ivanxiao.com/images/post_responsive_image.jpg 960w,
-https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_1280/https://www.ivanxiao.com/images/post_responsive_image.jpg 1280w,
-https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_1600/https://www.ivanxiao.com/images/post_responsive_image.jpg 1600w" sizes="(min-width: 50rem) 50rem, 90vw" width="6000" height="4000" />
+https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_540/https://www.ivanxiao.com/images/post_responsive_image.jpg 540w,
+https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_760/https://www.ivanxiao.com/images/post_responsive_image.jpg 760w,
+https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_980/https://www.ivanxiao.com/images/post_responsive_image.jpg 980w,
+https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_1200/https://www.ivanxiao.com/images/post_responsive_image.jpg 1200w" sizes="(min-width: 50rem) 50rem, 90vw" width="6000" height="4000" />
 <figcaption><p>Teaser image for this post, hosted with the page sources.</p>
 </figcaption>
 </figure>
 
 <figure>
 <img src="https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_800/https://upload.wikimedia.org/wikipedia/commons/a/aa/The_water_transfer.jpg" srcset="https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_320/https://upload.wikimedia.org/wikipedia/commons/a/aa/The_water_transfer.jpg 320w,
-https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_640/https://upload.wikimedia.org/wikipedia/commons/a/aa/The_water_transfer.jpg 640w,
-https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_960/https://upload.wikimedia.org/wikipedia/commons/a/aa/The_water_transfer.jpg 960w,
-https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_1280/https://upload.wikimedia.org/wikipedia/commons/a/aa/The_water_transfer.jpg 1280w,
-https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_1600/https://upload.wikimedia.org/wikipedia/commons/a/aa/The_water_transfer.jpg 1600w" sizes="(min-width: 50rem) 50rem, 90vw" width="5214" height="3476" />
+https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_540/https://upload.wikimedia.org/wikipedia/commons/a/aa/The_water_transfer.jpg 540w,
+https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_760/https://upload.wikimedia.org/wikipedia/commons/a/aa/The_water_transfer.jpg 760w,
+https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_980/https://upload.wikimedia.org/wikipedia/commons/a/aa/The_water_transfer.jpg 980w,
+https://res.cloudinary.com/maomao/image/fetch/c_limit,f_auto,q_auto,w_1200/https://upload.wikimedia.org/wikipedia/commons/a/aa/The_water_transfer.jpg 1200w" sizes="(min-width: 50rem) 50rem, 90vw" width="5214" height="3476" />
 <figcaption><p>Remote image from Wikipedia.</p>
 </figcaption>
 </figure>
 
-<p>Pro tip: if you inspect the above image with chrome’s developer tool, and change the device to one of the smaller size one such as iPhone 5, it shows the image being used has width=640.</p>
+<p>Pro tip: if you inspect the above image with chrome’s developer tool, and change the device to one of the smaller sized ones such as iPhone 5, it shows the image being used has width=640.</p>
 
 <figure>
 <img src="https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_800/v1612844962/inspecting_generated_responsive_image_tag.jpg" srcset="https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_320/v1612844962/inspecting_generated_responsive_image_tag.jpg 320w,
-https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_640/v1612844962/inspecting_generated_responsive_image_tag.jpg 640w,
-https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_960/v1612844962/inspecting_generated_responsive_image_tag.jpg 960w,
-https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_1280/v1612844962/inspecting_generated_responsive_image_tag.jpg 1280w,
-https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_1486/v1612844962/inspecting_generated_responsive_image_tag.jpg 1486w" sizes="(min-width: 50rem) 50rem, 90vw" width="1486" height="742" />
+https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_540/v1612844962/inspecting_generated_responsive_image_tag.jpg 540w,
+https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_760/v1612844962/inspecting_generated_responsive_image_tag.jpg 760w,
+https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_980/v1612844962/inspecting_generated_responsive_image_tag.jpg 980w,
+https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_1200/v1612844962/inspecting_generated_responsive_image_tag.jpg 1200w" sizes="(min-width: 50rem) 50rem, 90vw" width="1486" height="742" />
 <figcaption><p>Inspecting the above image with chrome developer tools and verify the intrinsic size.</p>
 </figcaption>
 </figure>
 
 <h2 id="avoid-recursive-fetching">Avoid recursive fetching</h2>
 
-<p>Notice that if you manually uploaded an image to cloundinary, get the link and plug into the <code class="language-plaintext highlighter-rouge">cloudinary</code> liquid tag, it will be fetched as a remote media. This is a waste since the image is already hosted. It’ll be awesome if it is served directly without fetching. If you want to have this behavior, feel free to use <a href="https://github.com/iveney/jekyll-cloudinary">my fork</a> instead. It parses the image URL and see if the delivery_type is <code class="language-plaintext highlighter-rouge">upload</code>, and will generate the transformations directly without fetching. I didn’t bother to make a separate gem for it, so please use the git method to add this as a jekyll plugin. In your Gemfile:</p>
+<p>Notice that if you manually uploaded an image to Cloudinary, get the link, and plug it into the <code class="language-plaintext highlighter-rouge">cloudinary</code> liquid tag, it will be fetched as remote media. This is a waste since the image is already hosted. It’ll be awesome if it is served directly without fetching. If you want to have this behavior, feel free to use <a href="https://github.com/iveney/jekyll-cloudinary">my fork</a> instead. It parses the image URL and sees if the delivery_type is <code class="language-plaintext highlighter-rouge">upload</code>, and will generate the transformations directly without fetching. I didn’t bother to make a separate gem for it, so please use the git method to add this as a Jekyll plugin. In your Gemfile:</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">group</span> <span class="ss">:jekyll_plugins</span> <span class="k">do</span>
   <span class="n">gem</span> <span class="s1">'jekyll-cloudinary'</span><span class="p">,</span> <span class="ss">:github</span> <span class="o">=&gt;</span> <span class="s1">'iveney/jekyll-cloudinary'</span><span class="p">,</span> <span class="ss">:branch</span> <span class="o">=&gt;</span> <span class="s1">'master'</span>
 <span class="k">end</span></code></pre></figure>
 
 <h2 id="conclusion">Conclusion</h2>
-<p>Inserting image in Markdown appears to be way more complicated than it appears - responsive image, styling, storage etc. Hopefully this solution can help to speed up your workflow so you can stay more focused on writing.</p>
+<p>Inserting images in Markdown appears to be way more complicated than it appears - responsive image, styling, storage, etc. Hopefully, this solution can help to speed up your workflow so you can stay more focused on writing.</p>
 
 <div class="footnotes" role="doc-endnotes">
   <ol>
@@ -539,7 +539,8 @@ https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_1486/v161
 ">Previous</a>
     
     
-      <a href="#" class="pagination--pager disabled">Next</a>
+      <a href="/2021/02/09/on-ark-invest-big-ideas-2021-part-i" class="pagination--pager" title="On ARK Invest Big Ideas 2021: Part I
+">Next</a>
     
   </nav>
 
@@ -706,12 +707,12 @@ Modifications:
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
       <div class="archive__item-teaser">
-        <img src="https://res.cloudinary.com/maomao/image/upload/v1491291930/blog/l1/cameraman.png" alt="">
+        <img src="/images/post_stock_market.jpg" alt="">
       </div>
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/2014/05/19/sparse-image-reconstruction-via-l1-minimization" rel="permalink">Sparse Image Reconstruction via L1-minimization
+        <a href="/2021/02/11/on-ark-invest-big-ideas-2021-part-ii" rel="permalink">On ARK Invest Big Ideas 2021: Part II
 </a>
       
     </h2>
@@ -722,7 +723,7 @@ Modifications:
       
       <span class="page__meta-date">
         <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2014-05-19T20:12:36+00:00">May 19, 2014</time>
+        <time datetime="2021-02-11T00:02:00+00:00">February 11, 2021</time>
       </span>
     
 
@@ -735,7 +736,7 @@ Modifications:
       <span class="page__meta-readtime">
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
-          5 minute read
+          6 minute read
         
       </span>
     
@@ -743,21 +744,7 @@ Modifications:
 
 
     
-    <p class="archive__item-excerpt" itemprop="description">
-  
-    
-      
-      
-      
-    
-    
-      Original
-      Minimum Energy Reconstruction
-      Sparse Reconstruction
-    
-  
-
-
+    <p class="archive__item-excerpt" itemprop="description">This is the second installment in the series in discussing ARK invest’s Big Ideas publication. In the first part, I reviewed and shared my read to their the 1st to 6th ideas. This post will cover the next five ideas.
 </p>
   </article>
 </div>
@@ -781,12 +768,12 @@ Modifications:
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
       <div class="archive__item-teaser">
-        <img src="/images/post_blogging.jpg" alt="">
+        <img src="/images/post_stock_market.jpg" alt="">
       </div>
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/2017/04/03/migrating-from-dropbox-public-folder" rel="permalink">Migrating from dropbox public folder
+        <a href="/2021/02/09/on-ark-invest-big-ideas-2021-part-i" rel="permalink">On ARK Invest Big Ideas 2021: Part I
 </a>
       
     </h2>
@@ -797,7 +784,7 @@ Modifications:
       
       <span class="page__meta-date">
         <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2017-04-03T09:22:32+00:00">April 3, 2017</time>
+        <time datetime="2021-02-09T22:28:00+00:00">February 9, 2021</time>
       </span>
     
 
@@ -810,7 +797,7 @@ Modifications:
       <span class="page__meta-readtime">
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
-          1 minute read
+          8 minute read
         
       </span>
     
@@ -818,7 +805,7 @@ Modifications:
 
 
     
-    <p class="archive__item-excerpt" itemprop="description">Dropbox recently removed its public folder feature, which was used to host my blog’s images. I have to figure out a solution to host and fix the paths to these images…
+    <p class="archive__item-excerpt" itemprop="description">ARK invest has published their Big Ideas 2021 report, which is a very interesting read.
 </p>
   </article>
 </div>
