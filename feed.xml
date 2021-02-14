@@ -1,4 +1,86 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://www.ivanxiao.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.ivanxiao.com/" rel="alternate" type="text/html" /><updated>2021-02-11T00:09:57+00:00</updated><id>https://www.ivanxiao.com/feed.xml</id><title type="html">Ivan Xiao</title><subtitle>Ivan's blog.</subtitle><author><name>Ivan Xiao</name></author><entry><title type="html">On ARK Invest Big Ideas 2021: Part II</title><link href="https://www.ivanxiao.com/2021/02/11/on-ark-invest-big-ideas-2021-part-ii" rel="alternate" type="text/html" title="On ARK Invest Big Ideas 2021: Part II" /><published>2021-02-11T00:02:00+00:00</published><updated>2021-02-11T00:02:00+00:00</updated><id>https://www.ivanxiao.com/2021/02/11/on-ark-invest-big-ideas-2021-part-ii</id><content type="html" xml:base="https://www.ivanxiao.com/2021/02/11/on-ark-invest-big-ideas-2021-part-ii">&lt;p&gt;This is the second installment in the series in discussing &lt;a href=&quot;https://research.ark-invest.com/hubfs/1_Download_Files_ARK-Invest/White_Papers/ARK%E2%80%93Invest_BigIdeas_2021.pdf&quot;&gt;ARK invest’s Big Ideas publication&lt;/a&gt;. In the first part, I reviewed and shared my read to their the 1st to 6th ideas. This post will cover the next five ideas.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://www.ivanxiao.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.ivanxiao.com/" rel="alternate" type="text/html" /><updated>2021-02-14T08:19:45+00:00</updated><id>https://www.ivanxiao.com/feed.xml</id><title type="html">Ivan Xiao</title><subtitle>Ivan's blog.</subtitle><author><name>Ivan Xiao</name></author><entry><title type="html">On ARK Invest Big Ideas 2021: Part III</title><link href="https://www.ivanxiao.com/2021/02/12/on-ark-invest-big-ideas-2021-part-iii" rel="alternate" type="text/html" title="On ARK Invest Big Ideas 2021: Part III" /><published>2021-02-12T07:24:00+00:00</published><updated>2021-02-12T07:24:00+00:00</updated><id>https://www.ivanxiao.com/2021/02/12/on-ark-invest-big-ideas-2021-part-iii</id><content type="html" xml:base="https://www.ivanxiao.com/2021/02/12/on-ark-invest-big-ideas-2021-part-iii">&lt;p&gt;This is the third installment in the series in discussing &lt;a href=&quot;https://research.ark-invest.com/hubfs/1_Download_Files_ARK-Invest/White_Papers/ARK%E2%80%93Invest_BigIdeas_2021.pdf&quot;&gt;ARK invest’s Big Ideas publication&lt;/a&gt;. In the first and second part, I reviewed and shared my read to their ideas from Deep Learning to Orbital Aerospace. I will cover the last four ideas in this post.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://paper-attachments.dropbox.com/s_A2437573015A66BA35A7D43E9EF4C4EBABEC985297355C182180DD45A0DB3E6D_1612586895817_image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;3d-printing&quot;&gt;3D Printing&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;ARK believes 3D printing will revolutionize manufacturing, growing at an annual rate of roughly 60% from $12 billion last year to $120 billion in 2025.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;A few key observations by ARK:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;3D printing found its new use during COVID-19, such as medical devices, personal protective equipment.&lt;/li&gt;
+  &lt;li&gt;There are three markets for 3D printing: prototypes, molds &amp;amp; tools, and end-use parts. The latter two parts have tiny market penetration and therefore have large potential - $30 billion and $490 billion respectively.&lt;/li&gt;
+  &lt;li&gt;3D printing enables a few innovations mentioned before, such as autonomous technology, EV batteries, drones.&lt;/li&gt;
+  &lt;li&gt;When combining AI, it’s also possible to achieve complex and optimized designs that were not possible traditionally.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;figure&gt;
+&lt;img src=&quot;https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_800/v1613024838/3d-printing-addressable-opportunity.jpg&quot; srcset=&quot;https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_320/v1613024838/3d-printing-addressable-opportunity.jpg 320w,
+https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_540/v1613024838/3d-printing-addressable-opportunity.jpg 540w,
+https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_760/v1613024838/3d-printing-addressable-opportunity.jpg 760w,
+https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_790/v1613024838/3d-printing-addressable-opportunity.jpg 790w&quot; sizes=&quot;(min-width: 50rem) 50rem, 90vw&quot; width=&quot;790&quot; height=&quot;554&quot; /&gt;
+&lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;My confidence: &lt;strong&gt;6/10&lt;/strong&gt;. The hotness about 3D printing seems to fade a little. I remember back to about 2014, it’s very fancy and everybody wants to buy or at least play with a 3D printer. Haven’t seen much news in recent years. I do see its huge benefit in prototyping. The major challenge to penetrate the molds &amp;amp; tools and end-use parts requires 3D printing to be more efficient, cost-friendly, and accurate for prosumer-grade production. ARK didn’t do a very good job here in presenting how the 3D printing technology is advancing though. Relatedly, there’s a recent &lt;a href=&quot;https://www.youtube.com/watch?v=XHSYEH133HA&quot;&gt;video showing 3D printing being used to build homes&lt;/a&gt;, which is quite impressive.&lt;/p&gt;
+
+&lt;h2 id=&quot;long-read-sequencing&quot;&gt;Long Read Sequencing&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;We estimate that long-read revenues will grow 82% at an annual rate, from $250 million in 2020 to roughly $5 billion in 2025.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In the field of DNA sequencing, researchers have to choose between Short read sequencing (SRS) vs Long read sequencing (LRS), with the trade-off between accuracy and completeness. SRS scans more accurately but could miss some mutations. LRS covers a longer sequence, therefore, has better completeness, but less accurate.&lt;/p&gt;
+
+&lt;p&gt;Recent advancement on deep learning has improved the LRS accuracy significantly. Further, the cost of LRS is reducing and can be on par with SRS by 2025 according to ARK.&lt;/p&gt;
+
+&lt;p&gt;My confidence: &lt;strong&gt;7/10&lt;/strong&gt;. ARK’s research seems quite convincing. Newborn screening is one of the best applications for DNA sequencing, which detects gene defection at an early stage and improves human life quality significantly.&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;img src=&quot;https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_800/v1613026543/DNA-sequencing-applications.jpg&quot; srcset=&quot;https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_320/v1613026543/DNA-sequencing-applications.jpg 320w,
+https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_540/v1613026543/DNA-sequencing-applications.jpg 540w,
+https://res.cloudinary.com/maomao/image/upload/c_limit,f_auto,q_auto,w_693/v1613026543/DNA-sequencing-applications.jpg 693w&quot; sizes=&quot;(min-width: 50rem) 50rem, 90vw&quot; width=&quot;693&quot; height=&quot;530&quot; /&gt;
+&lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;multi-cancer-screening&quot;&gt;Multi-Cancer Screening&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;According to ARK’s research, the convergence of
+innovative technologies have pushed the cost of multi-cancer screening down by 20-fold from $30,000 in 2015 to $1,500 today and it should drop another 80%+ to $250 in 2025.&lt;/li&gt;
+    &lt;li&gt;As a result, the multi-cancer screening market should scale
+to $150 billion in the US. A multi-cancer screening protocol could avert 66,000 cancer deaths per year in the US, saving 1.4 million human life years.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Cancers, if diagnosed early, can be treated with a high success rate. Multi-cancer screening can detect a dozen early-stage cancers based on a single blood test. One challenge is the cost. Thanks to the rapidly declining costs, nearly $150 all age groups above 40 years could be screened for cancer cost-effectively, potentially saving up to 1.4 million human life years in the US alone.&lt;/p&gt;
+
+&lt;p&gt;My confidence: &lt;strong&gt;8/10&lt;/strong&gt;. It is truly amazing that modern medicine has advanced to the stage that cancer could be considered conquered to a certain degree. ARK certainly paints a bright picture for multi-cancer screening and how it can vastly improve human life expectancy.&lt;/p&gt;
+
+&lt;h2 id=&quot;cell-and-gene-therapy-generation-2&quot;&gt;Cell and Gene Therapy: Generation 2&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;New cell and gene therapy innovations could increase the total addressable market for oncology therapeutics by more than 20-fold.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;ARK pointed out a few trends in cell and gene therapy:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Traditionally, cancer therapies are tested in liquid tumors. FDA is likely to approve the first CAR-T therapy for solid tumors in 2025.&lt;/li&gt;
+  &lt;li&gt;Oncology trials are shifting from autologous to allogeneic cell therapies.&lt;/li&gt;
+  &lt;li&gt;Gene therapies could shift from ex vivo to in vivo editing&lt;/li&gt;
+  &lt;li&gt;Gene therapy and editing trials have increased five-fold since 2010&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;My conclusion: &lt;strong&gt;8/10&lt;/strong&gt;. This is a big deal. The medical advancements mentioned above are groundbreaking. It seems to reach a breakpoint that cell and gene editing will no longer be some exotic technologies that are still in the clinical trial but could benefit you and me in the next few years.&lt;/p&gt;
+
+&lt;h2 id=&quot;closing-remarks&quot;&gt;Closing Remarks&lt;/h2&gt;
+
+&lt;p&gt;The above concludes the read of ARK’s 15 big ideas in 2021. A lot of them are pretty exciting. Just like a lot of people pointed out, they believe in ARK because they have transparency in mind and shared a lot of research regularly. Albeit the average investor won’t be able to dig into each theme and get the answers themselves, but they believe that the ARK team is doing the job for them to vet the disruptive innovations. We should look forward to the innovations and check back in a year and see if some of these ideas did break out and validate if ARK is really onto something.&lt;/p&gt;</content><author><name>Ivan Xiao</name></author><category term="[&quot;personal finance&quot;]" /><category term="ark" /><category term="etf" /><summary type="html">This is the third installment in the series in discussing ARK invest’s Big Ideas publication. In the first and second part, I reviewed and shared my read to their ideas from Deep Learning to Orbital Aerospace. I will cover the last four ideas in this post.</summary></entry><entry><title type="html">On ARK Invest Big Ideas 2021: Part II</title><link href="https://www.ivanxiao.com/2021/02/11/on-ark-invest-big-ideas-2021-part-ii" rel="alternate" type="text/html" title="On ARK Invest Big Ideas 2021: Part II" /><published>2021-02-11T00:02:00+00:00</published><updated>2021-02-11T00:02:00+00:00</updated><id>https://www.ivanxiao.com/2021/02/11/on-ark-invest-big-ideas-2021-part-ii</id><content type="html" xml:base="https://www.ivanxiao.com/2021/02/11/on-ark-invest-big-ideas-2021-part-ii">&lt;p&gt;This is the second installment in the series in discussing &lt;a href=&quot;https://research.ark-invest.com/hubfs/1_Download_Files_ARK-Invest/White_Papers/ARK%E2%80%93Invest_BigIdeas_2021.pdf&quot;&gt;ARK invest’s Big Ideas publication&lt;/a&gt;. In the first part, I reviewed and shared my read to their the 1st to 6th ideas. This post will cover the next five ideas.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://paper-attachments.dropbox.com/s_A2437573015A66BA35A7D43E9EF4C4EBABEC985297355C182180DD45A0DB3E6D_1612586895817_image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
@@ -845,66 +927,4 @@ Most notably, the markdown processor is &lt;a href=&quot;https://kramdown.gettal
 
 &lt;p&gt;结合我将近 10 年使用 mint 的经验，以及将近一年使用 &lt;a href=&quot;https://share.personalcapital.com/x/ua1RUS&quot;&gt;PC&lt;/a&gt; 的经验，我认为 &lt;a href=&quot;https://share.personalcapital.com/x/ua1RUS&quot;&gt;PC&lt;/a&gt; 还是非常值得一用的。它的 mobile app 做得也不错，而且它本身提供类似 wealthfront, betterment 的投资服务，说明是有自己的资金来源；比起半死不活的mint应该是更有前景。&lt;/p&gt;
 
-&lt;p&gt;如果你读完我的文章觉得有兴趣尝试，不妨使用我的&lt;a href=&quot;https://share.personalcapital.com/x/ua1RUS&quot;&gt;推广连接&lt;/a&gt;进行注册，这样你我都能得到 $20 的奖励，也算是对我这篇介绍的一点支持 🙂&lt;/p&gt;</content><author><name>Ivan Xiao</name></author><category term="personal finance" /><category term="personal capital" /><category term="mint" /><category term="investing" /><summary type="html">从小家里就给我灌输记账的习惯，一直没有养成，因为懒…… 直到来了美国之后，这个问题神奇地被解决了——因为信用卡普及光并且使用方便，基本上 eliminate 了我使用现金的需求（大多数都是去中国餐馆）。结合理财软件 mint，所有的消费一目了然。可惜自从 mint 被 intuit 收购之后，一直处于维护状态，很多功能停滞不前，很多时候也连不上银行。最近半年开始试用 Personal Capital，发觉非常好用。它更像是一个财富管理软件而不是记账软件。随着资产的积累，我发觉我不再经常 review 我的消费，更多的是管理我的资产，包括各个银行帐号，401k，IRA，brokerage，车贷房贷等。此篇就来介绍一下它以及自己的使用心得。</summary></entry><entry><title type="html">Http 与 Https 代理区别 / Proxifier 与 Charles 使用心得小结</title><link href="https://www.ivanxiao.com/2019/09/07/http-yu-https-dai-li-qu-bie-slash-proxifier-yu-charles-shi-yong-xin-de-xiao-jie" rel="alternate" type="text/html" title="Http 与 Https 代理区别 / Proxifier 与 Charles 使用心得小结" /><published>2019-09-07T22:41:54+00:00</published><updated>2019-09-07T22:41:54+00:00</updated><id>https://www.ivanxiao.com/2019/09/07/http-yu-https-dai-li-qu-bie-slash-proxifier-yu-charles-shi-yong-xin-de-xiao-jie</id><content type="html" xml:base="https://www.ivanxiao.com/2019/09/07/http-yu-https-dai-li-qu-bie-slash-proxifier-yu-charles-shi-yong-xin-de-xiao-jie">&lt;p&gt;HTTP Proxy 与 HTTPS Proxy 的区别很容易混淆。本文通过使用 Proxifier 与 Charles 实战作为一个笔记备忘。&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;h2 id=&quot;http-proxy-与-https-proxy-的区别&quot;&gt;HTTP Proxy 与 HTTPS Proxy 的区别&lt;/h2&gt;
-
-&lt;p&gt;如何使用 proxifier 处理以 https 开头的 url，也就是 SSL 连接？这种连接一般是访问 443 端口，而普通 http 连接使用的是 80 端口。&lt;a href=&quot;https://www.proxifier.com/docs/win-v3/http-proxy.htm&quot;&gt;摘自&lt;/a&gt; Proxifier 官网:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;It is a common misconception to confuse HTTP proxy and HTTPS proxy. HTTP proxy servers can process HTTP connections (port 80). They can also support HTTPS connections (SSL) but usually such connections are only allowed on port 443 (the standard port for HTTPS). For example this is the default configuration for Squid and Microsoft ISA proxy servers. If an HTTP proxy allows HTTPS connections on arbitrary ports, it can be called HTTPS proxy server (also called CONNECT or SSL proxy). In this case it can be used for generic TCP connections like SOCKS v4/5 proxy.
-Proxifier can work with HTTP proxy servers that do not support HTTPS on arbitrary ports. Due to the technical limitation of this protocol it is only possible to process HTTP connections with such proxy servers. This means that you must configure the &lt;a href=&quot;https://www.proxifier.com/docs/win-v3/rules.htm&quot;&gt;Proxification Rules&lt;/a&gt; accordingly.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;基本上的意思就是呢，广义的 HTTP server 是可以处理 HTTPS 连接的。但是大多数 HTTP proxy servers 只能处理 HTTP request。如果它能处理任意端口的 HTTPS 连接，那么它也能被称作 HTTPS proxy server。换句话说，HTTPS proxy server 其实也就是 HTTP proxy server 的一种。&lt;/p&gt;
-
-&lt;p&gt;所以呢：&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;After that you will be able to &lt;a href=&quot;https://www.proxifier.com/docs/win-v3/proxy.htm&quot;&gt;add HTTP proxy server&lt;/a&gt; just like any other type of proxies. Once HTTP proxy server is added, make sure that you properly set the &lt;a href=&quot;https://www.proxifier.com/docs/win-v3/rules.htm&quot;&gt;Proxification Rules&lt;/a&gt;. If you want to process HTTPS connections through this proxy also, you should add this proxy separately as HTTPS.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;也就是说当要使用一个 proxy server 来同时处理 http 与 https 的连接时，应该把它们当作单独的 server 添加，如下：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://d2mxuefqeaa7sj.cloudfront.net/s_553B645525E322D632E92E15E151778490F248AC9CEE526810CE6D8C11AAAF4E_1552886198873_image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;同时，forwarding rules 也要添加两条：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://d2mxuefqeaa7sj.cloudfront.net/s_553B645525E322D632E92E15E151778490F248AC9CEE526810CE6D8C11AAAF4E_1552886251879_image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;使用-charles-的同时使用-httphttps-proxy-server&quot;&gt;使用 Charles 的同时使用 http/https proxy server&lt;/h2&gt;
-
-&lt;p&gt;有时我们不希望设置一个全局的代理，而是希望针对某些 host:port 才使用代理。但是很多网站检测 ip 的功能可能放了在别的 host，所以 rule 里面要 match 好几个 host。这时，使用 charles 来监听访问一个网站时的 traffic 就特别方便，能轻易看到这个 request 会访问哪些 IP，然后可以逐个尝试把这些 IP 添加到 rule 里。但是 charles 本身就是一个（本地）代理。如何使用 Charles 时并且设置 external proxy server 呢？&lt;/p&gt;
-
-&lt;p&gt;这里比较复杂，要同时设置几个地方。首先，简单起见本地的 proxy server 直接设为 SOCKS:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://d2mxuefqeaa7sj.cloudfront.net/s_553B645525E322D632E92E15E151778490F248AC9CEE526810CE6D8C11AAAF4E_1552886348454_image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;其次，要支持 SSL 连接，必须设置 SSL proxy，简单起见，假设对于任意 host 任意端口都启用设置：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://d2mxuefqeaa7sj.cloudfront.net/s_553B645525E322D632E92E15E151778490F248AC9CEE526810CE6D8C11AAAF4E_1552886410475_image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;但是比较现代的浏览器会检测到 charles 发过来的根证书并不是要访问的网站的根证书，所以一般会提示并且出错，这是因为 (&lt;a href=&quot;https://www.charlesproxy.com/documentation/proxying/ssl-proxying/&quot;&gt;via&lt;/a&gt;)：&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Charles can be used as a man-in-the-middle HTTPS proxy, enabling you to view in plain text the communication between web browser and SSL web server.
-Charles does this by becoming a man-in-the-middle. &lt;strong&gt;Instead of your browser seeing the server’s certificate, Charles dynamically generates a certificate for the server and signs it with its own root certificate&lt;/strong&gt; (the Charles CA Certificate). &lt;strong&gt;Charles receives the server’s certificate, while your browser receives Charles’s certificate&lt;/strong&gt;. Therefore you will see a security warning, indicating that the root authority is not trusted. If you add the Charles CA Certificate to your trusted certificates you will no longer see any warnings – see below for how to do this.
-Charles still communicates via SSL to the web server. The communication is SSL (encrypted) from web browser to Charles and also SSL (encrypted) from Charles to the web server.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Charles uses its own Root SSL certificate for SSL requests through Charles to hosts enabled for SSL Proxying. The Root certificate is generated automatically for each Charles installation.
-Because Charles has signed the Root certificate itself, it won’t be trusted by your browsers or applications. In order to use the SSL Proxying feature in Charles you therefore need to add the Root certificate for your copy of Charles to the trust-store on your OS, and perhaps in your browser.
-Use the options in the SSL submenu in the Help menu in Charles to help install the Root certificate. You can install the certificate on the current OS, or on remote devices or browsers.
-To install the certificate in Mozilla Firefox, first configure Firefox to use Charles as its proxy then browse to chls.pro/ssl.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;参见&lt;a href=&quot;https://www.charlesproxy.com/documentation/proxying/ssl-proxying/&quot;&gt;这里&lt;/a&gt;设置添加信任 Charles 的根证书。&lt;/p&gt;
-
-&lt;p&gt;最后，我们要设置对应的 HTTP 以及 HTTPS server，原理类似 proxifier：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://d2mxuefqeaa7sj.cloudfront.net/s_553B645525E322D632E92E15E151778490F248AC9CEE526810CE6D8C11AAAF4E_1552886712011_image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;PS. 这位博主有一系列非常好的介绍文章，并且使用 nodejs 实现了 &lt;a href=&quot;https://imququ.com/post/web-proxy.html&quot;&gt;HTTP&lt;/a&gt; 与 &lt;a href=&quot;https://imququ.com/post/web-proxy-2.html&quot;&gt;HTTPS&lt;/a&gt; 代理。强烈推荐。&lt;/p&gt;</content><author><name>Ivan Xiao</name></author><category term="network security" /><category term="notes" /><category term="charles" /><category term="proxy" /><summary type="html">HTTP Proxy 与 HTTPS Proxy 的区别很容易混淆。本文通过使用 Proxifier 与 Charles 实战作为一个笔记备忘。</summary></entry></feed>
+&lt;p&gt;如果你读完我的文章觉得有兴趣尝试，不妨使用我的&lt;a href=&quot;https://share.personalcapital.com/x/ua1RUS&quot;&gt;推广连接&lt;/a&gt;进行注册，这样你我都能得到 $20 的奖励，也算是对我这篇介绍的一点支持 🙂&lt;/p&gt;</content><author><name>Ivan Xiao</name></author><category term="personal finance" /><category term="personal capital" /><category term="mint" /><category term="investing" /><summary type="html">从小家里就给我灌输记账的习惯，一直没有养成，因为懒…… 直到来了美国之后，这个问题神奇地被解决了——因为信用卡普及光并且使用方便，基本上 eliminate 了我使用现金的需求（大多数都是去中国餐馆）。结合理财软件 mint，所有的消费一目了然。可惜自从 mint 被 intuit 收购之后，一直处于维护状态，很多功能停滞不前，很多时候也连不上银行。最近半年开始试用 Personal Capital，发觉非常好用。它更像是一个财富管理软件而不是记账软件。随着资产的积累，我发觉我不再经常 review 我的消费，更多的是管理我的资产，包括各个银行帐号，401k，IRA，brokerage，车贷房贷等。此篇就来介绍一下它以及自己的使用心得。</summary></entry></feed>
